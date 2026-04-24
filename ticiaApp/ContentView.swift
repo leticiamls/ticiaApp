@@ -35,7 +35,7 @@ struct ContentView: View {
                     .font(Font.system(size: 24, weight: .bold))
                     
                     NavigationLink {
-                        JogarView()
+                        cardNews()
                     }
                     label: {
                         HStack{

@@ -40,18 +40,16 @@ struct cardNews: View {
                     }
                     .frame(height: 91)
                     .foregroundStyle(Color(.secondaryLabel))
-                }
-                
-                Spacer()
-                
-                VStack(alignment: .leading){
-                    Text("Fonte: \(newsList[0].fonte)")
-                        .font(.subheadline)
-                        .bold()
-                        .foregroundStyle(Color(.secondaryLabel))
-                }
                     
-                
+                    Spacer()
+                    
+                    VStack(alignment: .leading){
+                        Text("Fonte: \(newsList[0].fonte)")
+                            .font(.subheadline)
+                            .bold()
+                            .foregroundStyle(Color(.secondaryLabel))
+                    }
+                }
             }
             .frame(width: 327, height: 411)
             .backgroundStyle(Color.clear)
