@@ -102,18 +102,7 @@ struct resultsView: View {
             .font(Font.system(size: 24, weight: .bold))
 
         }
-        
-            //toolbar
-                .toolbar{
-                    ToolbarItem(placement: .topBarLeading){
-                        Button(action: {
-                            
-                            //
-                        }, label: {
-                            Image(systemName: "chevron.left")
-                        })
-                    }
-                }
+            
         }
     }
 
