@@ -51,13 +51,13 @@ struct cardNews: View {
                     }
                 }
             }
-            .frame(width: 327, height: 411)
-            .backgroundStyle(Color.clear)
-            .padding(0)
         }
         .background(Color(.pink))
         .clipShape(RoundedRectangle(cornerRadius: 15))
-        .frame(width: 327, height: 411)
+        .frame(maxWidth: .infinity , maxHeight: .infinity)
+        .backgroundStyle(Color.clear)
+        .padding(.horizontal, 37)
+        .padding(.top, 167).padding(.bottom, 200)
     }
 }
 
