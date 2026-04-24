@@ -13,10 +13,13 @@ struct ContentView: View {
         VStack(spacing: 225){
             VStack{
                 Text("Tícia!")
-                    .font(Font.system(size: 96, weight: .bold))
+                    .font(Font.custom("Grandstander-Black", size: 96))
                     .foregroundColor(Color("Black"))
-                Text("Teste seus conhecimentos sobre fake news")
-                    .font(Font.system(size: 16, weight: .bold))
+                    .kerning(-4)
+                Text("Teste seus conhecimentos sobre")
+                    .font(Font.custom("Fredoka-Medium", size: 18))
+                Text("Fake News!")
+                    .font(Font.custom("Fredoka-SemiBold", size: 18))
             }
                 VStack(spacing: 30){
                     NavigationLink {
@@ -32,10 +35,10 @@ struct ContentView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(Color(.black))
-                    .font(Font.system(size: 24, weight: .bold))
+                    .font(Font.custom("Fredoka-SemiBold", size: 24))
                     
                     NavigationLink {
-                        JogarView()
+                        cardNews()
                     }
                     label: {
                         HStack{
@@ -47,8 +50,8 @@ struct ContentView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(Color(.black))
-                    .font(Font.system(size: 24, weight: .bold))
-                    
+                    .font(Font.custom("Fredoka-SemiBold", size: 24))
+
                     NavigationLink {
                         EstudarView()
                     }
@@ -62,8 +65,8 @@ struct ContentView: View {
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(Color(.black))
-                    .font(Font.system(size: 24, weight: .bold))
-                    
+                    .font(Font.custom("Fredoka-SemiBold", size: 24))
+
                 }
             }
         }
