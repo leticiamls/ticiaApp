@@ -26,19 +26,16 @@ struct cardNews: View {
             GroupBox{
                 Image("cardImage")
                     .resizable()
-                    .frame(width: 295, height: 173)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .shadow(radius: 12)
                     .padding(0)
                 VStack(alignment: .leading){
                     Text(newsList[0].manchete)
-                        .font(.headline)
-                    
+                        .font(Font.custom("Fredoka-SemiBold", size: 24))
                     ScrollView(.vertical, showsIndicators: true) {
                         Text(newsList[0].texto)
-                            .font(.footnote)
+                            .font(Font.custom("Fredoka-Regular", size: 16))
                     }
-                    .frame(height: 91)
                     .foregroundStyle(Color(.secondaryLabel))
                     
                     Spacer()
@@ -47,21 +44,23 @@ struct cardNews: View {
                         Text("Fonte: \(newsList[0].fonte)")
                             .font(.subheadline)
                             .bold()
-                            .foregroundStyle(Color(.secondaryLabel))
+                            .font(Font.custom("Fredoka-Regular", size: 12))
                     }
                 }
             }
         }
-        .background(Color(.pink))
+        .background(Color(.white))
+        .foregroundColor(Color("Black"))
         .clipShape(RoundedRectangle(cornerRadius: 15))
         .frame(maxWidth: .infinity , maxHeight: .infinity)
         .backgroundStyle(Color.clear)
         .padding(.horizontal, 37)
         .padding(.top, 167).padding(.bottom, 200)
     }
+    
 }
 
 
 #Preview {
-    cardNews()
+    cardNews().background(Color.black)
 }
