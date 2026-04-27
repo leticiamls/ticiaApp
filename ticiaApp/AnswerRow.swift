@@ -34,7 +34,7 @@ struct AnswerRow: View {
             .foregroundColor(isSelected ? Color("AccentColor") : .gray)
             .shadow(color : isSelected ? (answer.isCorrect ? green : red) : .gray, radius: 5, x: 0.5, y:0.5)
         }
-        .tint(Color(.black))
+        .tint(Color(.pink))
         .font(Font.system(size: 24, weight: .bold))
     }
 }
