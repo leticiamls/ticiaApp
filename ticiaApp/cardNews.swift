@@ -14,7 +14,7 @@ struct news {
 }
 
 var newsList: [news] = [
-    news(manchete: "URGENTE!! Vacina CAUSA AUTISMO em CRIANÇAS!!", texto: "COMPARTILHE ANTES QUE REMOVAM!! Fontes ciemtificas afirma que vacinas causa AUTISMO!! Médicos NÃO querem que você saiba disso!! COMPARTILHE com AMIGOS aaaaaaaaaaaaaaaaaaaaaaaaaLWIRFHIEHRFIUEIHRFIUHEDISRKFJDKLSRHFUKEDRHFUIOEHRe FAMÍLIA!!", fonte: "Grupo do WhatsApp"),
+    news(manchete: "URGENTE!! Vacina CAUSA AUTISMO em CRIANÇAS!!", texto: "COMPARTILHE ANTES QUE REMOVAM!! Fontes ciemtificas afirma que vacinas causa AUTISMO!! Médicos NÃO querem que você saiba disso!! COMPARTILHE com AMIGOS e FAMÍLIA!!", fonte: "Grupo do WhatsApp"),
     news(manchete: "Notícia 2", texto: "Texto da notícia 2", fonte: "Grupo do WhatsApp"),
     news(manchete: "Notícia 3", texto: "Texto da notícia 3", fonte: "Grupo do WhatsApp"),
 ]

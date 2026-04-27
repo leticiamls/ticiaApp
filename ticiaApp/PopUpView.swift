@@ -1,5 +1,5 @@
 //
-//  popUpView.swift
+//  PopUpView.swift
 //  ticiaApp
 //
 //  Created by User on 27/04/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct popUpView: View {
+struct PopUpView: View {
     var body: some View {
 //        NavigationStack{
             ZStack{
@@ -15,10 +15,12 @@ struct popUpView: View {
                     VStack{
                         Text("Vixi... Essa é Fake")
                             .font(Font.custom("Fredoka-SemiBold", size: 36))
-                        Image("tíciaResults")
+                        Image("tíciaFeliz")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 200, height: 200)
+                            .padding(EdgeInsets(top: 00, leading: 0, bottom: 00, trailing: 40))
+
                         VStack (alignment: .leading){
                             Text("Essa tava com toda cara de ser fake:")
                                 .font(Font.custom("Fredoka-Regular", size: 20))
@@ -26,21 +28,22 @@ struct popUpView: View {
                                 .font(Font.custom("Fredoka-Semibold", size: 20))
                             Text("Não publique notícias assim!")
                                 .font(Font.custom("Fredoka-Regular", size: 20))
+                            Spacer()
+                                .frame(height: 12)
+                            HStack{
+                                Image(systemName: "exclamationmark.triangle.fill")
+                                    .font(Font.custom("Fredoka-Semibold", size: 20))
+                                Text("+ 10 de Caos")
+                                    .font(Font.custom("Fredoka-Semibold", size: 24))
+                            }
+                            .foregroundStyle(Color(.red))
                         }
+                        
                     }
                     
                     Spacer()
-                        .frame(height: 8)
-                        HStack{
-                            Image(systemName: "exclamationmark.triangle.fill")
-                                .font(Font.custom("Fredoka-Semibold", size: 20))
-                            
-                            Text("+ 10 de Caos")
-                                .font(Font.custom("Fredoka-Semibold", size: 24))
-                        }
-                    .foregroundStyle(Color(.red))
-                    .frame(width: 324)
-                    
+                        .frame(height: 16)
+                                            
                     Button {
                         //botao para publicar a noticia
                     }
@@ -60,10 +63,11 @@ struct popUpView: View {
                     .tint(Color(.red))
                     
                 }
+                .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                 .background(RoundedRectangle(cornerRadius: 20)
                     .fill(Color.white)
                     .stroke(Color(.lightGray), lineWidth: 1))
-                .foregroundColor(Color("Black"))
+                .foregroundStyle(Color.blackTícia)
                 .frame(maxWidth: 370, maxHeight: 575)
                 .backgroundStyle(Color.clear)
             }
@@ -72,5 +76,5 @@ struct popUpView: View {
 //}
 
 #Preview {
-    popUpView()
+    PopUpView()
 }

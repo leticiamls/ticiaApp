@@ -12,69 +12,77 @@ struct resultsView: View {
     var body: some View {
         NavigationStack{
             //imagem e texto
-           
-                VStack(alignment: .center){
-                    Image("tíciaResults")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150, height: 150)
+            VStack(alignment: .center){
+                Image("tíciaFeliz")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 160)
+                    .padding(EdgeInsets(top: 00, leading: 00, bottom: 00, trailing: 35))
+                Text("Mandou muito bem!")
+                    .font(Font.custom("Fredoka-Semibold", size: 40))
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.blackTícia)
+                Text("Você foi tão bem que eu acho que posso te considerar um... Aprendiz.")
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .font(Font.custom("Fredoka-Medium", size: 20))
+            }
+            .padding(EdgeInsets(top: 40, leading: 20, bottom: 30, trailing: 20))
+            
+            //resultados
+            VStack (alignment: .leading){
+                Text("RESULTADOS")
+                    .font(Font.custom("Fredoka-Medium", size: 16))
+                    .foregroundStyle(Color(.gray))
+                    .frame(width: 145, height: 1)
+                    .kerning(0.8)
+                GroupBox{
+                    VStack{
+                        HStack{
+                            Image(systemName: "hand.thumbsup.fill")
+                            Text("Confiança")
+                            Spacer()
+                            Text("70%")
+                        }
+                        .font(Font.custom("Fredoka-Medium", size: 24))
+                        .foregroundStyle(Color.greenTicia)
+                        Gauge(value: pointsUser){
+                            //
+                        }
+                        .tint(Color(.green))
+                    }
+                    .padding(EdgeInsets(top: 25, leading: 00, bottom: 20, trailing: 00))
                     
-                    Text("Mandou muito bem!")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                    Text("Você foi tão bem que eu acho que posso te considerar um... Aprendiz")
-                        .multilineTextAlignment(.center)
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity)
-                }
-                .padding(EdgeInsets(top: 40, leading: 00, bottom: 30, trailing: 00))
-
-                //resultados
-            GroupBox{
-                VStack{
-                    HStack{
-                        Image(systemName: "hand.thumbsup.fill")
-                        Text("Confiança")
-                        Spacer()
-                        Text("70%")
-                    }
-                    .foregroundStyle(Color(.green))
-                    Gauge(value: pointsUser){
+                    Divider()
+                    
+                    VStack{
+                        HStack{
+                            Image(systemName: "exclamationmark.triangle.fill")
+                            Text("Caos")
+                            Spacer()
+                            Text("30%")
+                        }
+                        .font(Font.custom("Fredoka-Medium", size: 24))
                         
+                        .foregroundColor(Color(.red))
+                        Gauge(value: pointsUser - 0.50){
+                            //
+                        }
+                        .tint(Color(.red))
                     }
-                    .tint(Color(.green))
-                }
-                .padding(EdgeInsets(top: 25, leading: 00, bottom: 20, trailing: 00))
-
-                Divider()
-                
-                VStack{
-                    HStack{
-                        Image(systemName: "exclamationmark.triangle.fill")
-                        Text("Caos")
-                        Spacer()
-                        Text("20%")
-                    }
-                    .foregroundColor(Color(.red))
-                    Gauge(value: pointsUser - 0.50){
-                        
-                    }
-                    .tint(Color(.red))
+                    .padding(EdgeInsets(top: 10, leading: 00, bottom: 30, trailing: 00))
                 }
                 .padding(EdgeInsets(top: 10, leading: 00, bottom: 30, trailing: 00))
-
+                .groupBoxStyle(CardGroupBoxStyle())
+                .padding(EdgeInsets(top: 00, leading: 16, bottom: 00, trailing: 16))
+                .font(Font.system(size: 24, weight: .bold))
             }
-            .padding(EdgeInsets(top: 10, leading: 00, bottom: 30, trailing: 00))
-            .groupBoxStyle(CardGroupBoxStyle())
-            .padding(EdgeInsets(top: 00, leading: 16, bottom: 00, trailing: 16))
-            .font(Font.system(size: 24, weight: .bold))
             Spacer()
             
             //botões
             VStack(spacing: 16){
                 NavigationLink {
-                    JogarView()
+                    JogoNewsView()
                 }
                 label: {
                     HStack{
@@ -85,7 +93,6 @@ struct resultsView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(Color(.black))
-                .font(Font.system(size: 24, weight: .bold))
                 
                 NavigationLink {
                     ContentView()
@@ -99,12 +106,14 @@ struct resultsView: View {
                 }
                 .buttonStyle(PlainButtonStyle())
             }
-            .font(Font.system(size: 24, weight: .bold))
-
-        }
+            .font(Font.custom("Fredoka-Semibold", size: 24))
+            .navigationBarBackButtonHidden()
+            
             
         }
+        
     }
+}
 
 
 #Preview {
@@ -120,7 +129,7 @@ struct CardGroupBoxStyle: GroupBoxStyle {
         
         .background(RoundedRectangle(cornerRadius: 20)
             .fill(Color.white)
-            .stroke(Color(.lightGray), lineWidth: 3)
+            .stroke(Color(.lightGray), lineWidth: 1.7)
         )
     }
 }
