@@ -25,22 +25,12 @@ var newsList: [news] = [
     news(manchete: "Notícia 3", texto: "Texto da notícia 3", fonte: "Grupo do WhatsApp", isTrue: false)
 ]
 
-enum Questao: Identifiable {
-    case pergunta(String, Resposta, Resposta, Resposta)
-    
-    var id: UUID {
-        switch self {
-        case .pergunta:
-            return UUID()
-        }
-    }
-}
-
 struct tester: View {
     var body: some View {
-        Text("Pergunta?")
-        AnswerRow(answer: Resposta(texto: "false", isCorrect: true))
-        AnswerRow(answer: Resposta(texto: "true", isCorrect: false))
+        HStack {
+            AnswerRow(answer: Resposta(texto: "Excluir", isCorrect: true))
+            AnswerRow(answer: Resposta(texto: "Publicar", isCorrect: false))
+        }
     }
 }
 

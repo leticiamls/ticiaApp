@@ -54,7 +54,7 @@ struct JogarView: View {
                         Image(systemName: "xmark")
                         Text("Excluir")
                     }
-                    .padding(18)
+                    .padding(16)
                     .frame(width: 150)
                     .background(RoundedRectangle(cornerRadius: 30).stroke(Color(.black), lineWidth: 2))
                 }
