@@ -1,8 +1,0 @@
-## Xcode
-# Arquivos de usuário e estado (Onde mora o problema)
-xcuserdata/
-*.xcuserstate
-*.mode1v3
-*.mode2v3
-*.perspectivev3
-DerivedData/
