@@ -14,7 +14,7 @@ struct ContentView: View {
             VStack{
                 Text("Tícia!")
                     .font(Font.custom("Grandstander-Black", size: 96))
-                    .foregroundStyle(Color.blackTícia)
+                    .foregroundStyle(Color.blackTicia)
                     .kerning(-4)
                     .frame(height: 45)
                 Text("Teste seus conhecimentos sobre")

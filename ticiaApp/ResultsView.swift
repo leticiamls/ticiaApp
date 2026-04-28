@@ -21,7 +21,7 @@ struct ResultsView: View {
                 Text("Mandou muito bem!")
                     .font(Font.custom("Fredoka-Semibold", size: 40))
                     .fontWeight(.bold)
-                    .foregroundStyle(Color.blackTícia)
+                    .foregroundStyle(Color.blackTicia)
                 Text("Você foi tão bem que eu acho que posso te considerar um... Aprendiz.")
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
