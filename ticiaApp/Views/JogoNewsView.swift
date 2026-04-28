@@ -63,7 +63,7 @@ struct JogoNewsView: View {
                     .background(RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white)
                         .stroke(Color(.lightGray), lineWidth: 1))
-                    .foregroundStyle(Color.blackTícia)
+                    .foregroundStyle(Color.blackTicia)
                     .frame(maxWidth: 327 , maxHeight: 393)
                     .backgroundStyle(Color.clear)
                 }
