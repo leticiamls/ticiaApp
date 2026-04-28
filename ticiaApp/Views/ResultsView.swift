@@ -73,7 +73,7 @@ struct ResultsView: View {
                     .padding(EdgeInsets(top: 10, leading: 00, bottom: 30, trailing: 00))
                 }
                 .padding(EdgeInsets(top: 10, leading: 00, bottom: 30, trailing: 00))
-                .groupBoxStyle(CardGroupBoxStyle())
+                .groupBoxStyle(CardResultsFinal())
                 .padding(EdgeInsets(top: 00, leading: 16, bottom: 00, trailing: 16))
                 .font(Font.system(size: 24, weight: .bold))
             }
@@ -88,11 +88,10 @@ struct ResultsView: View {
                     HStack{
                         Text("Jogar novamente")
                     }
-                    .padding(10)
                     .frame(width: 340)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(Color(.black))
+                .buttonStyle(ButtonPrimary())
+              
                 
                 NavigationLink {
                     ContentView()
@@ -101,35 +100,16 @@ struct ResultsView: View {
                     HStack{
                         Text("Voltar para o menu")
                     }
-                    .padding(16)
-                    .frame(width: 370)
+                    .navigationBarBackButtonHidden()
                 }
-                .buttonStyle(PlainButtonStyle())
+                .buttonStyle(ButtonTerciary())
+                
             }
-            .font(Font.custom("Fredoka-Semibold", size: 24))
-            .navigationBarBackButtonHidden()
-            
-            
         }
-        
     }
-}
-
-
+    }
 #Preview {
     ResultsView()
 }
 
-struct CardGroupBoxStyle: GroupBoxStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        VStack(alignment: .center) {
-            configuration.content
-                .padding(EdgeInsets(top: 00, leading: 16, bottom: 00, trailing: 16))
-        }
-        
-        .background(RoundedRectangle(cornerRadius: 20)
-            .fill(Color.white)
-            .stroke(Color(.lightGray), lineWidth: 1.7)
-        )
-    }
-}
+
