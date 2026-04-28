@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "ED4F026A-8871-4485-8F85-A086B84E1CA1"
+   uuid = "A5CA73BE-0611-4F5B-A3B9-08E900658868"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "18F96048-B2F8-415A-A1B0-1C7A357BE48E"
-            shouldBeEnabled = "No"
+            uuid = "484049EE-BEF6-4729-9DF2-5EEE5C49E888"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ticiaApp/ResultsView.swift"
+            filePath = "ticiaApp/cardNews.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
