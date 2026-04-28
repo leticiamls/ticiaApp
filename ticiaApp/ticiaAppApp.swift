@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct ticiaAppApp: App {
+    @State var isPresented: Bool = false
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Tester(presentPopup: $isPresented)
         }
     }
 }

@@ -10,20 +10,27 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationStack{
-        VStack(spacing: 225){
+        VStack(spacing: 100){
             VStack{
                 Text("Tícia!")
                     .font(Font.custom("Grandstander-Black", size: 96))
-                    .foregroundColor(Color("Black"))
+                    .foregroundStyle(Color.blackTicia)
                     .kerning(-4)
+                    .frame(height: 45)
                 Text("Teste seus conhecimentos sobre")
                     .font(Font.custom("Fredoka-Medium", size: 18))
                 Text("Fake News!")
                     .font(Font.custom("Fredoka-SemiBold", size: 18))
+            Image("tíciaResults")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 217, height: 200)
             }
+            
+            //botoes
                 VStack(spacing: 30){
                     NavigationLink {
-                        JogarView()
+                        JogoNewsView()
                     }
                     label: {
                         HStack{
@@ -38,21 +45,6 @@ struct ContentView: View {
                     .font(Font.custom("Fredoka-SemiBold", size: 24))
                     
                     NavigationLink {
-                        cardNews()
-                    }
-                    label: {
-                        HStack{
-                            Image(systemName: "play.fill")
-                            Text("Continuar Jogo")
-                        }
-                        .padding(10)
-                        .frame(width: 317)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(.black))
-                    .font(Font.custom("Fredoka-SemiBold", size: 24))
-
-                    NavigationLink {
                         EstudarView()
                     }
                     label: {
@@ -60,16 +52,18 @@ struct ContentView: View {
                             Image(systemName: "book.fill")
                             Text("Estudar")
                         }
-                        .padding(10)
-                        .frame(width: 317)
+                        .padding(16)
+                        .frame(width: 327)
+                        .background(RoundedRectangle(cornerRadius: 30).stroke(Color(.black), lineWidth: 2))
                     }
-                    .buttonStyle(.borderedProminent)
                     .tint(Color(.black))
                     .font(Font.custom("Fredoka-SemiBold", size: 24))
-
                 }
+            
             }
         }
+        .navigationBarBackButtonHidden()
+
     }
 }
 
