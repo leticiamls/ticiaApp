@@ -12,6 +12,8 @@ struct JogoNewsView: View {
     
     @State private var presentPopup: Bool = false
 
+    private var noticia: [NoticiaElemento] = NoticiaElemento.todasNoticias
+    
     var body: some View {
         NavigationStack {
             HStack (spacing: 20){
@@ -47,7 +49,7 @@ struct JogoNewsView: View {
                             .frame(width: 300, height: 150)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         VStack(alignment: .leading){
-                            Text(newsList[0].manchete)
+                            Text(newsList[0].texto)
                                 .font(Font.custom("Fredoka-SemiBold", size: 24))
                             Text(newsList[0].texto)
                                 .font(Font.custom("Fredoka-Regular", size: 16))
