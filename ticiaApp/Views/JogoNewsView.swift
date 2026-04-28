@@ -80,11 +80,9 @@ struct JogoNewsView: View {
                             Image(systemName: "checkmark")
                             Text("Publicar")
                         }
-                        .padding(10)
-                        .frame(width: 150)
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(.black))
+                    .buttonStyle(ButtonPublish())
+                    
                     
                     Button {
                         //botao para excluir a noticia
@@ -94,11 +92,8 @@ struct JogoNewsView: View {
                             Image(systemName: "xmark")
                             Text("Excluir")
                         }
-                        .padding(18)
-                        .frame(width: 150)
-                        .background(RoundedRectangle(cornerRadius: 30).stroke(Color(.black), lineWidth: 2))
                     }
-                    .tint(Color(.black))
+                    .buttonStyle(ButtonDelete())
                 }
                 .font(Font.custom("Fredoka-Semibold", size: 24))
 
