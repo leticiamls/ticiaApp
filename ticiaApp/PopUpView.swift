@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PopUpView: View {
+    @Binding var presentPopup: Bool
+
     var body: some View {
 //        NavigationStack{
             ZStack{
@@ -45,7 +47,7 @@ struct PopUpView: View {
                         .frame(height: 16)
                                             
                     Button {
-                        //botao para publicar a noticia
+                        presentPopup.toggle()
                     }
                     label: {
                         HStack{
@@ -76,5 +78,5 @@ struct PopUpView: View {
 //}
 
 #Preview {
-    PopUpView()
+    PopUpView(presentPopup: .constant(true))
 }

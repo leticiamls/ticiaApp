@@ -74,7 +74,6 @@ struct JogoNewsView: View {
                         withAnimation {
                             presentPopup.toggle()
                         }
-//                        resultsView()
                     }
                     label: {
                         HStack{
@@ -128,7 +127,7 @@ struct JogoNewsView: View {
                         }
                     }
                 }
-                PopUpView()
+                PopUpView(presentPopup: $presentPopup)
                     .transition(.scale)
             }
             

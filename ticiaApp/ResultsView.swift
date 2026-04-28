@@ -1,5 +1,5 @@
 //
-//  resultsView.swift
+//  ResultsView.swift
 //  ticiaApp
 //
 //  Created by User on 23/04/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct resultsView: View {
+struct ResultsView: View {
     @State private var pointsUser: Double = 0.70
     var body: some View {
         NavigationStack{
@@ -117,7 +117,7 @@ struct resultsView: View {
 
 
 #Preview {
-    resultsView()
+    ResultsView()
 }
 
 struct CardGroupBoxStyle: GroupBoxStyle {
