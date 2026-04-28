@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ResultsView: View {
+    @Environment(Router.self) var router: Router
+    
     @State private var pointsUser: Double = 0.70
     var body: some View {
-        NavigationStack{
+        VStack{
             //imagem e texto
             VStack(alignment: .center){
                 Image("tíciaFeliz")
@@ -81,8 +83,8 @@ struct ResultsView: View {
             
             //botões
             VStack(spacing: 16){
-                NavigationLink {
-                    JogoNewsView()
+                Button {
+                    router.restartNavigation()
                 }
                 label: {
                     HStack{
@@ -109,7 +111,10 @@ struct ResultsView: View {
     }
     }
 #Preview {
+    @Previewable @State var router = Router()
+    
     ResultsView()
+        .environment(router)
 }
 
 

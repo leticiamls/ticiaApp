@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct JogoNewsView: View {
-    @State private var progressGame: Double = 0.80
+    @Environment(GameManager.self) var gameManager: GameManager
+    @Environment(Router.self) var router: Router
     
+    @State private var progressGame: Double = 0.80
     @State private var presentPopup: Bool = false
+    @State private var isAcepted: Bool = false
+    @State private var isTrue: Bool = newsList[0].isTrue
+    
+    @State private var navigateEndGame: Bool = false
+    
+//    let currentNew = newsList[0]
 
-    private var noticia: [NoticiaElemento] = NoticiaElemento.todasNoticias
+//    private var noticia: [NoticiaElemento] = NoticiaElemento.todasNoticias
     
     var body: some View {
-        NavigationStack {
+        VStack {
             HStack (spacing: 20){
                 Gauge(value: progressGame){
                     //
@@ -42,21 +50,22 @@ struct JogoNewsView: View {
             .frame(width: 402, height: 40)
             
             VStack (spacing: 90){
-                VStack {
+                VStack (alignment: .leading){
                     GroupBox{
                         Image("cardImage")
                             .resizable()
                             .frame(width: 300, height: 150)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         VStack(alignment: .leading){
-                            Text(newsList[0].texto)
+                            Text(gameManager.currentNew?.manchete ?? "Sem valor")
                                 .font(Font.custom("Fredoka-SemiBold", size: 24))
-                            Text(newsList[0].texto)
+
+                            Text(gameManager.currentNew?.texto ?? "Sem valor")
                                 .font(Font.custom("Fredoka-Regular", size: 16))
                                 .frame(maxHeight: 100)
                                 .foregroundStyle(Color(.secondaryLabel))
                             VStack(alignment: .leading){
-                                Text("Fonte: \(newsList[0].fonte)")
+                                Text("Fonte: \(gameManager.currentNew?.fonte)")
                                     .font(Font.custom("Fredoka-Regular", size: 15))
                             }
                         }
@@ -73,6 +82,7 @@ struct JogoNewsView: View {
                 
                 HStack (spacing: 30){
                     Button {
+                        isAcepted = true
                         withAnimation {
                             presentPopup.toggle()
                         }
@@ -87,7 +97,10 @@ struct JogoNewsView: View {
                     
                     
                     Button {
-                        //botao para excluir a noticia
+                        isAcepted = false
+                        withAnimation {
+                            presentPopup.toggle()
+                        }
                     }
                     label: {
                         HStack{
@@ -100,8 +113,6 @@ struct JogoNewsView: View {
                 .font(Font.custom("Fredoka-Semibold", size: 24))
 
             }
-            
-            
             .toolbar{
                     ToolbarItem(placement: .title){
                         Button(action: {
@@ -124,7 +135,13 @@ struct JogoNewsView: View {
                         }
                     }
                 }
-                PopUpView(presentPopup: $presentPopup)
+                PopUpView(presentPopup: $presentPopup, isTrue: $isTrue, isAcepted: $isAcepted)
+                    .onDisappear {
+                        if gameManager.isLastNew() {
+                            router.goTo(.ResultView)
+                        }
+                        gameManager.nextNew()
+                    }
                     .transition(.scale)
             }
             
@@ -133,5 +150,13 @@ struct JogoNewsView: View {
 }
 
 #Preview {
+    @Previewable @State var gameManager = GameManager()
+    @Previewable @State var router = Router()
+    
     JogoNewsView()
+        .onAppear{
+            gameManager.startGame()
+        }
+        .environment(gameManager)
+        .environment(router)
 }

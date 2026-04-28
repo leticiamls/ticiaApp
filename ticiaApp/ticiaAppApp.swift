@@ -10,9 +10,13 @@ import SwiftUI
 @main
 struct ticiaAppApp: App {
     @State var isPresented: Bool = false
+    
+    @State private var gameManager: GameManager = GameManager()
+    
     var body: some Scene {
         WindowGroup {
-            Tester(presentPopup: $isPresented)
+            ContentView()
+                .environment(gameManager)
         }
     }
 }
