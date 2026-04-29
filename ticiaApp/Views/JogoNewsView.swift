@@ -77,6 +77,20 @@ struct JogoNewsView: View {
                 
                 HStack (spacing: 30){
                     Button {
+                        isAcepted = false
+                        withAnimation {
+                            presentPopup.toggle()
+                        }
+                    }
+                    label: {
+                        HStack{
+                            Image(systemName: "xmark")
+                            Text("Excluir")
+                        }
+                    }
+                    .buttonStyle(ButtonDelete())
+                    
+                    Button {
                         isAcepted = true
                         withAnimation {
                             presentPopup.toggle()
@@ -91,19 +105,6 @@ struct JogoNewsView: View {
                     .buttonStyle(ButtonPublish())
                     
                     
-                    Button {
-                        isAcepted = false
-                        withAnimation {
-                            presentPopup.toggle()
-                        }
-                    }
-                    label: {
-                        HStack{
-                            Image(systemName: "xmark")
-                            Text("Excluir")
-                        }
-                    }
-                    .buttonStyle(ButtonDelete())
                 }
                 .font(Font.custom("Fredoka-Semibold", size: 24))
 
