@@ -14,14 +14,9 @@ struct JogoNewsView: View {
     @State private var progressGame: Double = 0.80
     @State private var presentPopup: Bool = false
     @State private var isAcepted: Bool = false
-    @State private var isTrue: Bool = newsList[0].isTrue
     
     @State private var navigateEndGame: Bool = false
-    
-//    let currentNew = newsList[0]
-
-//    private var noticia: [NoticiaElemento] = NoticiaElemento.todasNoticias
-    
+   
     var body: some View {
         VStack {
             HStack (spacing: 20){
@@ -57,15 +52,15 @@ struct JogoNewsView: View {
                             .frame(width: 300, height: 150)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         VStack(alignment: .leading){
-                            Text(gameManager.currentNew?.manchete ?? "Sem valor")
+                            Text(gameManager.currentNew?.titulo ?? "Sem valor")
                                 .font(Font.custom("Fredoka-SemiBold", size: 24))
 
-                            Text(gameManager.currentNew?.texto ?? "Sem valor")
+                            Text(gameManager.currentNew?.resumo ?? "Sem valor")
                                 .font(Font.custom("Fredoka-Regular", size: 16))
                                 .frame(maxHeight: 100)
                                 .foregroundStyle(Color(.secondaryLabel))
                             VStack(alignment: .leading){
-                                Text("Fonte: \(gameManager.currentNew?.fonte)")
+                                Text("Fonte: \(gameManager.currentNew?.fonte ?? "Sem valor")")
                                     .font(Font.custom("Fredoka-Regular", size: 15))
                             }
                         }
@@ -135,7 +130,12 @@ struct JogoNewsView: View {
                         }
                     }
                 }
-                PopUpView(presentPopup: $presentPopup, isTrue: $isTrue, isAcepted: $isAcepted)
+                @Bindable var isTrue = gameManager
+                PopUpView(
+                    presentPopup: $presentPopup,
+                    isTrue: gameManager.currentNew?.isTrue ?? false,
+                    isAcepted: $isAcepted
+                )
                     .onDisappear {
                         if gameManager.isLastNew() {
                             router.goTo(.ResultView)

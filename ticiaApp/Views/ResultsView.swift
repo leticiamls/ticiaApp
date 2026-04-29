@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ResultsView: View {
+        
     @Environment(Router.self) var router: Router
     
     @State private var pointsUser: Double = 0.70
@@ -20,7 +21,6 @@ struct ResultsView: View {
                     .scaledToFit()
                     .frame(width: 150, height: 160)
                     .padding(EdgeInsets(top: 00, leading: 00, bottom: 00, trailing: 35))
-                Text("Mandou muito bem!")
                     .font(Font.custom("Fredoka-Semibold", size: 40))
                     .fontWeight(.bold)
                     .foregroundStyle(Color.blackTicia)

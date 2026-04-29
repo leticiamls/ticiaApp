@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PopUpView: View {
     @Binding var presentPopup: Bool
-    @Binding var isTrue: Bool
+    let isTrue: Bool
     @Binding var isAcepted: Bool
     var body: some View {
         //        NavigationStack{
@@ -178,5 +178,5 @@ struct PopUpView: View {
 #Preview {
     @Previewable @State var isTrue: Bool = false
     @Previewable @State var isAcepted: Bool = false
-    PopUpView(presentPopup: .constant(true), isTrue: $isTrue, isAcepted: $isAcepted)
+    PopUpView(presentPopup: .constant(true), isTrue: isTrue, isAcepted: $isAcepted)
 }

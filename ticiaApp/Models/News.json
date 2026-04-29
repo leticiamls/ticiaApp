@@ -1,62 +1,62 @@
-//[
-//   {
-//      "titulo": "Fifa divulga teaser da primeira música oficial da Copa do Mundo 2026",
-//      "resumo": "A Fifa divulgou um trecho de 'Lighter', a primeira música oficial da Copa do Mundo 2026. A faixa é fruto de uma parceria entre o rapper Jelly Roll (EUA), Carin León (México) e o produtor Cirkut (Canadá).",
-//      "fonte": "cnnbrasil.com.br",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Show do Guns N' Roses em Fortaleza tem fila quilométrica antes dos portões abrir",
-//      "resumo": "Fãs da banda Guns N' Roses enfrentaram calor e longas esperas na Arena Castelão, em Fortaleza, para garantir lugar na apresentação deste sábado (18), formando filas antes da abertura dos portões.",
-//      "fonte": "diariodonordeste.verdesmares.com.br",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Mulheres recebem aviso sobre oferta gratuita de absorventes higiênicos",
-//      "resumo": "Mensagens serão enviadas por WhatsApp e pelo aplicativo Gov.BR para pessoas que menstruam e utilizam os Programas do Sistema Único de Saúde (SUS) sobre a distribuição gratuita de absorventes.",
-//      "fonte": "www.gov.br",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Ginecologista alerta para 5 sintomas da endometriose além da cólica",
-//      "resumo": "Embora a cólica seja o sintoma mais comum, a endometriose pode causar outras dores e incômodos que persistem fora do período menstrual, alerta especialista.",
-//      "fonte": "www.metropoles.com",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Após retorno bem-sucedido, BTS inicia turnê mundial com passagem pela América Latina",
-//      "resumo": "As estrelas do k-pop BTS iniciam uma turnê global com paradas na América Latina, impulsionadas pelo sucesso do novo álbum e pelo show de retorno em Seul.",
-//      "fonte": "g1.globo.com",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Mata de Santa Genebra, em Campinas, promove encontro sobre plantas medicinais aberta ao público",
-//      "resumo": "Alunos da Unicamp farão apresentações sobre identificação de espécies, propriedades medicinais e dicas de preparo para o uso seguro e eficaz de plantas.",
-//      "fonte": "campinas.sp.gov.br",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Solidão eleva risco clínico e reduz a sobrevida de idosos com câncer",
-//      "resumo": "Consenso internacional aponta o isolamento social como um preditor independente de mortalidade durante o tratamento oncológico em pacientes idosos.",
-//      "fonte": "www.cnnbrasil.com.br",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Um processo 'complexo, caro e, ainda assim, vulnerável': vazamento de questões gera alerta sobre pré-testes do Enem",
-//      "resumo": "O vazamento de questões similares às do exame por um jovem que participou de avaliações do Inep levanta discussões sobre a segurança da estratégia de formulação de perguntas.",
-//      "fonte": "www.oglobo.globo.com",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Apple anuncia sucessão: Tim Cook deixará comando e John Ternus será novo CEO",
-//      "resumo": "Tim Cook passará a atuar como presidente do conselho, enquanto John Ternus, atual VP de Engenharia de Hardware, assumirá como CEO a partir de 1º de setembro de 2026.",
-//      "fonte": "www.g1.globo.com",
-//      "istrue": true
-//   },
-//   {
-//      "titulo": "Por que a Netflix desistiu de comprar a Warner Bros? CEO fala sobre lado positivo do fracasso",
-//      "resumo": "Após um acordo inicial de US$ 82 bilhões em 2025, o negócio foi desfeito devido a uma oferta maior da Paramount Skydance (US$ 111 bilhões) pela gigante multimídia.",
-//      "fonte": "www.tecmundo.com.br",
-//      "istrue": true
-//   }
-//]
+[
+   {
+      "titulo": "Fifa divulga teaser da primeira música oficial da Copa do Mundo 2026",
+      "resumo": "A Fifa divulgou um trecho de 'Lighter', a primeira música oficial da Copa do Mundo 2026. A faixa é fruto de uma parceria entre o rapper Jelly Roll (EUA), Carin León (México) e o produtor Cirkut (Canadá).",
+      "fonte": "cnnbrasil.com.br",
+      "isTrue": true
+   },
+   {
+      "titulo": "Show do Guns N' Roses em Fortaleza tem fila quilométrica antes dos portões abrir",
+      "resumo": "Fãs da banda Guns N' Roses enfrentaram calor e longas esperas na Arena Castelão, em Fortaleza, para garantir lugar na apresentação deste sábado (18), formando filas antes da abertura dos portões.",
+      "fonte": "diariodonordeste.verdesmares.com.br",
+      "isTrue": true
+   },
+   {
+      "titulo": "Mulheres recebem aviso sobre oferta gratuita de absorventes higiênicos",
+      "resumo": "Mensagens serão enviadas por WhatsApp e pelo aplicativo Gov.BR para pessoas que menstruam e utilizam os Programas do Sistema Único de Saúde (SUS) sobre a distribuição gratuita de absorventes.",
+      "fonte": "www.gov.br",
+      "isTrue": true
+   },
+   {
+      "titulo": "Ginecologista alerta para 5 sintomas da endometriose além da cólica",
+      "resumo": "Embora a cólica seja o sintoma mais comum, a endometriose pode causar outras dores e incômodos que persistem fora do período menstrual, alerta especialista.",
+      "fonte": "www.metropoles.com",
+      "isTrue": true
+   },
+   {
+      "titulo": "Após retorno bem-sucedido, BTS inicia turnê mundial com passagem pela América Latina",
+      "resumo": "As estrelas do k-pop BTS iniciam uma turnê global com paradas na América Latina, impulsionadas pelo sucesso do novo álbum e pelo show de retorno em Seul.",
+      "fonte": "g1.globo.com",
+      "isTrue": true
+   },
+   {
+      "titulo": "Mata de Santa Genebra, em Campinas, promove encontro sobre plantas medicinais aberta ao público",
+      "resumo": "Alunos da Unicamp farão apresentações sobre identificação de espécies, propriedades medicinais e dicas de preparo para o uso seguro e eficaz de plantas.",
+      "fonte": "campinas.sp.gov.br",
+      "isTrue": true
+   },
+   {
+      "titulo": "Solidão eleva risco clínico e reduz a sobrevida de idosos com câncer",
+      "resumo": "Consenso internacional aponta o isolamento social como um preditor independente de mortalidade durante o tratamento oncológico em pacientes idosos.",
+      "fonte": "www.cnnbrasil.com.br",
+      "isTrue": true
+   },
+   {
+      "titulo": "Um processo 'complexo, caro e, ainda assim, vulnerável': vazamento de questões gera alerta sobre pré-testes do Enem",
+      "resumo": "O vazamento de questões similares às do exame por um jovem que participou de avaliações do Inep levanta discussões sobre a segurança da estratégia de formulação de perguntas.",
+      "fonte": "www.oglobo.globo.com",
+      "isTrue": true
+   },
+   {
+      "titulo": "Apple anuncia sucessão: Tim Cook deixará comando e John Ternus será novo CEO",
+      "resumo": "Tim Cook passará a atuar como presidente do conselho, enquanto John Ternus, atual VP de Engenharia de Hardware, assumirá como CEO a partir de 1º de setembro de 2026.",
+      "fonte": "www.g1.globo.com",
+      "isTrue": true
+   },
+   {
+      "titulo": "Por que a Netflix desistiu de comprar a Warner Bros? CEO fala sobre lado positivo do fracasso",
+      "resumo": "Após um acordo inicial de US$ 82 bilhões em 2025, o negócio foi desfeito devido a uma oferta maior da Paramount Skydance (US$ 111 bilhões) pela gigante multimídia.",
+      "fonte": "www.tecmundo.com.br",
+      "isTrue": true
+   }
+]
