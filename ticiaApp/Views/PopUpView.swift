@@ -8,175 +8,71 @@
 import SwiftUI
 
 struct PopUpView: View {
+    @Environment(GameManager.self) var gameManager: GameManager
     @Binding var presentPopup: Bool
     let isTrue: Bool
-    @Binding var isAcepted: Bool
+    @Binding var isAcepted: Bool    
+    
+    
     var body: some View {
-        //        NavigationStack{
+        //SE ERRAR
         if isTrue == true && isAcepted == false
-            || isTrue == false && isAcepted == true
-        {
-            ZStack {
-                GroupBox {
-                    VStack {
-                        Text("Vixi... Essa é Fake")
-                            .font(Font.custom("Fredoka-SemiBold", size: 36))
-                        Image("tíciaFeliz")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200)
-                            .padding(
-                                EdgeInsets(
-                                    top: 00,
-                                    leading: 0,
-                                    bottom: 00,
-                                    trailing: 40
-                                )
-                            )
-
-                        VStack(alignment: .leading) {
-                            Text("Essa tava com toda cara de ser fake:")
-                                .font(Font.custom("Fredoka-Regular", size: 20))
-                            Text(
-                                "título em CAPS LOCK, não cita fonte confiável, faz apelo emocional..."
-                            )
-                            .font(Font.custom("Fredoka-Semibold", size: 20))
-                            Text("Não publique notícias assim!")
-                                .font(Font.custom("Fredoka-Regular", size: 20))
-                            Spacer()
-                                .frame(height: 12)
-                            HStack {
-                                Image(
-                                    systemName: "exclamationmark.triangle.fill"
-                                )
-                                .font(Font.custom("Fredoka-Semibold", size: 20))
-                                Text("+ 10 de Caos")
-                                    .font(
-                                        Font.custom(
-                                            "Fredoka-Semibold",
-                                            size: 24
-                                        )
-                                    )
-                            }
-                            .foregroundStyle(Color(.red))
-                        }
-
-                    }
-
-                    Spacer()
-                        .frame(height: 16)
-
-                    Button {
-                        presentPopup.toggle()
-                    } label: {
-                        HStack {
-                            Text("Próxima")
-                                .font(Font.custom("Fredoka-Semibold", size: 24))
-                                .foregroundColor(Color(.white))
-                            Image(systemName: "arrow.right")
-                                .foregroundColor(Color(.white))
-                                .font(Font.custom("Fredoka-Semibold", size: 24))
-                        }
-                        .padding(10)
-                        .frame(width: 317)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(.red))
-
+            || isTrue == false && isAcepted == true {
+            PopUpViewNegative(presentPopup: $presentPopup)
+                .onAppear {
+                    gameManager.caosPoints += 10
+                        print("aaaa")
                 }
-                .groupBoxStyle(PopUp())
-                .padding(
-                    EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
-                )
-            }
-
-        } else if isTrue == true && isAcepted == true
+            
+        }
+        //SE ACERTAR
+        else if isTrue == true && isAcepted == true
             || isTrue == false && isAcepted == false
         {
-            ZStack {
-                GroupBox {
-                    VStack {
-                        Text("Essa é verdade!")
-                            .font(Font.custom("Fredoka-SemiBold", size: 36))
-                        Image("tíciaFeliz")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200)
-                            .padding(
-                                EdgeInsets(
-                                    top: 00,
-                                    leading: 0,
-                                    bottom: 00,
-                                    trailing: 40
-                                )
-                            )
-
-                        VStack(alignment: .leading) {
-                            Text("Essa tava com toda cara de ser fake:")
-                                .font(Font.custom("Fredoka-Regular", size: 20))
-                            Text(
-                                "título em CAPS LOCK, não cita fonte confiável, faz apelo emocional..."
-                            )
-                            .font(Font.custom("Fredoka-Semibold", size: 20))
-                            Text("Não publique notícias assim!")
-                                .font(Font.custom("Fredoka-Regular", size: 20))
-                            Spacer()
-                                .frame(height: 12)
-                            HStack {
-                                Image(
-                                    systemName: "exclamationmark.triangle.fill"
-                                )
-                                .font(Font.custom("Fredoka-Semibold", size: 20))
-                                Text("+ 10 de Confiança")
-                                    .font(
-                                        Font.custom(
-                                            "Fredoka-Semibold",
-                                            size: 24
-                                        )
-                                    )
-                            }
-                            .foregroundStyle(Color(.greenTicia))
-                        }
-
-                    }
-
-                    Spacer()
-                        .frame(height: 16)
-
-                    Button {
-                        presentPopup.toggle()
-                    } label: {
-                        HStack {
-                            Text("Próxima")
-                                .font(Font.custom("Fredoka-Semibold", size: 24))
-                                .foregroundColor(Color(.white))
-                            Image(systemName: "arrow.right")
-                                .foregroundColor(Color(.white))
-                                .font(Font.custom("Fredoka-Semibold", size: 24))
-                        }
-                        .padding(10)
-                        .frame(width: 317)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(.greenTicia))
-
+            PopUpViewPositive(presentPopup: $presentPopup)
+                .onAppear{
+                    gameManager.confiancaPoints += 10
                 }
-                .groupBoxStyle(PopUp())
-                .padding(
-                    EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
-                )
-            }
-
         }
         else{
             Text("a")
         }
     }
 }
-//}
 
 #Preview {
+    @Previewable @State var gameManager = GameManager()
     @Previewable @State var isTrue: Bool = false
     @Previewable @State var isAcepted: Bool = false
     PopUpView(presentPopup: .constant(true), isTrue: isTrue, isAcepted: $isAcepted)
+        .environment(gameManager)
+
 }
+
+
+//
+//else {
+//    if isTrue {
+////        PopUpViewNegative(presentPopup: $presentPopup)
+//        // perde os pontos
+//    }
+//    else {
+//        // ganha pontos
+//    }
+//}
+
+//
+//if isTrue == true && isAcepted == false
+//    || isTrue == false && isAcepted == true {
+//    PopUpViewNegative(presentPopup: $presentPopup)
+//    
+//}
+////SE ACERTAR
+//else if isTrue == true && isAcepted == true
+//    || isTrue == false && isAcepted == false
+//{
+//    PopUpViewPositive(presentPopup: $presentPopup)
+//}
+//else{
+//    Text("a")
+//}

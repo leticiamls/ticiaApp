@@ -17,6 +17,8 @@ import SwiftUI
 class GameManager {
     var currentNewIndex: Int?
     var currentNew: Noticia?
+    var confiancaPoints: Int = 0
+    var caosPoints: Int = 0
     
 //      Chamar o JSON
     func getNewsFromJson() -> [Noticia] {
@@ -46,4 +48,5 @@ class GameManager {
         currentNewIndex = (currentNewIndex ?? 0) + 1
         currentNew = Noticia.listaNoticias[currentNewIndex!]
     }
+    
 }

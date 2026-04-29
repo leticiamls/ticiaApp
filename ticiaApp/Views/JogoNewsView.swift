@@ -28,13 +28,13 @@ struct JogoNewsView: View {
                     HStack{
                         Image(systemName: "hand.thumbsup.fill")
                             .frame(width: 10)
-                        Text("80%")
+                        Text("\(gameManager.confiancaPoints)%")
                     }
                     .foregroundStyle(Color.greenTicia)
                     HStack{
                         Image(systemName: "exclamationmark.triangle.fill")
                             .frame(width: 15)
-                        Text("20%")
+                        Text("\(gameManager.caosPoints)%")
                     }
                     .foregroundStyle(Color(.red))
                 }
