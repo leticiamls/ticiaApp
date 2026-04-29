@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ResultsView: View {
-        
+    @Environment(GameManager.self) var gameManager: GameManager
+
     @Environment(Router.self) var router: Router
     
     @State private var pointsUser: Double = 0.70
@@ -21,6 +22,7 @@ struct ResultsView: View {
                     .scaledToFit()
                     .frame(width: 150, height: 160)
                     .padding(EdgeInsets(top: 00, leading: 00, bottom: 00, trailing: 35))
+                Text("Muito bem!")
                     .font(Font.custom("Fredoka-Semibold", size: 40))
                     .fontWeight(.bold)
                     .foregroundStyle(Color.blackTicia)
@@ -44,7 +46,7 @@ struct ResultsView: View {
                             Image(systemName: "hand.thumbsup.fill")
                             Text("Confiança")
                             Spacer()
-                            Text("70%")
+                            Text("\(gameManager.confiancaPoints)%")
                         }
                         .font(Font.custom("Fredoka-Medium", size: 24))
                         .foregroundStyle(Color.greenTicia)
@@ -62,7 +64,7 @@ struct ResultsView: View {
                             Image(systemName: "exclamationmark.triangle.fill")
                             Text("Caos")
                             Spacer()
-                            Text("30%")
+                            Text("\(gameManager.caosPoints)%")
                         }
                         .font(Font.custom("Fredoka-Medium", size: 24))
                         
@@ -111,10 +113,12 @@ struct ResultsView: View {
     }
     }
 #Preview {
+    @Previewable @State var gameManager = GameManager()
     @Previewable @State var router = Router()
     
     ResultsView()
         .environment(router)
+        .environment(gameManager)
 }
 
 
