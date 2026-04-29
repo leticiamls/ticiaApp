@@ -17,36 +17,44 @@ import SwiftUI
 class GameManager {
     var currentNewIndex: Int?
     var currentNew: Noticia?
-    var confiancaPoints: Int = 0
-    var caosPoints: Int = 0
+    var confiancaPoints: Double = 0
+    var caosPoints: Double = 0
+    var progress: Double = 0
+
     
-//      Chamar o JSON
+    //      Chamar o JSON
     func getNewsFromJson() -> [Noticia] {
         return Bundle.main.decode(file: "News.json")
     }
-    
-//    var listaNewsAntiga: [newsAntiga] = [
-//        newsAntiga(manchete: "URGENTE!! Vacina CAUSA AUTISMO em CRIANÇAS!!", texto: "COMPARTILHE ANTES QUE REMOVAM!! Fontes ciemtificas afirma que vacinas causa AUTISMO!! Médicos NÃO querem que você saiba disso!! COMPARTILHE com AMIGOS e FAMÍLIA!!", fonte: "Grupo do WhatsApp", isTrue: false),
-//        newsAntiga(manchete: "Notícia 2", texto: "Texto da notícia 2", fonte: "Grupo do WhatsApp", isTrue: false),
-//        newsAntiga(manchete: "Notícia 3", texto: "Texto da notícia 3", fonte: "Grupo do WhatsApp", isTrue: false)
-//    ]
-    
+
+    //    var listaNewsAntiga: [newsAntiga] = [
+    //        newsAntiga(manchete: "URGENTE!! Vacina CAUSA AUTISMO em CRIANÇAS!!", texto: "COMPARTILHE ANTES QUE REMOVAM!! Fontes ciemtificas afirma que vacinas causa AUTISMO!! Médicos NÃO querem que você saiba disso!! COMPARTILHE com AMIGOS e FAMÍLIA!!", fonte: "Grupo do WhatsApp", isTrue: false),
+    //        newsAntiga(manchete: "Notícia 2", texto: "Texto da notícia 2", fonte: "Grupo do WhatsApp", isTrue: false),
+    //        newsAntiga(manchete: "Notícia 3", texto: "Texto da notícia 3", fonte: "Grupo do WhatsApp", isTrue: false)
+    //    ]
+
     func startGame() {
         let Noticia = getNewsFromJson()
         currentNewIndex = 0
         currentNew = Noticia[currentNewIndex ?? 0]
     }
-    
+
     func isLastNew() -> Bool {
         return (Noticia.listaNoticias.count - 1) == currentNewIndex
     }
-    
+
     func nextNew() {
         if currentNewIndex == nil { return }
         if currentNewIndex == (Noticia.listaNoticias.count - 1) { return }
-        
+
         currentNewIndex = (currentNewIndex ?? 0) + 1
+        progress = Double(currentNewIndex ?? 0)/10
         currentNew = Noticia.listaNoticias[currentNewIndex!]
     }
     
+//    func randomNews(){
+//        Noticia.listaNoticias.shuffle()
+//    }
+    
+
 }
