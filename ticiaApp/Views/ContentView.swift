@@ -7,10 +7,32 @@
 
 import SwiftUI
 
+enum NavigationDestinations: Hashable {
+    case GameView
+    case ResultView
+}
+
+@Observable
+class Router {
+    var path = NavigationPath()
+    
+    func goTo(_ destination: NavigationDestinations) {
+        path.append(destination)
+    }
+    
+    func restartNavigation() {
+        path = .init()
+    }
+    
+}
+
 struct ContentView: View {
+    @Environment(GameManager.self) private var gameManager: GameManager
+    @State var router = Router()
+    
     var body: some View {
-        NavigationStack{
-            VStack(spacing: 100){
+        NavigationStack(path: $router.path) {
+            VStack(spacing: 100) {
                 VStack{
                     Text("Tícia!")
                         .font(Font.custom("Grandstander-Black", size: 96))
@@ -29,8 +51,8 @@ struct ContentView: View {
                 
                 //botoes
                 VStack(spacing: 30){
-                    NavigationLink {
-                        JogoNewsView()
+                    Button {
+                        router.goTo(.GameView)
                     }
                     label: {
                         HStack{
@@ -57,11 +79,27 @@ struct ContentView: View {
                 }
             }
             .navigationBarBackButtonHidden()
+            .navigationDestination(for: NavigationDestinations.self) { destination in
+                switch destination {
+                case .GameView:
+                    JogoNewsView()
+                        .onAppear {
+                            gameManager.startGame()
+                        }
+                        .environment(router)
+                case .ResultView:
+                    ResultsView()
+                        .environment(router)
+                }
+            }
             
         }
     }
 }
 
 #Preview {
+    @Previewable @State var gameManager = GameManager()
+    
     ContentView()
+        .environment(gameManager)
 }
