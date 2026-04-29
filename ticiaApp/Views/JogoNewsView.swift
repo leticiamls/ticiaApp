@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct JogoNewsView: View {
-    @State private var progressGame: Double = 0.80
+    @Environment(GameManager.self) var gameManager: GameManager
+    @Environment(Router.self) var router: Router
     
+    @State private var progressGame: Double = 0.80
     @State private var presentPopup: Bool = false
-
+    @State private var isAcepted: Bool = false
+    
+    @State private var navigateEndGame: Bool = false
+   
     var body: some View {
-        NavigationStack {
+        VStack {
             HStack (spacing: 20){
                 Gauge(value: progressGame){
                     //
@@ -40,21 +45,22 @@ struct JogoNewsView: View {
             .frame(width: 402, height: 40)
             
             VStack (spacing: 90){
-                VStack {
+                VStack (alignment: .leading){
                     GroupBox{
                         Image("cardImage")
                             .resizable()
                             .frame(width: 300, height: 150)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         VStack(alignment: .leading){
-                            Text(newsList[0].manchete)
+                            Text(gameManager.currentNew?.titulo ?? "Sem valor")
                                 .font(Font.custom("Fredoka-SemiBold", size: 24))
-                            Text(newsList[0].texto)
+
+                            Text(gameManager.currentNew?.resumo ?? "Sem valor")
                                 .font(Font.custom("Fredoka-Regular", size: 16))
                                 .frame(maxHeight: 100)
                                 .foregroundStyle(Color(.secondaryLabel))
                             VStack(alignment: .leading){
-                                Text("Fonte: \(newsList[0].fonte)")
+                                Text("Fonte: \(gameManager.currentNew?.fonte ?? "Sem valor")")
                                     .font(Font.custom("Fredoka-Regular", size: 15))
                             }
                         }
@@ -71,6 +77,7 @@ struct JogoNewsView: View {
                 
                 HStack (spacing: 30){
                     Button {
+                        isAcepted = true
                         withAnimation {
                             presentPopup.toggle()
                         }
@@ -80,31 +87,27 @@ struct JogoNewsView: View {
                             Image(systemName: "checkmark")
                             Text("Publicar")
                         }
-                        .padding(10)
-                        .frame(width: 150)
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color(.black))
+                    .buttonStyle(ButtonPublish())
+                    
                     
                     Button {
-                        //botao para excluir a noticia
+                        isAcepted = false
+                        withAnimation {
+                            presentPopup.toggle()
+                        }
                     }
                     label: {
                         HStack{
                             Image(systemName: "xmark")
                             Text("Excluir")
                         }
-                        .padding(18)
-                        .frame(width: 150)
-                        .background(RoundedRectangle(cornerRadius: 30).stroke(Color(.black), lineWidth: 2))
                     }
-                    .tint(Color(.black))
+                    .buttonStyle(ButtonDelete())
                 }
                 .font(Font.custom("Fredoka-Semibold", size: 24))
 
             }
-            
-            
             .toolbar{
                     ToolbarItem(placement: .title){
                         Button(action: {
@@ -127,7 +130,18 @@ struct JogoNewsView: View {
                         }
                     }
                 }
-                PopUpView(presentPopup: $presentPopup)
+                @Bindable var isTrue = gameManager
+                PopUpView(
+                    presentPopup: $presentPopup,
+                    isTrue: gameManager.currentNew?.isTrue ?? false,
+                    isAcepted: $isAcepted
+                )
+                    .onDisappear {
+                        if gameManager.isLastNew() {
+                            router.goTo(.ResultView)
+                        }
+                        gameManager.nextNew()
+                    }
                     .transition(.scale)
             }
             
@@ -136,5 +150,13 @@ struct JogoNewsView: View {
 }
 
 #Preview {
+    @Previewable @State var gameManager = GameManager()
+    @Previewable @State var router = Router()
+    
     JogoNewsView()
+        .onAppear{
+            gameManager.startGame()
+        }
+        .environment(gameManager)
+        .environment(router)
 }

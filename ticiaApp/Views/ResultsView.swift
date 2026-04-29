@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ResultsView: View {
+        
+    @Environment(Router.self) var router: Router
+    
     @State private var pointsUser: Double = 0.70
     var body: some View {
-        NavigationStack{
+        VStack{
             //imagem e texto
             VStack(alignment: .center){
                 Image("tíciaFeliz")
@@ -18,7 +21,6 @@ struct ResultsView: View {
                     .scaledToFit()
                     .frame(width: 150, height: 160)
                     .padding(EdgeInsets(top: 00, leading: 00, bottom: 00, trailing: 35))
-                Text("Mandou muito bem!")
                     .font(Font.custom("Fredoka-Semibold", size: 40))
                     .fontWeight(.bold)
                     .foregroundStyle(Color.blackTicia)
@@ -73,7 +75,7 @@ struct ResultsView: View {
                     .padding(EdgeInsets(top: 10, leading: 00, bottom: 30, trailing: 00))
                 }
                 .padding(EdgeInsets(top: 10, leading: 00, bottom: 30, trailing: 00))
-                .groupBoxStyle(CardGroupBoxStyle())
+                .groupBoxStyle(CardResultsFinal())
                 .padding(EdgeInsets(top: 00, leading: 16, bottom: 00, trailing: 16))
                 .font(Font.system(size: 24, weight: .bold))
             }
@@ -81,18 +83,17 @@ struct ResultsView: View {
             
             //botões
             VStack(spacing: 16){
-                NavigationLink {
-                    JogoNewsView()
+                Button {
+                    router.restartNavigation()
                 }
                 label: {
                     HStack{
                         Text("Jogar novamente")
                     }
-                    .padding(10)
                     .frame(width: 340)
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(Color(.black))
+                .buttonStyle(ButtonPrimary())
+              
                 
                 NavigationLink {
                     ContentView()
@@ -101,35 +102,19 @@ struct ResultsView: View {
                     HStack{
                         Text("Voltar para o menu")
                     }
-                    .padding(16)
-                    .frame(width: 370)
+                    .navigationBarBackButtonHidden()
                 }
-                .buttonStyle(PlainButtonStyle())
+                .buttonStyle(ButtonTerciary())
+                
             }
-            .font(Font.custom("Fredoka-Semibold", size: 24))
-            .navigationBarBackButtonHidden()
-            
-            
         }
-        
     }
-}
-
-
+    }
 #Preview {
+    @Previewable @State var router = Router()
+    
     ResultsView()
+        .environment(router)
 }
 
-struct CardGroupBoxStyle: GroupBoxStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        VStack(alignment: .center) {
-            configuration.content
-                .padding(EdgeInsets(top: 00, leading: 16, bottom: 00, trailing: 16))
-        }
-        
-        .background(RoundedRectangle(cornerRadius: 20)
-            .fill(Color.white)
-            .stroke(Color(.lightGray), lineWidth: 1.7)
-        )
-    }
-}
+
