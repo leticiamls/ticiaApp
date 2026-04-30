@@ -90,9 +90,6 @@ struct ContentView: View {
                     JogoNewsView()
                         .onAppear {
                             gameManager.startGame()
-                            gameManager.caosPoints = 0
-                            gameManager.confiancaPoints = 0
-                            gameManager.progress = 0
                         }
                         .environment(router)
                 case .ResultView:

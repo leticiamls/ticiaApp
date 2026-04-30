@@ -76,8 +76,7 @@ struct JogoNewsView: View {
                     .frame(maxWidth: 327 , maxHeight: 393)
                     .backgroundStyle(Color.clear)
                 }
-                
-                
+
                 HStack (spacing: 30){
                     Button {
                         isAcepted = false
@@ -118,7 +117,8 @@ struct JogoNewsView: View {
                             gameManager.caosPoints = 0
                             gameManager.confiancaPoints = 0
                             gameManager.progress = 0
-                        }, label: {
+                        },
+                               label: {
                             Text("NOTÍCIAS")
                                 .font(Font.custom("Fredoka-Medium", size: 16))
                                 .kerning(1)
