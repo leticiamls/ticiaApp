@@ -50,7 +50,7 @@ struct JogoNewsView: View {
             VStack (spacing: 90){
                 VStack (alignment: .leading){
                     GroupBox{
-                        Image("cardImage")
+                        Image(gameManager.currentNew?.foto ?? "Sem valor")
                             .resizable()
                             .frame(width: 300, height: 150)
                             .clipShape(RoundedRectangle(cornerRadius: 10))
