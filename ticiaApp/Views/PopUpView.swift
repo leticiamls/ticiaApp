@@ -50,30 +50,3 @@ struct PopUpView: View {
     .environment(gameManager)
 
 }
-
-//
-//else {
-//    if isTrue {
-////        PopUpViewNegative(presentPopup: $presentPopup)
-//        // perde os pontos
-//    }
-//    else {
-//        // ganha pontos
-//    }
-//}
-
-//
-//if isTrue == true && isAcepted == false
-//    || isTrue == false && isAcepted == true {
-//    PopUpViewNegative(presentPopup: $presentPopup)
-//
-//}
-////SE ACERTAR
-//else if isTrue == true && isAcepted == true
-//    || isTrue == false && isAcepted == false
-//{
-//    PopUpViewPositive(presentPopup: $presentPopup)
-//}
-//else{
-//    Text("a")
-//}

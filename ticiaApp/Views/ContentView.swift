@@ -24,6 +24,10 @@ class Router {
     func restartNavigation() {
         path = .init()
     }
+    
+    func resetView() {
+        path.removeLast()
+    }
 
 }
 
@@ -93,7 +97,12 @@ struct ContentView: View {
                         }
                         .environment(router)
                 case .ResultView:
-                    ResultsView()
+                    let result = gameManager.getResult()
+                    let resultTitle = gameManager.getResultsTitle()
+                    ResultsView(
+                        titleUser: resultTitle.titleUser,
+                        subtitleUser: result.subtitleUser
+                    )
                         .environment(router)
                 }
             }
