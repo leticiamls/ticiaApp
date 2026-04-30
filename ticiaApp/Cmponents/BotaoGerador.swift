@@ -77,8 +77,38 @@ struct ButtonPublish: ButtonStyle {
     }
 }
 
+struct ButtonAnterior: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(16)
+            .frame(width: 150, height: 44)
+            .background(
+                RoundedRectangle(cornerRadius: 30).stroke(
+                    Color(.black),
+                    lineWidth: 2
+                )
+            )
+
+            .tint(Color(.black))
+            .font(Font.custom("Fredoka-Medium", size: 20))
+    }
+}
+
+struct ButtonProximo: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(18)
+            .frame(width: 150, height: 44)
+            .background(Color.blackTicia)
+            .clipShape(Capsule())
+            .foregroundStyle(Color.white)
+            .tint(Color(.black))
+            .font(Font.custom("Fredoka-Medium", size: 20))
+    }
+}
+
 enum ButtonType {
-    case primary, secondary, terciary, buttonDeleta, buttonPublicar
+    case primary, secondary, terciary, buttonDeleta, buttonPublicar, buttonProximo, buttonAnterior
 }
 //
 //struct AnswerRow: View {

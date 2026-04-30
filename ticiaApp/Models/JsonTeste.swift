@@ -8,7 +8,7 @@ import Foundation
 
 // MARK: - Noticia
 struct Noticia: Codable {
-    let titulo, resumo, fonte: String
+    let titulo, resumo, fonte, foto, justificativa: String
     var isTrue: Bool
     static let listaNoticias: [Noticia] = Bundle.main.decode(file: "News.json")
 }
