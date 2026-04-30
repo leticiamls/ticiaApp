@@ -50,8 +50,8 @@
 		CEBB168E2F9A3CAA00BB2B57 = {
 			isa = PBXGroup;
 			children = (
-				CEAB95C32FA0D0B600E1EBA4 /* .gitignore */,
 				CEBB16992F9A3CAA00BB2B57 /* ticiaApp */,
+				CEAB95C32FA0D0B600E1EBA4 /* .gitignore */,
 				CEBB16982F9A3CAA00BB2B57 /* Products */,
 			);
 			sourceTree = "<group>";

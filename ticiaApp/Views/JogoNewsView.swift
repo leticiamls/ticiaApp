@@ -105,7 +105,8 @@ struct JogoNewsView: View {
                         }
                     }
                     .buttonStyle(ButtonPublish())
-                    
+                                      
+
                 }
                 .font(Font.custom("Fredoka-Semibold", size: 24))
 
