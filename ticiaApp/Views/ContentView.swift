@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum NavigationDestinations: Hashable {
+    case MenuView
     case GameView
     case ResultView
 }
@@ -15,25 +16,24 @@ enum NavigationDestinations: Hashable {
 @Observable
 class Router {
     var path = NavigationPath()
-    
+
     func goTo(_ destination: NavigationDestinations) {
         path.append(destination)
     }
-    
+
     func restartNavigation() {
         path = .init()
     }
-    
+
 }
 
 struct ContentView: View {
     @Environment(GameManager.self) private var gameManager: GameManager
     @State var router = Router()
-    
-    var body: some View {
+        var body: some View {
         NavigationStack(path: $router.path) {
             VStack(spacing: 100) {
-                VStack{
+                VStack {
                     Text("Tícia!")
                         .font(Font.custom("Grandstander-Black", size: 96))
                         .foregroundStyle(Color.blackTicia)
@@ -48,39 +48,44 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(width: 217, height: 200)
                 }
-                
+
                 //botoes
-                VStack(spacing: 30){
+                VStack(spacing: 30) {
                     Button {
                         router.goTo(.GameView)
-                    }
-                    label: {
-                        HStack{
+                    } label: {
+                        HStack {
                             Image(systemName: "gamecontroller.fill")
                             Text("Jogar")
                         }
-                        
                     }
                     .buttonStyle(ButtonPrimary())
-                    
-                    
+
                     NavigationLink {
                         EstudarView()
-                    }
-                    label: {
-                        HStack{
+                    } label: {
+                        HStack {
                             Image(systemName: "book.fill")
                             Text("Estudar")
                         }
-                        
+
                     }
                     .buttonStyle(ButtonSecondary())
 
                 }
             }
             .navigationBarBackButtonHidden()
-            .navigationDestination(for: NavigationDestinations.self) { destination in
+            .navigationDestination(for: NavigationDestinations.self) {
+                destination in
                 switch destination {
+                case .MenuView:
+                    ContentView()
+                        .onAppear {
+                            gameManager.caosPoints = 0
+                            gameManager.confiancaPoints = 0
+                            gameManager.progress = 0
+                        }
+                        .environment(router)
                 case .GameView:
                     JogoNewsView()
                         .onAppear {
@@ -92,14 +97,14 @@ struct ContentView: View {
                         .environment(router)
                 }
             }
-            
+
         }
     }
 }
 
 #Preview {
     @Previewable @State var gameManager = GameManager()
-    
+
     ContentView()
         .environment(gameManager)
 }

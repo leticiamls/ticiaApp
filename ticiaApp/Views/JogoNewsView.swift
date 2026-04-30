@@ -11,30 +11,33 @@ struct JogoNewsView: View {
     @Environment(GameManager.self) var gameManager: GameManager
     @Environment(Router.self) var router: Router
     
-    @State private var progressGame: Double = 0.80
     @State private var presentPopup: Bool = false
     @State private var isAcepted: Bool = false
     
-    @State private var navigateEndGame: Bool = false
+    
    
     var body: some View {
         VStack {
-            HStack (spacing: 20){
-                Gauge(value: progressGame){
-                    //
+            HStack (spacing: 28){
+//                Gauge(value: progressGame){
+//                    //
+//                }
+                Gauge(value: gameManager.progress){
+                    
                 }
+                .frame(minWidth: 180)
                 .tint(Color(.black))
-                HStack{
+                HStack (spacing: 16){
                     HStack{
                         Image(systemName: "hand.thumbsup.fill")
                             .frame(width: 10)
-                        Text("80%")
+                        Text("\(Int(gameManager.confiancaPoints))%")
                     }
                     .foregroundStyle(Color.greenTicia)
                     HStack{
                         Image(systemName: "exclamationmark.triangle.fill")
-                            .frame(width: 15)
-                        Text("20%")
+                            .frame(width: 8)
+                        Text("\(Int(gameManager.caosPoints))%")
                     }
                     .foregroundStyle(Color(.red))
                 }
@@ -73,8 +76,7 @@ struct JogoNewsView: View {
                     .frame(maxWidth: 327 , maxHeight: 393)
                     .backgroundStyle(Color.clear)
                 }
-                
-                
+
                 HStack (spacing: 30){
                     Button {
                         isAcepted = false
@@ -103,8 +105,8 @@ struct JogoNewsView: View {
                         }
                     }
                     .buttonStyle(ButtonPublish())
-                    
-                    
+                                      
+
                 }
                 .font(Font.custom("Fredoka-Semibold", size: 24))
 
@@ -112,8 +114,12 @@ struct JogoNewsView: View {
             .toolbar{
                     ToolbarItem(placement: .title){
                         Button(action: {
-                            //
-                        }, label: {
+                            router.goTo(.MenuView)
+                            gameManager.caosPoints = 0
+                            gameManager.confiancaPoints = 0
+                            gameManager.progress = 0
+                        },
+                               label: {
                             Text("NOTÍCIAS")
                                 .font(Font.custom("Fredoka-Medium", size: 16))
                                 .kerning(1)

@@ -6,44 +6,40 @@
 //
 import SwiftUI
 
-//struct newsAntiga {
-//    let manchete: String;
-//    let texto: String;
-//    let fonte: String;
-//    let isTrue: Bool;
-//}
-
 @Observable
 class GameManager {
+    var listaNoticiasJogo: [Noticia] = []
     var currentNewIndex: Int?
     var currentNew: Noticia?
-    
-//      Chamar o JSON
+    var confiancaPoints: Double = 0
+    var caosPoints: Double = 0
+    var progress: Double = 0
+
+    //      Chamar o JSON
     func getNewsFromJson() -> [Noticia] {
         return Bundle.main.decode(file: "News.json")
     }
-    
-//    var listaNewsAntiga: [newsAntiga] = [
-//        newsAntiga(manchete: "URGENTE!! Vacina CAUSA AUTISMO em CRIANÇAS!!", texto: "COMPARTILHE ANTES QUE REMOVAM!! Fontes ciemtificas afirma que vacinas causa AUTISMO!! Médicos NÃO querem que você saiba disso!! COMPARTILHE com AMIGOS e FAMÍLIA!!", fonte: "Grupo do WhatsApp", isTrue: false),
-//        newsAntiga(manchete: "Notícia 2", texto: "Texto da notícia 2", fonte: "Grupo do WhatsApp", isTrue: false),
-//        newsAntiga(manchete: "Notícia 3", texto: "Texto da notícia 3", fonte: "Grupo do WhatsApp", isTrue: false)
-//    ]
-    
+
     func startGame() {
-        let Noticia = getNewsFromJson()
+        listaNoticiasJogo = getNewsFromJson().shuffled().prefix(10).map(\.self)
         currentNewIndex = 0
-        currentNew = Noticia[currentNewIndex ?? 0]
+        caosPoints = 0
+        confiancaPoints = 0
+        progress = 0
+        currentNew = listaNoticiasJogo[currentNewIndex ?? 0]
     }
-    
+
     func isLastNew() -> Bool {
-        return (Noticia.listaNoticias.count - 1) == currentNewIndex
+        return (listaNoticiasJogo.count - 1) == currentNewIndex
     }
-    
+
     func nextNew() {
         if currentNewIndex == nil { return }
-        if currentNewIndex == (Noticia.listaNoticias.count - 1) { return }
-        
+        if currentNewIndex == (listaNoticiasJogo.count - 1) { return }
+
         currentNewIndex = (currentNewIndex ?? 0) + 1
-        currentNew = Noticia.listaNoticias[currentNewIndex!]
+        progress = Double(currentNewIndex ?? 0)/10
+        currentNew = listaNoticiasJogo[currentNewIndex!]
     }
+    
 }
