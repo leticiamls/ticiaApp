@@ -13,7 +13,6 @@ struct Noticia: Codable {
     static let listaNoticias: [Noticia] = Bundle.main.decode(file: "News.json")
 }
 
-
 extension Bundle {
     func decode<T: Decodable>(file: String) -> T {
         // 1. Localiza o arquivo

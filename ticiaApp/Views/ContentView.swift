@@ -11,6 +11,7 @@ enum NavigationDestinations: Hashable {
     case MenuView
     case GameView
     case ResultView
+    case EstudarView
 }
 
 @Observable
@@ -65,8 +66,8 @@ struct ContentView: View {
                     }
                     .buttonStyle(ButtonPrimary())
 
-                    NavigationLink {
-                        EstudarView()
+                    Button {
+                        router.goTo(.EstudarView)
                     } label: {
                         HStack {
                             Image(systemName: "book.fill")
@@ -89,6 +90,9 @@ struct ContentView: View {
                             gameManager.confiancaPoints = 0
                             gameManager.progress = 0
                         }
+                        .environment(router)
+                case .EstudarView:
+                    EstudarView()
                         .environment(router)
                 case .GameView:
                     JogoNewsView()

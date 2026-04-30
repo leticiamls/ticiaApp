@@ -6,6 +6,7 @@
 //
 import SwiftUI
 
+
 enum UserResultsProfile: String, CaseIterable {
     case estagiario, aprendiz, especialista
     
@@ -52,7 +53,7 @@ class GameManager {
     func getNewsFromJson() -> [Noticia] {
         return Bundle.main.decode(file: "News.json")
     }
-    
+        
     func getResult() -> UserResultsProfile {
         if ((0...30).contains(pointsTotal)){
             return .estagiario
@@ -93,4 +94,12 @@ class GameManager {
         currentNew = listaNoticiasJogo[currentNewIndex!]
     }
 
+}
+
+struct Estudo: Identifiable {
+    var id: UUID = UUID()
+    var tituloEstudo: String
+    var descricaoEstudo: String
+    var exemploMentira: String
+    var exemploVerdade: String
 }
