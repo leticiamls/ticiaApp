@@ -19,9 +19,9 @@ struct JogoNewsView: View {
     var body: some View {
         VStack {
             HStack (spacing: 28){
-//                Gauge(value: progressGame){
-//                    //
-//                }
+                //                Gauge(value: progressGame){
+                //                    //
+                //                }
                 Gauge(value: gameManager.progress){
                     
                 }
@@ -48,8 +48,8 @@ struct JogoNewsView: View {
             .frame(width: 402, height: 40)
             
             VStack (spacing: 90){
-               CardJogo()
-
+                CardJogo()
+                
                 HStack (spacing: 30){
                     Button {
                         isAcepted = false
@@ -78,38 +78,42 @@ struct JogoNewsView: View {
                         }
                     }
                     .buttonStyle(ButtonPublish())
-                                      
-
+                    
+                    
                 }
                 .font(Font.custom("Fredoka-Semibold", size: 24))
-
+                
             }
             .toolbar{
-                    ToolbarItem(placement: .title){
-                        Button(action: {
-                            router.goTo(.MenuView)
-                            gameManager.caosPoints = 0
-                            gameManager.confiancaPoints = 0
-                            gameManager.progress = 0
-                        },
-                               label: {
-                            Text("NOTÍCIAS")
-                                .font(Font.custom("Fredoka-Medium", size: 16))
-                                .kerning(1)
-                        })
-                    }
+                ToolbarItem(placement: .title){
+                    Button(action: {
+                        router.goTo(.MenuView)
+                        gameManager.caosPoints = 0
+                        gameManager.confiancaPoints = 0
+                        gameManager.progress = 0
+                    },
+                           label: {
+                        Text("NOTÍCIAS")
+                            .font(Font.custom("Fredoka-Medium", size: 16))
+                            .kerning(1)
+                    })
                 }
-                .frame(height: 670)
+            }
+            .frame(height: 670)
         }
         .overlay {
             if presentPopup {
                 ZStack {
-                    Color.black.opacity(0.3).ignoresSafeArea().onTapGesture {
+                    Color.black.opacity(0.3).onTapGesture {
                         withAnimation {
                             presentPopup.toggle()
                         }
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+
                 }
+
+
                 @Bindable var isTrue = gameManager
                 PopUpView(
                     presentPopup: $presentPopup,
@@ -124,8 +128,11 @@ struct JogoNewsView: View {
                     }
                     .transition(.scale)
             }
-            
         }
+        
+        .ignoresSafeArea(.all)
+        
+
     }
 }
 
