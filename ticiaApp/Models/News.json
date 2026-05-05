@@ -1,0 +1,182 @@
+[
+  {
+    "titulo": "Fifa divulga teaser da primeira música oficial da Copa do Mundo 2026",
+    "resumo": "A Fifa divulgou um trecho de 'Lighter', a primeira música oficial da Copa do Mundo 2026. A faixa é fruto de uma parceria entre o rapper Jelly Roll (EUA), Carin León (México) e o produtor Cirkut (Canadá).",
+    "fonte": "cnnbrasil.com.br",
+    "foto": "copa",
+    "isTrue": true,
+    "justificativaErro": "Você deixou **passar** um fato real! A notícia cita uma organização oficial e foi publicada em um veículo de imprensa de grande credibilidade.",
+    "justificativaAcerto": "Excelente! Você reconheceu uma notícia oficial vinda de uma fonte confiável e com informações verificáveis sobre o evento."
+  },
+  {
+    "titulo": "Show do Guns N' Roses em Fortaleza tem fila quilométrica antes dos portões abrir",
+    "resumo": "Fãs da banda Guns N' Roses enfrentaram calor e longas esperas na Arena Castelão para garantir lugar na apresentação, formando filas antes da abertura dos portões.",
+    "fonte": "diariodonordeste.verdesmares.com.br",
+    "foto": "guns",
+    "isTrue": true,
+    "justificativaErro": "Atenção! Esta é uma notícia factual de um jornal regional tradicional. Eventos locais desse porte são amplamente documentados.",
+    "justificativaAcerto": "Boa! Você identificou um relato jornalístico local autêntico, publicado por um veículo profissional da região."
+  },
+  {
+    "titulo": "Mulheres recebem aviso sobre oferta gratuita de absorventes higiênicos",
+    "resumo": "Mensagens serão enviadas por WhatsApp e pelo aplicativo Gov.BR para pessoas que menstruam e utilizam os Programas do Sistema Único de Saúde (SUS) sobre a distribuição gratuita de absorventes.",
+    "fonte": "www.gov.br",
+    "foto": "absorvente",
+    "isTrue": true,
+    "justificativaErro": "Não é fake! Fontes governamentais (.gov.br) são canais oficiais para anúncios de políticas públicas e programas sociais.",
+    "justificativaAcerto": "Perfeito! Você confiou em uma fonte oficial do governo, que é o canal correto para confirmar programas de saúde pública."
+  },
+  {
+    "titulo": "Ginecologista alerta para 5 sintomas da endometriose além da cólica",
+    "resumo": "Embora a cólica seja o sintoma mais comum, a endometriose pode causar outras dores e incômodos que persistem fora do período menstrual, alerta especialista.",
+    "fonte": "www.metropoles.com",
+    "foto": "dor",
+    "isTrue": true,
+    "justificativaErro": "Esta notícia é informativa e baseada em orientações médicas. Ignorar alertas de saúde de fontes conhecidas pode ser um erro.",
+    "justificativaAcerto": "Muito bem! Você diferenciou uma orientação de saúde legítima de promessas milagrosas. O tom aqui é educativo e profissional."
+  },
+  {
+    "titulo": "Após retorno bem-sucedido, BTS inicia turnê mundial com passagem pela América Latina",
+    "resumo": "As estrelas do k-pop BTS iniciam uma turnê global com paradas na América Latina, impulsionadas pelo sucesso do novo álbum e pelo show de retorno em Seul.",
+    "fonte": "g1.globo.com",
+    "foto": "bts",
+    "isTrue": true,
+    "justificativaErro": "Cuidado! Embora o tema gere muito engajamento, a fonte G1 é rigorosa na apuração de eventos de entretenimento globais.",
+    "justificativaAcerto": "Isso aí! Você validou a informação através de um dos maiores portais de notícias do país, que confirmou o cronograma oficial do grupo."
+  },
+  {
+    "titulo": "Mata de Santa Genebra, em Campinas, promove encontro sobre plantas medicinais aberta ao público",
+    "resumo": "Alunos da Unicamp farão apresentações sobre identificação de espécies, propriedades medicinais e dicas de preparo para o uso seguro e eficaz de plantas.",
+    "fonte": "campinas.sp.gov.br",
+    "foto": "farmacia",
+    "isTrue": true,
+    "justificativaErro": "Fique atento: eventos acadêmicos e municipais divulgados em sites de prefeituras são fontes seguras de informação local.",
+    "justificativaAcerto": "Ótima análise! O uso do domínio oficial da prefeitura e a parceria com a Unicamp garantem a veracidade do evento."
+  },
+  {
+    "titulo": "Solidão eleva risco clínico e reduz a sobrevida de idosos com câncer",
+    "resumo": "Consenso internacional aponta o isolamento social como um preditor independente de mortalidade durante o tratamento oncológico em pacientes idosos.",
+    "fonte": "www.cnnbrasil.com.br",
+    "foto": "idoso",
+    "isTrue": true,
+    "justificativaErro": "Você duvidou de um fato científico. A notícia aborda um estudo sério publicado por canais de jornalismo de referência.",
+    "justificativaAcerto": "Correto! O texto apresenta dados baseados em consenso médico e cita estudos internacionais, sem promessas sensacionalistas."
+  },
+  {
+    "titulo": "Um processo 'complexo, caro e, ainda assim, vulnerável': vazamento de questões gera alerta sobre pré-testes do Enem",
+    "resumo": "O vazamento de questões similares às do exame por um jovem que participou de avaliações do Inep levanta discussões sobre a segurança da estratégia de formulação de perguntas.",
+    "fonte": "www.oglobo.globo.com",
+    "foto": "enem",
+    "isTrue": true,
+    "justificativaErro": "Notícias críticas sobre órgãos públicos são essenciais. Este é um relato jornalístico apurado sobre falhas de segurança reais.",
+    "justificativaAcerto": "Boa! Você reconheceu uma reportagem investigativa de um jornal de prestígio sobre um tema de interesse público."
+  },
+  {
+    "titulo": "Apple anuncia sucessão: Tim Cook deixará comando e John Ternus será novo CEO",
+    "resumo": "Tim Cook passará a atuar como presidente do conselho, enquanto John Ternus, atual VP de Engenharia de Hardware, assumirá como CEO a partir de 1º de setembro de 2026.",
+    "fonte": "www.g1.globo.com",
+    "foto": "caminhar",
+    "isTrue": true,
+    "justificativaErro": "Mudanças no alto escalão de grandes empresas são fatos de mercado reais e amplamente noticiados pela imprensa de tecnologia.",
+    "justificativaAcerto": "Correto! Você identificou uma notícia corporativa importante publicada em um veículo de confiança."
+  },
+  {
+    "titulo": "Por que a Netflix desistiu de comprar a Warner Bros? CEO fala sobre lado positivo do fracasso",
+    "resumo": "Após um acordo inicial de US$ 82 bilhões em 2025, o negócio foi desfeito devido a uma oferta maior da Paramount Skydance (US$ 111 bilhões) pela gigante multimídia.",
+    "fonte": "www.tecmundo.com.br",
+    "foto": "netflix",
+    "isTrue": true,
+    "justificativaErro": "Negociações bilionárias entre empresas de tecnologia são fatos reais do mercado financeiro e de entretenimento.",
+    "justificativaAcerto": "Mandou bem! Você validou uma movimentação de mercado através de uma fonte especializada em tecnologia e negócios."
+  },
+  {
+    "titulo": "Dipirona é retirada das farmácias após matar adolescentes em diferentes estados",
+    "resumo": "Nas últimas semanas nos estados de São Paulo, Acre, e Alagoas, um total de 15 adolescentes morreram após o consumo de comprimidos para febre e dores. Há pacientes em outros três estados que passaram mal após ingerir o medicamento.",
+    "fonte": "www.dipironamata.biz",
+    "foto": "dipirona",
+    "isTrue": false,
+    "justificativaErro": "Cuidado! Notícias alarmistas sobre medicamentos comuns sem respaldo da Anvisa e com fontes .biz são quase sempre golpes ou fakes.",
+    "justificativaAcerto": "Excelente! Você percebeu o tom alarmista e a fonte suspeita (.biz), evitando espalhar pânico desnecessário sobre um remédio comum."
+  },
+  {
+    "titulo": "Ariana Grande pausa carreira para abrir loja de donuts",
+    "resumo": "Loja tem temática nas cores das personagens do musical Wicked, filme que garantiu o Oscar da cantora.",
+    "fonte": "www.suadodoces.net",
+    "foto": "loja",
+    "isTrue": false,
+    "justificativaErro": "Você caiu em um boato de fã-clube! A fonte é um site não oficial (.net) e a notícia mistura fatos reais com invenções.",
+    "justificativaAcerto": "Boa! Você notou que a fonte não é profissional e que a notícia soa mais como uma curiosidade inventada do que um fato jornalístico."
+  },
+  {
+    "titulo": "BEYONCÉ ANUNCIA APOSENTADORIA APÓS DEBUT DA FILHA",
+    "resumo": "Beyoncé anunciou a aposentadoria de sua carreira após o lançamento do lead single de sua filha Blue Ivy Carter.",
+    "fonte": "Instagram",
+    "foto": "beyonce",
+    "isTrue": false,
+    "justificativaErro": "O Caps Lock no título e a falta de uma fonte oficial (como a assessoria da artista) são sinais claros de que a notícia é falsa.",
+    "justificativaAcerto": "Perfeito! Você identificou o 'grito' do Caps Lock e a ausência de um link real, características típicas de desinformação em redes sociais."
+  },
+  {
+    "titulo": "Sandálias de Borracha dão câncer de pele",
+    "resumo": "Não use sandálias de borracha pois elas dão câncer de pele após uso contínuo de 90 dias.",
+    "fonte": "Facebook",
+    "foto": "sandália",
+    "isTrue": false,
+    "justificativaErro": "Atenção: afirmações pseudocientíficas que circulam em redes sociais sem qualquer base médica são clássicos de correntes falsas.",
+    "justificativaAcerto": "Muito bem! Você desconfiou de uma afirmação médica absurda e sem comprovação, que claramente buscava apenas gerar medo."
+  },
+  {
+    "titulo": "Catedral metropolitana de Fortaleza inunda após chuva forte.",
+    "resumo": "Igreja centenária de fortaleza fecha as portas após alagamento na região interna subterrânea, o arcebispo da capital não se pronunciou a respeito.",
+    "fonte": "www.dailynews.info",
+    "foto": "catedral",
+    "isTrue": false,
+    "justificativaErro": "Você foi enganado por um site de aparência genérica (.info). Um evento desse em um ponto turístico seria capa de todos os jornais da cidade.",
+    "justificativaAcerto": "Ótimo olho! Você percebeu que um fato local tão importante não estava nos veículos de imprensa tradicionais da região."
+  },
+  {
+    "titulo": "Vacina contra tétano transforma pessoas em robôs controlados pelo governo via Wi-Fi",
+    "resumo": "Um suposto relatório secreto afirma que vacinas contra gripe conteriam \"chips ativados por sinal Wi-Fi 5G\" que permitem controle total do comportamento humana.",
+    "fonte": "Whatsapp",
+    "foto": "vacina",
+    "isTrue": false,
+    "justificativaErro": "Esta é uma teoria da conspiração perigosa! 'Relatórios secretos' e controle por Wi-Fi são elementos clássicos de ficção e desinformação.",
+    "justificativaAcerto": "Excelente! Você identificou uma teoria da conspiração absurda. Ciência e tecnologia não funcionam dessa forma, e o WhatsApp é mestre em espalhar isso."
+  },
+  {
+    "titulo": "PLANTA QUE TIRA TODAS AS ESTRIAS",
+    "resumo": "Nova Planta medicinal não identificada promete tirar as estrias somente com o consumo do chá, planta já está disponível para compra GARANTA JÁ A SUA",
+    "fonte": "www.nosamaskincare.biz",
+    "foto": "plantas",
+    "isTrue": false,
+    "justificativaErro": "Essa tava com toda cara de ser fake: título em CAPS LOCK, não cita fonte confiável, faz apelo emocional... Não publique notícias assim!",
+    "justificativaAcerto": "Boa escolha! Essa notícia cita fontes confiáveis, não tem apelo emocional e não é alarmista. Publique mais notícias assim!"
+  },
+  {
+    "titulo": "ALEXANDRE DE MORAIS VOLTA A PROIBIR REDES SOCIAIS NO BRASIL",
+    "resumo": "Dois anos após a \"exclusão\" da rede social twitter no país, dessa vez o Vice-presidente do Supremo Tribunal Federal, Alexandre De Morais, proibiu o uso total das seguintes plataformas: instagram, facebook, wattpad, e chatGPT.",
+    "fonte": "www.urgentepeidobonotobwitter.net",
+    "foto": "X",
+    "isTrue": false,
+    "justificativaErro": "O título em Caps Lock e a URL do site (com um nome completamente absurdo) são sinais claros de que a notícia é uma paródia ou golpe. Além disso, o bloqueio de ferramentas de trabalho e estudo como o ChatGPT seria reportado em todos os veículos oficiais.",
+    "justificativaAcerto": "Boa! Você percebeu que a fonte é totalmente amadora e satírica. Decisões judiciais dessa magnitude são publicadas no Diário Oficial e amplamente discutidas pela imprensa profissional, não em sites com nomes bizarros."
+  },
+  {
+    "titulo": "Consumo de carne de gato choca moradores em cidade na florida",
+    "resumo": "Um grupo de imigrantes do sul do méxico são presos nesta sexta-feira após serem pegos consumindo e vendendo tacos feitos com carne de gato na cidade de Boca Raton na Florida.",
+    "fonte": "Grupo do Facebook",
+    "foto": "tacos",
+    "isTrue": false,
+    "justificativaErro": "Cuidado com narrativas sensacionalistas que circulam em grupos de redes sociais. Esse tipo de notícia costuma usar estereótipos para gerar revolta e raramente apresenta provas ou links de jornais reais.",
+    "justificativaAcerto": "Excelente! Você identificou que 'Grupos de Facebook' não são fontes de notícias confiáveis, especialmente para casos de crimes graves que teriam repercussão internacional se fossem verdade."
+  },
+  {
+    "titulo": "BARRINHAS DE EMAGRECIMENTO CHAMAM ATENÇÃO NA WEB",
+    "resumo": "Nova linha barras nutritivas suecas que fazem perder peso ganham popularidade nas redes. As barras nutritivas suecas Kälteen, funciona para queimar carboidratos em semanas, e após isso ocorpo humano vai funcionar a base de água.",
+    "fonte": "Instagram",
+    "foto": "kalteen",
+    "isTrue": false,
+    "justificativaErro": "Essa notícia é baseada em uma ficção (o filme 'Meninas Malvadas')! Além disso, a promessa de que o corpo humano passaria a funcionar 'a base de água' é biologicamente impossível e perigosa.",
+    "justificativaAcerto": "Mandou muito bem! Você percebeu o absurdo biológico da afirmação. O corpo humano não queima carboidratos dessa forma, e a referência às barras 'Kälteen' é um clássico da cultura pop, não da nutrição."
+  }
+]
