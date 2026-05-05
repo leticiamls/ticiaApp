@@ -56,6 +56,7 @@ struct JogoNewsView: View {
                         withAnimation {
                             presentPopup.toggle()
                         }
+//                        gameManager.popover = PopoverContent(presentPopup: $presentPopup, isTrue: isAcepted, isAcepted: $isAcepted)
                     }
                     label: {
                         HStack{
@@ -70,6 +71,9 @@ struct JogoNewsView: View {
                         withAnimation {
                             presentPopup.toggle()
                         }
+//                        withAnimation {
+//                            gameManager.popover = PopoverContent(presentPopup: $presentPopup, isTrue: isAcepted, isAcepted: $isAcepted)
+//                        }
                     }
                     label: {
                         HStack{
@@ -104,15 +108,13 @@ struct JogoNewsView: View {
         .overlay {
             if presentPopup {
                 ZStack {
-                    Color.black.opacity(0.3).onTapGesture {
+                    Color.black.opacity(0.6).onTapGesture {
                         withAnimation {
                             presentPopup.toggle()
                         }
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-
                 }
-
+                .ignoresSafeArea(.all)
 
                 @Bindable var isTrue = gameManager
                 PopUpView(
@@ -128,9 +130,9 @@ struct JogoNewsView: View {
                     }
                     .transition(.scale)
             }
+            
         }
         
-        .ignoresSafeArea(.all)
         
 
     }

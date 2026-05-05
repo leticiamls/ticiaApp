@@ -291,5 +291,6 @@ struct CardJogo: View {
 #Preview {
     @Previewable @State var gameManager = GameManager()
 
-    CardEstudar(estudos:Estudo(tituloEstudo: "Títulos Sensacionalistas", descricaoEstudo: "Uso de títulos chamativos e letras garrafais com apelo emocional para incentivar o compartilhamento rápido.", exemploMentira: "MUITO CUIDADO! COMER ARROZ DE ONTEM MATA", exemploVerdade: "Entenda a relação entre o armazenamento do arroz e o risco de intoxicação bacteriana"))
+//    CardEstudar(estudos:Estudo(tituloEstudo: "Títulos Sensacionalistas", descricaoEstudo: "Uso de títulos chamativos e letras garrafais com apelo emocional para incentivar o compartilhamento rápido.", exemploMentira: "MUITO CUIDADO! COMER ARROZ DE ONTEM MATA", exemploVerdade: "Entenda a relação entre o armazenamento do arroz e o risco de intoxicação bacteriana"))
+    PopUpViewNegative(presentPopup: .constant(true))
 }

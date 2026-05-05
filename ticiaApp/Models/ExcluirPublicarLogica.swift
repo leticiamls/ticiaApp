@@ -39,6 +39,37 @@ enum UserResultsProfileTitle: String, CaseIterable{
 
 }
 
+//struct PopoverContent: View {
+//    @Environment(GameManager.self) var gameManager: GameManager
+//    @Binding var presentPopup: Bool
+//    let isTrue: Bool
+//    @Binding var isAcepted: Bool
+//    
+//    var body: some View {
+//        //SE ERRAR
+//        if isTrue == true && isAcepted == false
+//            || isTrue == false && isAcepted == true
+//        {
+//            PopUpViewNegative(presentPopup: $presentPopup)
+//                .onAppear {
+//                    gameManager.caosPoints += 10
+//                }
+//
+//        }
+//        //SE ACERTAR
+//        else if isTrue == true && isAcepted == true
+//            || isTrue == false && isAcepted == false
+//        {
+//            PopUpViewPositive(presentPopup: $presentPopup)
+//                .onAppear {
+//                    gameManager.confiancaPoints += 10
+//                }
+//        } else {
+//            Text("a")
+//        }
+//    }
+//}
+
 @Observable
 class GameManager {
     var listaNoticiasJogo: [Noticia] = []
@@ -48,6 +79,8 @@ class GameManager {
     var caosPoints: Double = 0
     var progress: Double = 0
     var pointsTotal: Double { confiancaPoints - caosPoints }
+    
+//    var popover: PopoverContent?
 
     //      Chamar o JSON
     func getNewsFromJson() -> [Noticia] {

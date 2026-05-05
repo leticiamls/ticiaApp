@@ -32,13 +32,12 @@ struct ResultsView: View {
                         )
                     )
                 Text(titleUser)
-                    .font(Font.custom("Fredoka-Semibold", size: 40))
-                    .fontWeight(.bold)
+                    .font(Font.custom("Fredoka-Semibold", size: 36))
                     .foregroundStyle(Color.blackTicia)
                 Text(subtitleUser)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
-                .font(Font.custom("Fredoka-Medium", size: 20))
+                .font(Font.custom("Fredoka-Medium", size: 18))
             }
             .padding(EdgeInsets(top: 40, leading: 20, bottom: 30, trailing: 20))
 
