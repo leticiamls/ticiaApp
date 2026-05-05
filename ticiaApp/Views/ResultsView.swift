@@ -11,6 +11,9 @@ struct ResultsView: View {
     @Environment(GameManager.self) var gameManager: GameManager
 
     @Environment(Router.self) var router: Router
+    
+    let titleUser: String
+    let subtitleUser: String
         
     var body: some View {
         VStack {
@@ -28,13 +31,11 @@ struct ResultsView: View {
                             trailing: 35
                         )
                     )
-                Text("Muito bem!")
+                Text(titleUser)
                     .font(Font.custom("Fredoka-Semibold", size: 40))
                     .fontWeight(.bold)
                     .foregroundStyle(Color.blackTicia)
-                Text(
-                    "Você foi tão bem que eu acho que posso te considerar um... Aprendiz."
-                )
+                Text(subtitleUser)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)
                 .font(Font.custom("Fredoka-Medium", size: 20))
@@ -56,7 +57,7 @@ struct ResultsView: View {
                             Spacer()
                             Text("\(Int(gameManager.confiancaPoints))%")
                         }
-                        .font(Font.custom("Fredoka-Medium", size: 24))
+                        .font(Font.custom("Fredoka-Semibold", size: 24))
                         .foregroundStyle(Color.greenTicia)
                         Gauge(value: gameManager.confiancaPoints/100) {
                             //
@@ -81,7 +82,7 @@ struct ResultsView: View {
                             Spacer()
                             Text("\(Int(gameManager.caosPoints))%")
                         }
-                        .font(Font.custom("Fredoka-Medium", size: 24))
+                        .font(Font.custom("Fredoka-SemiBold", size: 24))
 
                         .foregroundColor(Color(.red))
                         Gauge(value: gameManager.caosPoints/100) {
@@ -113,7 +114,7 @@ struct ResultsView: View {
             VStack(spacing: 16) {
                 
                 Button {
-                    router.goTo(.GameView)
+                    router.resetView()
                     gameManager.caosPoints = 0
                     gameManager.confiancaPoints = 0
                     gameManager.progress = 0
@@ -143,14 +144,16 @@ struct ResultsView: View {
         .navigationBarBackButtonHidden()
 
     }
-
  
 }
 #Preview {
     @Previewable @State var gameManager = GameManager()
     @Previewable @State var router = Router()
 
-    ResultsView()
+    ResultsView(
+        titleUser: "Muito bem!",
+        subtitleUser: "Você foi tão bem que eu acho que posso te considerar um... Aprendiz."
+    )
         .environment(router)
         .environment(gameManager)
 }

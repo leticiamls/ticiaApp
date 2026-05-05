@@ -6,6 +6,39 @@
 //
 import SwiftUI
 
+
+enum UserResultsProfile: String, CaseIterable {
+    case estagiario, aprendiz, especialista
+    
+    var subtitleUser: String {
+        switch self {
+        case .estagiario:
+            return "Dessa vez as Fake News te pegaram, Estagiário!"
+        case .aprendiz:
+            return "Você foi tão bem que eu acho que já posso te considerar... Aprendiz!"
+        case .especialista:
+            return "É, você nem precisa mais da minha ajuda. Já tá... Especialista!"
+        }
+    }
+    
+}
+
+enum UserResultsProfileTitle: String, CaseIterable{
+    case estagiarioTitle, aprendizTitle, especialistaTitle
+    
+    var titleUser: String {
+        switch self {
+        case .estagiarioTitle:
+            return "É... Te enganaram..."
+        case .aprendizTitle:
+            return "Muito bem!"
+        case .especialistaTitle:
+            return "Isso sim é especialista!"
+        }
+    }
+
+}
+
 @Observable
 class GameManager {
     var listaNoticiasJogo: [Noticia] = []
@@ -14,14 +47,33 @@ class GameManager {
     var confiancaPoints: Double = 0
     var caosPoints: Double = 0
     var progress: Double = 0
+    var pointsTotal: Double { confiancaPoints - caosPoints }
 
     //      Chamar o JSON
     func getNewsFromJson() -> [Noticia] {
         return Bundle.main.decode(file: "News.json")
     }
+        
+    func getResult() -> UserResultsProfile {
+        if ((0...30).contains(pointsTotal)){
+            return .estagiario
+        } else if (31 <= pointsTotal && pointsTotal <= 50) {
+            return .aprendiz
+        }
+        return .especialista
+    }
+    
+    func getResultsTitle () -> UserResultsProfileTitle {
+        if ((0...30).contains(pointsTotal)){
+            return .estagiarioTitle
+        } else if (31 <= pointsTotal && pointsTotal <= 50) {
+            return .aprendizTitle
+        }
+        return .especialistaTitle
+    }
 
     func startGame() {
-        listaNoticiasJogo = getNewsFromJson().shuffled().prefix(10).map(\.self)
+        listaNoticiasJogo = Array(getNewsFromJson().shuffled().prefix(10))
         currentNewIndex = 0
         caosPoints = 0
         confiancaPoints = 0
@@ -41,5 +93,13 @@ class GameManager {
         progress = Double(currentNewIndex ?? 0)/10
         currentNew = listaNoticiasJogo[currentNewIndex!]
     }
-    
+
+}
+
+struct Estudo: Identifiable {
+    var id: UUID = UUID()
+    var tituloEstudo: String
+    var descricaoEstudo: String
+    var exemploMentira: String
+    var exemploVerdade: String
 }
