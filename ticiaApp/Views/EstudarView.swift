@@ -29,9 +29,6 @@ struct EstudarView: View {
                 .disabled(cardManager.currentStudyIndex == 0)
                 
                 Button {
-//                    if cardManager.isLastNew() {
-//                        router.goTo(.MenuView)
-//                    }
                     cardManager.nextNew()
                 }
                 
