@@ -11,6 +11,7 @@ enum NavigationDestinations: Hashable {
     case MenuView
     case GameView
     case ResultView
+    case EstudarView
 }
 
 @Observable
@@ -23,6 +24,10 @@ class Router {
 
     func restartNavigation() {
         path = .init()
+    }
+    
+    func resetView() {
+        path.removeLast()
     }
 
 }
@@ -61,8 +66,8 @@ struct ContentView: View {
                     }
                     .buttonStyle(ButtonPrimary())
 
-                    NavigationLink {
-                        EstudarView()
+                    Button {
+                        router.goTo(.EstudarView)
                     } label: {
                         HStack {
                             Image(systemName: "book.fill")
@@ -86,6 +91,9 @@ struct ContentView: View {
                             gameManager.progress = 0
                         }
                         .environment(router)
+                case .EstudarView:
+                    EstudarView()
+                        .environment(router)
                 case .GameView:
                     JogoNewsView()
                         .onAppear {
@@ -93,7 +101,12 @@ struct ContentView: View {
                         }
                         .environment(router)
                 case .ResultView:
-                    ResultsView()
+                    let result = gameManager.getResult()
+                    let resultTitle = gameManager.getResultsTitle()
+                    ResultsView(
+                        titleUser: resultTitle.titleUser,
+                        subtitleUser: result.subtitleUser
+                    )
                         .environment(router)
                 }
             }
