@@ -44,6 +44,7 @@ struct PopUp: GroupBoxStyle {
 
 struct PopUpViewNegative: View {
     @Binding var presentPopup: Bool
+    @Environment(GameManager.self) var gameManager: GameManager
 
     var body: some View {
         ZStack {
@@ -65,13 +66,7 @@ struct PopUpViewNegative: View {
                         )
 
                     VStack(alignment: .leading) {
-                        Text("Essa tava com toda cara de ser fake:")
-                            .font(Font.custom("Fredoka-Regular", size: 20))
-                        Text(
-                            "título em CAPS LOCK, não cita fonte confiável, faz apelo emocional..."
-                        )
-                        .font(Font.custom("Fredoka-Semibold", size: 20))
-                        Text("Não publique notícias assim!")
+                        Text(gameManager.currentNew?.justificativaErro ?? "Erro")
                             .font(Font.custom("Fredoka-Regular", size: 20))
                         Spacer()
                             .frame(height: 12)
@@ -125,6 +120,7 @@ struct PopUpViewNegative: View {
 
 struct PopUpViewPositive: View {
     @Binding var presentPopup: Bool
+    @Environment(GameManager.self) var gameManager: GameManager
     var body: some View {
         ZStack {
             GroupBox {
@@ -145,13 +141,7 @@ struct PopUpViewPositive: View {
                         )
 
                     VStack(alignment: .leading) {
-                        Text("Essa tava com toda cara de ser fake:")
-                            .font(Font.custom("Fredoka-Regular", size: 20))
-                        Text(
-                            "título em CAPS LOCK, não cita fonte confiável, faz apelo emocional..."
-                        )
-                        .font(Font.custom("Fredoka-Semibold", size: 20))
-                        Text("Não publique notícias assim!")
+                        Text(gameManager.currentNew?.justificativaAcerto ?? "Erro")
                             .font(Font.custom("Fredoka-Regular", size: 20))
                         Spacer()
                             .frame(height: 12)
