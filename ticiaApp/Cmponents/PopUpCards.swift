@@ -203,20 +203,22 @@ struct PopUpViewPositive: View {
 }
 
 struct CardEstudar: View {
-    let estudos: Estudo
+    
+    @Environment(CardManager.self) var cardManager: CardManager
+    
     var body: some View {
         VStack (alignment: .center){
             GroupBox{
                 VStack(alignment: .center, spacing: 24){
                     HStack{
-                        Text(estudos.tituloEstudo)
+                        Text(cardManager.currentNew.tituloEstudo)
                             .frame(
                                 maxWidth: .infinity)
                             .fixedSize(horizontal: false, vertical: true)
                             .font(Font.custom("Fredoka-SemiBold", size: 28))
                     }.multilineTextAlignment(.center)
                     
-                    Text(estudos.descricaoEstudo)
+                    Text(cardManager.currentNew.descricaoEstudo)
                         .font(Font.custom("Fredoka-Regular", size: 20))
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(maxHeight: 100)
@@ -226,14 +228,14 @@ struct CardEstudar: View {
                     VStack(alignment: .leading, spacing: 50){
                         HStack{
                             Image(systemName: "x.circle.fill").foregroundColor(.red)
-                            Text(estudos.exemploMentira)
+                            Text(cardManager.currentNew.exemploMentira)
                                 .font(Font.custom("Fredoka-Medium", size: 18))
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(maxHeight: 40)
                         }
                         HStack{
                             Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
-                            Text(estudos.exemploVerdade)
+                            Text(cardManager.currentNew.exemploVerdade)
                                 .font(Font.custom("Fredoka-Medium", size: 18))
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(maxHeight: 22)
@@ -290,6 +292,6 @@ struct CardJogo: View {
 
 #Preview {
     @Previewable @State var gameManager = GameManager()
-
-    CardEstudar(estudos:Estudo(tituloEstudo: "Títulos Sensacionalistas", descricaoEstudo: "Uso de títulos chamativos e letras garrafais com apelo emocional para incentivar o compartilhamento rápido.", exemploMentira: "MUITO CUIDADO! COMER ARROZ DE ONTEM MATA", exemploVerdade: "Entenda a relação entre o armazenamento do arroz e o risco de intoxicação bacteriana"))
+//
+//    CardEstudar(estudos:Estudo(tituloEstudo: "Títulos Sensacionalistas", descricaoEstudo: "Uso de títulos chamativos e letras garrafais com apelo emocional para incentivar o compartilhamento rápido.", exemploMentira: "MUITO CUIDADO! COMER ARROZ DE ONTEM MATA", exemploVerdade: "Entenda a relação entre o armazenamento do arroz e o risco de intoxicação bacteriana"))
 }

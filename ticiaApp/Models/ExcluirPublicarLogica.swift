@@ -40,6 +40,37 @@ enum UserResultsProfileTitle: String, CaseIterable{
 }
 
 @Observable
+class CardManager {
+    let estudosLista: [Estudo] = [
+        Estudo(tituloEstudo: "Títulos Sensacionalistas", descricaoEstudo: "Uso de títulos chamativos e letras garrafais com apelo emocional para incentivar o compartilhamento rápido.", exemploMentira: "a", exemploVerdade: "a"), Estudo(tituloEstudo: "b", descricaoEstudo: "b", exemploMentira: "c", exemploVerdade: "d"),
+        Estudo(tituloEstudo: "ffff", descricaoEstudo: "dfgergter", exemploMentira: "kfhjdsbfjkasd", exemploVerdade: "d")]
+    var currentNewIndex: Int = 0
+    var progress: Double = 0
+    
+    var currentNew: Estudo {
+        estudosLista[currentNewIndex]
+    }
+
+    func startEstudos() {
+        currentNewIndex = 0
+        progress = 0
+    }
+
+    func isLastNew() -> Bool {
+        return (estudosLista.count - 1) == currentNewIndex
+    }
+
+    func nextNew() {
+        if currentNewIndex == (estudosLista.count - 1) { return }
+
+        currentNewIndex = (currentNewIndex) + 1
+//        progress = Double(currentNewIndex ?? 0)/5
+    }
+
+}
+
+
+@Observable
 class GameManager {
     var listaNoticiasJogo: [Noticia] = []
     var currentNewIndex: Int?

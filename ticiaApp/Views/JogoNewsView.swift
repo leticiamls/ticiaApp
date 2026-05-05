@@ -17,74 +17,76 @@ struct JogoNewsView: View {
     
    
     var body: some View {
-        VStack {
-            HStack (spacing: 28){
-//                Gauge(value: progressGame){
-//                    //
-//                }
-                Gauge(value: gameManager.progress){
-                    
-                }
-                .frame(minWidth: 180)
-                .tint(Color(.black))
-                HStack (spacing: 16){
-                    HStack{
-                        Image(systemName: "hand.thumbsup.fill")
-                            .frame(width: 10)
-                        Text("\(Int(gameManager.confiancaPoints))%")
-                    }
-                    .foregroundStyle(Color.greenTicia)
-                    HStack{
-                        Image(systemName: "exclamationmark.triangle.fill")
-                            .frame(width: 8)
-                        Text("\(Int(gameManager.caosPoints))%")
-                    }
-                    .foregroundStyle(Color(.red))
-                }
-            }
-            .position(x: 180, y: 0)
-            .padding(18)
-            .font(Font.system(size: 16, weight: .bold))
-            .frame(width: 402, height: 40)
+        ZStack {
             
-            VStack (spacing: 90){
-               CardJogo()
-
-                HStack (spacing: 30){
-                    Button {
-                        isAcepted = false
-                        withAnimation {
-                            presentPopup.toggle()
-                        }
+            VStack {
+                HStack (spacing: 28){
+                    //                Gauge(value: progressGame){
+                    //                    //
+                    //                }
+                    Gauge(value: gameManager.progress){
+                        
                     }
-                    label: {
+                    .frame(minWidth: 180)
+                    .tint(Color(.black))
+                    HStack (spacing: 16){
                         HStack{
-                            Image(systemName: "xmark")
-                            Text("Excluir")
+                            Image(systemName: "hand.thumbsup.fill")
+                                .frame(width: 10)
+                            Text("\(Int(gameManager.confiancaPoints))%")
                         }
-                    }
-                    .buttonStyle(ButtonDelete())
-                    
-                    Button {
-                        isAcepted = true
-                        withAnimation {
-                            presentPopup.toggle()
-                        }
-                    }
-                    label: {
+                        .foregroundStyle(Color.greenTicia)
                         HStack{
-                            Image(systemName: "checkmark")
-                            Text("Publicar")
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .frame(width: 8)
+                            Text("\(Int(gameManager.caosPoints))%")
                         }
+                        .foregroundStyle(Color(.red))
                     }
-                    .buttonStyle(ButtonPublish())
-                                      
-
                 }
-                .font(Font.custom("Fredoka-Semibold", size: 24))
-
-            }
-            .toolbar{
+                .position(x: 180, y: 0)
+                .padding(18)
+                .font(Font.system(size: 16, weight: .bold))
+                .frame(width: 402, height: 40)
+                
+                VStack (spacing: 90){
+                    CardJogo()
+                    
+                    HStack (spacing: 30){
+                        Button {
+                            isAcepted = false
+                            withAnimation {
+                                presentPopup.toggle()
+                            }
+                        }
+                        label: {
+                            HStack{
+                                Image(systemName: "xmark")
+                                Text("Excluir")
+                            }
+                        }
+                        .buttonStyle(ButtonDelete())
+                        
+                        Button {
+                            isAcepted = true
+                            withAnimation {
+                                presentPopup.toggle()
+                            }
+                        }
+                        label: {
+                            HStack{
+                                Image(systemName: "checkmark")
+                                Text("Publicar")
+                            }
+                        }
+                        .buttonStyle(ButtonPublish())
+                        
+                        
+                    }
+                    .font(Font.custom("Fredoka-Semibold", size: 24))
+                    
+                }
+                .toolbar{
                     ToolbarItem(placement: .title){
                         Button(action: {
                             router.goTo(.MenuView)
@@ -100,8 +102,33 @@ struct JogoNewsView: View {
                     }
                 }
                 .frame(height: 670)
-        }
-        .overlay {
+            }
+//            .overlay {
+//                if presentPopup {
+//                    ZStack {
+//                        Color.black.opacity(0.3).ignoresSafeArea().onTapGesture {
+//                            withAnimation {
+//                                presentPopup.toggle()
+//                            }
+//                        }
+//                    }
+//                    @Bindable var isTrue = gameManager
+//                    PopUpView(
+//                        presentPopup: $presentPopup,
+//                        isTrue: gameManager.currentNew?.isTrue ?? false,
+//                        isAcepted: $isAcepted
+//                    )
+//                    .onDisappear {
+//                        if gameManager.isLastNew() {
+//                            router.goTo(.ResultView)
+//                        }
+//                        gameManager.nextNew()
+//                    }
+//                    .transition(.scale)
+//                }
+//                
+//            }
+            
             if presentPopup {
                 ZStack {
                     Color.black.opacity(0.3).ignoresSafeArea().onTapGesture {
@@ -116,15 +143,15 @@ struct JogoNewsView: View {
                     isTrue: gameManager.currentNew?.isTrue ?? false,
                     isAcepted: $isAcepted
                 )
-                    .onDisappear {
-                        if gameManager.isLastNew() {
-                            router.goTo(.ResultView)
-                        }
-                        gameManager.nextNew()
+                .onDisappear {
+                    if gameManager.isLastNew() {
+                        router.goTo(.ResultView)
                     }
-                    .transition(.scale)
+                    gameManager.nextNew()
+                }
+                .transition(.scale)
             }
-            
+
         }
     }
 }

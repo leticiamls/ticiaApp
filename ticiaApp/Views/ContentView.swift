@@ -34,6 +34,8 @@ class Router {
 
 struct ContentView: View {
     @Environment(GameManager.self) private var gameManager: GameManager
+    @Environment(CardManager.self) private var cardManager: CardManager
+
     @State var router = Router()
         var body: some View {
         NavigationStack(path: $router.path) {
@@ -93,13 +95,18 @@ struct ContentView: View {
                         .environment(router)
                 case .EstudarView:
                     EstudarView()
+                        .onAppear {
+                            cardManager.startEstudos()
+                        }
                         .environment(router)
+                        .environment(cardManager)
                 case .GameView:
                     JogoNewsView()
                         .onAppear {
                             gameManager.startGame()
                         }
                         .environment(router)
+
                 case .ResultView:
                     let result = gameManager.getResult()
                     let resultTitle = gameManager.getResultsTitle()
@@ -117,7 +124,10 @@ struct ContentView: View {
 
 #Preview {
     @Previewable @State var gameManager = GameManager()
+    @Previewable @State var cardManager = CardManager()
+
 
     ContentView()
         .environment(gameManager)
+        .environment(cardManager)
 }

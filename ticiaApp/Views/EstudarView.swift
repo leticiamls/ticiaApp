@@ -8,14 +8,13 @@ import SwiftUI
 
 struct EstudarView: View {
     @Environment(Router.self) var router: Router
-    
-    let estudosLista: [Estudo] = [Estudo(tituloEstudo: "a", descricaoEstudo: "a", exemploMentira: "a", exemploVerdade: "a"), Estudo(tituloEstudo: "b", descricaoEstudo: "b", exemploMentira: "c", exemploVerdade: "d")]
+    @Environment(CardManager.self) var cardManager: CardManager
 
     
     var body: some View {
         VStack{
             Spacer()
-            CardEstudar(estudos: estudosLista[1])
+            CardEstudar()
             Spacer()
             HStack (spacing: 30){
                 Button {
@@ -29,8 +28,12 @@ struct EstudarView: View {
                 .buttonStyle(ButtonAnterior())
                 
                 Button {
-                    
+                    if cardManager.isLastNew() {
+                        router.goTo(.MenuView)
+                    }
+                    cardManager.nextNew()
                 }
+                
                 
                 label: {
                     HStack{
@@ -42,14 +45,29 @@ struct EstudarView: View {
                 
             }
         }
-        
+        .toolbar{
+                ToolbarItem(placement: .title){
+                    Button(action: {
+                        router.goTo(.MenuView)
+                    },
+                           label: {
+                        Text("NOTÍCIAS")
+                            .font(Font.custom("Fredoka-Medium", size: 16))
+                            .kerning(1)
+                    })
+                }
+            }
+            .frame(height: 670)
         
     }
 }
 
 #Preview {
     @Previewable @State var router = Router()
+    @Previewable @State var cardManager = CardManager()
+
 
     EstudarView()
         .environment(router)
+        .environment(cardManager)
 }
