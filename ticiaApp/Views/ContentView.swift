@@ -100,12 +100,14 @@ struct ContentView: View {
                         }
                         .environment(router)
                         .environment(cardManager)
+
                 case .GameView:
                     JogoNewsView()
                         .onAppear {
                             gameManager.startGame()
                         }
                         .environment(router)
+
 
                 case .ResultView:
                     let result = gameManager.getResult()

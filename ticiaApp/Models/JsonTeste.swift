@@ -20,6 +20,7 @@ struct Noticia: Codable {
 //        return LocalizedStringKey(justificativaErro)
 //    }
     
+
     static let listaNoticias: [Noticia] = Bundle.main.decode(file: "News.json")
 }
 

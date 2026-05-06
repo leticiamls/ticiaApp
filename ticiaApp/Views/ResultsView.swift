@@ -20,6 +20,7 @@ struct ResultsView: View {
             //imagem e texto
             VStack(alignment: .center) {
                 //TODO: Amanhã, quarta-feira, SE DER TEMPO, ajeitar a imagem da tícia. Fazer mudar junto do resultado, criando variações de acordo com a pontuação.
+
                 Image("tíciaFeliz")
                     .resizable()
                     .scaledToFit()

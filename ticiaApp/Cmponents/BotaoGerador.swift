@@ -81,6 +81,7 @@ struct ButtonAnterior: ButtonStyle {
     
     @Environment(\.isEnabled) var isEnabled
     
+
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(16)
@@ -91,16 +92,18 @@ struct ButtonAnterior: ButtonStyle {
                         Color(.black),
                         lineWidth: 2
                     )
+
             )
 
             .tint(Color(.black))
             .font(Font.custom("Fredoka-Medium", size: 20))
             .opacity(isEnabled ? 1 : 0.3)
+
     }
 }
 
 struct ButtonProximo: ButtonStyle {
-    
+
     @Environment(\.isEnabled) var isEnabled
 
     func makeBody(configuration: Self.Configuration) -> some View {
@@ -111,9 +114,9 @@ struct ButtonProximo: ButtonStyle {
             .clipShape(Capsule())
             .foregroundStyle(Color.white)
             .tint(Color(.black))
-            .font(Font.custom("Fredoka-Medium", size: 20))
-        
+            .font(Font.custom("Fredoka-Medium", size: 20))        
             .opacity(isEnabled ? 1 : 0.3)
 
     }
 }
+

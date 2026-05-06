@@ -9,6 +9,7 @@ import SwiftUI
 struct EstudarView: View {
     @Environment(Router.self) var router: Router
     @Environment(CardManager.self) var cardManager: CardManager
+
     
     var body: some View {
         VStack{
@@ -31,7 +32,6 @@ struct EstudarView: View {
                 Button {
                     cardManager.nextNew()
                 }
-                
                 
                 label: {
                     HStack{

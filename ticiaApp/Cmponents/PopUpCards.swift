@@ -46,6 +46,7 @@ struct PopUpViewNegative: View {
     @Binding var presentPopup: Bool
     @Environment(GameManager.self) var gameManager: GameManager
 
+
     var body: some View {
         ZStack {
             GroupBox {
@@ -121,11 +122,13 @@ struct PopUpViewNegative: View {
 struct PopUpViewPositive: View {
     @Binding var presentPopup: Bool
     @Environment(GameManager.self) var gameManager: GameManager
+
     var body: some View {
         ZStack {
             GroupBox {
                 VStack {
                     Text("Boa! Acertou!")
+
                         .font(Font.custom("Fredoka-SemiBold", size: 36))
                     Image("tíciaFeliz")
                         .resizable()
@@ -142,6 +145,7 @@ struct PopUpViewPositive: View {
 
                     VStack(alignment: .leading) {
                         Text(LocalizedStringKey(gameManager.currentNew?.justificativaAcerto ?? "Erro"))
+
                             .font(Font.custom("Fredoka-Regular", size: 20))
                         Spacer()
                             .frame(height: 12)
@@ -195,13 +199,14 @@ struct PopUpViewPositive: View {
 struct CardEstudar: View {
     
     @Environment(CardManager.self) var cardManager: CardManager
-    
+
     var body: some View {
         VStack (alignment: .center){
             GroupBox{
                 VStack(alignment: .center, spacing: 24){
                     HStack{
                         Text(cardManager.currentStudy.tituloEstudo)
+
                             .frame(
                                 maxWidth: .infinity)
                             .fixedSize(horizontal: false, vertical: true)
@@ -220,6 +225,7 @@ struct CardEstudar: View {
                         HStack{
                             Image(systemName: "x.circle.fill").foregroundColor(.red)
                             Text(cardManager.currentStudy.exemploMentira)
+
                                 .font(Font.custom("Fredoka-Medium", size: 18))
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(maxHeight: 40)
@@ -231,6 +237,7 @@ struct CardEstudar: View {
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(maxHeight: 22)
                                 .tint(.black)
+
                         }
                     }
                 }
@@ -263,6 +270,7 @@ struct CardJogo: View {
                         .font(Font.custom("Fredoka-SemiBold", size: 20))
                         .fixedSize(horizontal: false, vertical: true)
 
+
                     Text(gameManager.currentNew?.resumo ?? "Sem valor")
                         .font(Font.custom("Fredoka-Regular", size: 16))
                         .frame(maxHeight: 100)
@@ -285,5 +293,4 @@ struct CardJogo: View {
 
 #Preview {
     @Previewable @State var gameManager = GameManager()
-
 }

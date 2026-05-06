@@ -98,7 +98,6 @@ struct JogoNewsView: View {
                 }
                 .frame(height: 670)
             }
-            
             if presentPopup {
                 ZStack {
                     Color.black.opacity(0.3).ignoresSafeArea().onTapGesture {
@@ -121,7 +120,6 @@ struct JogoNewsView: View {
                 }
                 .transition(.scale)
             }
-
         }
     }
 }
