@@ -16,6 +16,7 @@ struct ButtonPrimary: ButtonStyle {
             .foregroundStyle(Color.white)
             .tint(Color(.black))
             .font(Font.custom("Fredoka-SemiBold", size: 24))
+            .opacity(configuration.isPressed ? 0.75 : 1.0)
     }
 }
 
@@ -30,6 +31,8 @@ struct ButtonSecondary: ButtonStyle {
                     lineWidth: 2
                 )
             )
+            .opacity(configuration.isPressed ? 0.30 : 1.0)
+
 
             .tint(Color(.black))
             .font(Font.custom("Fredoka-SemiBold", size: 24))
@@ -44,6 +47,8 @@ struct ButtonTerciary: ButtonStyle {
             .buttonStyle(PlainButtonStyle())
             .font(Font.custom("Fredoka-Semibold", size: 24))
             .foregroundStyle(Color.blackTicia)
+            .opacity(configuration.isPressed ? 0.30 : 1.0)
+
     }
 }
 
@@ -58,6 +63,8 @@ struct ButtonDelete: ButtonStyle {
                     lineWidth: 2
                 )
             )
+            .opacity(configuration.isPressed ? 0.30 : 1.0)
+
 
             .tint(Color(.black))
             .font(Font.custom("Fredoka-SemiBold", size: 24))
@@ -74,6 +81,8 @@ struct ButtonPublish: ButtonStyle {
             .foregroundStyle(Color.white)
             .tint(Color(.black))
             .font(Font.custom("Fredoka-SemiBold", size: 24))
+            .opacity(configuration.isPressed ? 0.75 : 1.0)
+
     }
 }
 
@@ -98,6 +107,8 @@ struct ButtonAnterior: ButtonStyle {
             .tint(Color(.black))
             .font(Font.custom("Fredoka-Medium", size: 20))
             .opacity(isEnabled ? 1 : 0.3)
+            .opacity(configuration.isPressed ? 0.30 : 1.0)
+
 
     }
 }
@@ -116,6 +127,8 @@ struct ButtonProximo: ButtonStyle {
             .tint(Color(.black))
             .font(Font.custom("Fredoka-Medium", size: 20))        
             .opacity(isEnabled ? 1 : 0.3)
+            .opacity(configuration.isPressed ? 0.75 : 1.0)
+
 
     }
 }

@@ -41,20 +41,19 @@ struct ContentView: View {
         NavigationStack(path: $router.path) {
             VStack(spacing: 100) {
                 VStack {
-                    Text("Tícia!")
-                        .font(Font.custom("Grandstander-Black", size: 96))
-                        .foregroundStyle(Color.blackTicia)
-                        .kerning(-4)
-                        .frame(height: 45)
+//                    Text("Tícia!")
+//                        .font(Font.custom("Grandstander-Black", size: 96))
+//                        .foregroundStyle(Color.blackTicia)
+//                        .kerning(-4)
+//                        .frame(height: 45)
+                    Image("TíciaLogoApp")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 310, height: 220)
                     Text("Teste seus conhecimentos sobre")
                         .font(Font.custom("Fredoka-Medium", size: 18))
                     Text("Fake News!")
-                        .font(Font.custom("Fredoka-SemiBold", size: 18))
-                    Image("tíciaResults")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 217, height: 200)
-                }
+                        .font(Font.custom("Fredoka-SemiBold", size: 18))                }
 
                 //botoes
                 VStack(spacing: 30) {
