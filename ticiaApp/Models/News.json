@@ -5,7 +5,6 @@
     "fonte": "cnnbrasil.com.br",
     "foto": "copa",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Você deixou **passar** um fato real! A notícia cita uma organização oficial e foi publicada em um veículo de imprensa de grande credibilidade.",
     "justificativaAcerto": "Excelente! Você reconheceu uma notícia oficial vinda de uma fonte confiável e com informações verificáveis sobre o evento."
   },
@@ -17,17 +16,6 @@
     "isTrue": true,
     "justificativaErro": "Atenção! Esta é uma notícia factual de um jornal regional tradicional. Eventos locais desse porte são amplamente documentados.",
     "justificativaAcerto": "Boa! Você identificou um relato jornalístico local autêntico, publicado por um veículo profissional da região."
-=======
-    "justificativa": ""
-  },
-  {
-    "titulo": "Show do Guns N' Roses em Fortaleza tem fila quilométrica antes dos portões abrir",
-    "resumo": "Fãs da banda Guns N' Roses enfrentaram calor e longas esperas na Arena Castelão, em Fortaleza, para garantir lugar na apresentação deste sábado (18), formando filas antes da abertura dos portões.",
-    "fonte": "diariodonordeste.verdesmares.com.br",
-    "foto": "guns",
-    "isTrue": true,
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Mulheres recebem aviso sobre oferta gratuita de absorventes higiênicos",
@@ -35,12 +23,8 @@
     "fonte": "www.gov.br",
     "foto": "absorvente",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Não é fake! Fontes governamentais (.gov.br) são canais oficiais para anúncios de políticas públicas e programas sociais.",
     "justificativaAcerto": "Perfeito! Você confiou em uma fonte oficial do governo, que é o canal correto para confirmar programas de saúde pública."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Ginecologista alerta para 5 sintomas da endometriose além da cólica",
@@ -48,12 +32,8 @@
     "fonte": "www.metropoles.com",
     "foto": "dor",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Esta notícia é informativa e baseada em orientações médicas. Ignorar alertas de saúde de fontes conhecidas pode ser um erro.",
     "justificativaAcerto": "Muito bem! Você diferenciou uma orientação de saúde legítima de promessas milagrosas. O tom aqui é educativo e profissional."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Após retorno bem-sucedido, BTS inicia turnê mundial com passagem pela América Latina",
@@ -61,12 +41,9 @@
     "fonte": "g1.globo.com",
     "foto": "bts",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Cuidado! Embora o tema gere muito engajamento, a fonte G1 é rigorosa na apuração de eventos de entretenimento globais.",
     "justificativaAcerto": "Isso aí! Você validou a informação através de um dos maiores portais de notícias do país, que confirmou o cronograma oficial do grupo."
-=======
-    "justificativa": ""
->>>>>>> develop
+
   },
   {
     "titulo": "Mata de Santa Genebra, em Campinas, promove encontro sobre plantas medicinais aberta ao público",
@@ -74,12 +51,8 @@
     "fonte": "campinas.sp.gov.br",
     "foto": "farmacia",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Fique atento: eventos acadêmicos e municipais divulgados em sites de prefeituras são fontes seguras de informação local.",
     "justificativaAcerto": "Ótima análise! O uso do domínio oficial da prefeitura e a parceria com a Unicamp garantem a veracidade do evento."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Solidão eleva risco clínico e reduz a sobrevida de idosos com câncer",
@@ -87,12 +60,8 @@
     "fonte": "www.cnnbrasil.com.br",
     "foto": "idoso",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Você duvidou de um fato científico. A notícia aborda um estudo sério publicado por canais de jornalismo de referência.",
     "justificativaAcerto": "Correto! O texto apresenta dados baseados em consenso médico e cita estudos internacionais, sem promessas sensacionalistas."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Um processo 'complexo, caro e, ainda assim, vulnerável': vazamento de questões gera alerta sobre pré-testes do Enem",
@@ -100,12 +69,8 @@
     "fonte": "www.oglobo.globo.com",
     "foto": "enem",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Notícias críticas sobre órgãos públicos são essenciais. Este é um relato jornalístico apurado sobre falhas de segurança reais.",
     "justificativaAcerto": "Boa! Você reconheceu uma reportagem investigativa de um jornal de prestígio sobre um tema de interesse público."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Apple anuncia sucessão: Tim Cook deixará comando e John Ternus será novo CEO",
@@ -113,12 +78,9 @@
     "fonte": "www.g1.globo.com",
     "foto": "caminhar",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Mudanças no alto escalão de grandes empresas são fatos de mercado reais e amplamente noticiados pela imprensa de tecnologia.",
     "justificativaAcerto": "Correto! Você identificou uma notícia corporativa importante publicada em um veículo de confiança."
-=======
-    "justificativa": ""
->>>>>>> develop
+
   },
   {
     "titulo": "Por que a Netflix desistiu de comprar a Warner Bros? CEO fala sobre lado positivo do fracasso",
@@ -126,12 +88,8 @@
     "fonte": "www.tecmundo.com.br",
     "foto": "netflix",
     "isTrue": true,
-<<<<<<< HEAD
     "justificativaErro": "Negociações bilionárias entre empresas de tecnologia são fatos reais do mercado financeiro e de entretenimento.",
     "justificativaAcerto": "Mandou bem! Você validou uma movimentação de mercado através de uma fonte especializada em tecnologia e negócios."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Dipirona é retirada das farmácias após matar adolescentes em diferentes estados",
@@ -139,28 +97,17 @@
     "fonte": "www.dipironamata.biz",
     "foto": "dipirona",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "Cuidado! Notícias alarmistas sobre medicamentos comuns sem respaldo da Anvisa e com fontes .biz são quase sempre golpes ou fakes.",
     "justificativaAcerto": "Excelente! Você percebeu o tom alarmista e a fonte suspeita (.biz), evitando espalhar pânico desnecessário sobre um remédio comum."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Ariana Grande pausa carreira para abrir loja de donuts",
     "resumo": "Loja tem temática nas cores das personagens do musical Wicked, filme que garantiu o Oscar da cantora.",
-<<<<<<< HEAD
     "fonte": "www.suadodoces.net",
     "foto": "loja",
     "isTrue": false,
     "justificativaErro": "Você caiu em um boato de fã-clube! A fonte é um site não oficial (.net) e a notícia mistura fatos reais com invenções.",
     "justificativaAcerto": "Boa! Você notou que a fonte não é profissional e que a notícia soa mais como uma curiosidade inventada do que um fato jornalístico."
-=======
-    "fonte": "www.suadoceabutera.net",
-    "foto": "loja",
-    "isTrue": false,
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "BEYONCÉ ANUNCIA APOSENTADORIA APÓS DEBUT DA FILHA",
@@ -168,12 +115,8 @@
     "fonte": "Instagram",
     "foto": "beyonce",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "O Caps Lock no título e a falta de uma fonte oficial (como a assessoria da artista) são sinais claros de que a notícia é falsa.",
     "justificativaAcerto": "Perfeito! Você identificou o 'grito' do Caps Lock e a ausência de um link real, características típicas de desinformação em redes sociais."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Sandálias de Borracha dão câncer de pele",
@@ -181,12 +124,9 @@
     "fonte": "Facebook",
     "foto": "sandália",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "Atenção: afirmações pseudocientíficas que circulam em redes sociais sem qualquer base médica são clássicos de correntes falsas.",
     "justificativaAcerto": "Muito bem! Você desconfiou de uma afirmação médica absurda e sem comprovação, que claramente buscava apenas gerar medo."
-=======
-    "justificativa": ""
->>>>>>> develop
+
   },
   {
     "titulo": "Catedral metropolitana de Fortaleza inunda após chuva forte.",
@@ -194,12 +134,8 @@
     "fonte": "www.dailynews.info",
     "foto": "catedral",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "Você foi enganado por um site de aparência genérica (.info). Um evento desse em um ponto turístico seria capa de todos os jornais da cidade.",
     "justificativaAcerto": "Ótimo olho! Você percebeu que um fato local tão importante não estava nos veículos de imprensa tradicionais da região."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Vacina contra tétano transforma pessoas em robôs controlados pelo governo via Wi-Fi",
@@ -207,12 +143,8 @@
     "fonte": "Whatsapp",
     "foto": "vacina",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "Esta é uma teoria da conspiração perigosa! 'Relatórios secretos' e controle por Wi-Fi são elementos clássicos de ficção e desinformação.",
     "justificativaAcerto": "Excelente! Você identificou uma teoria da conspiração absurda. Ciência e tecnologia não funcionam dessa forma, e o WhatsApp é mestre em espalhar isso."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "PLANTA QUE TIRA TODAS AS ESTRIAS",
@@ -220,12 +152,8 @@
     "fonte": "www.nosamaskincare.biz",
     "foto": "plantas",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "Essa tava com toda cara de ser fake: título em CAPS LOCK, não cita fonte confiável, faz apelo emocional... Não publique notícias assim!",
     "justificativaAcerto": "Boa escolha! Essa notícia cita fontes confiáveis, não tem apelo emocional e não é alarmista. Publique mais notícias assim!"
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "ALEXANDRE DE MORAIS VOLTA A PROIBIR REDES SOCIAIS NO BRASIL",
@@ -233,12 +161,8 @@
     "fonte": "www.urgentepeidobonotobwitter.net",
     "foto": "X",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "O título em Caps Lock e a URL do site (com um nome completamente absurdo) são sinais claros de que a notícia é uma paródia ou golpe. Além disso, o bloqueio de ferramentas de trabalho e estudo como o ChatGPT seria reportado em todos os veículos oficiais.",
     "justificativaAcerto": "Boa! Você percebeu que a fonte é totalmente amadora e satírica. Decisões judiciais dessa magnitude são publicadas no Diário Oficial e amplamente discutidas pela imprensa profissional, não em sites com nomes bizarros."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "Consumo de carne de gato choca moradores em cidade na florida",
@@ -246,12 +170,8 @@
     "fonte": "Grupo do Facebook",
     "foto": "tacos",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "Cuidado com narrativas sensacionalistas que circulam em grupos de redes sociais. Esse tipo de notícia costuma usar estereótipos para gerar revolta e raramente apresenta provas ou links de jornais reais.",
     "justificativaAcerto": "Excelente! Você identificou que 'Grupos de Facebook' não são fontes de notícias confiáveis, especialmente para casos de crimes graves que teriam repercussão internacional se fossem verdade."
-=======
-    "justificativa": ""
->>>>>>> develop
   },
   {
     "titulo": "BARRINHAS DE EMAGRECIMENTO CHAMAM ATENÇÃO NA WEB",
@@ -259,11 +179,7 @@
     "fonte": "Instagram",
     "foto": "kalteen",
     "isTrue": false,
-<<<<<<< HEAD
     "justificativaErro": "Essa notícia é baseada em uma ficção (o filme 'Meninas Malvadas')! Além disso, a promessa de que o corpo humano passaria a funcionar 'a base de água' é biologicamente impossível e perigosa.",
     "justificativaAcerto": "Mandou muito bem! Você percebeu o absurdo biológico da afirmação. O corpo humano não queima carboidratos dessa forma, e a referência às barras 'Kälteen' é um clássico da cultura pop, não da nutrição."
-=======
-    "justificativa": ""
->>>>>>> develop
   }
 ]
