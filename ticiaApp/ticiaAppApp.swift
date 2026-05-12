@@ -13,7 +13,7 @@ struct ticiaAppApp: App {
     
     @State private var gameManager: GameManager = GameManager()
     @State private var cardManager: CardManager = CardManager()
-
+    
     
     var body: some Scene {
         WindowGroup {

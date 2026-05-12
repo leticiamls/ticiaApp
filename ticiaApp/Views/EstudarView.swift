@@ -9,7 +9,7 @@ import SwiftUI
 struct EstudarView: View {
     @Environment(Router.self) var router: Router
     @Environment(CardManager.self) var cardManager: CardManager
-
+    
     
     var body: some View {
         VStack{
@@ -41,23 +41,17 @@ struct EstudarView: View {
                 }
                 .buttonStyle(ButtonProximo())
                 .disabled(cardManager.isLastNew())
-
+                
                 
             }
         }
         .toolbar{
-                ToolbarItem(placement: .title){
-                    Button(action: {
-                        router.goTo(.MenuView)
-                    },
-                           label: {
-                        Text("ESTUDAR")
-                            .font(Font.custom("Fredoka-Medium", size: 16))
-                            .kerning(1)
-                    })
-                }
+            ToolbarItem(placement: .title){
+                Text("ESTUDAR")
+                    .font(Font.custom("Fredoka-Medium", size: 16))
             }
-            .frame(height: 670)
+        }
+        .frame(height: 670)
         
     }
 }
@@ -65,8 +59,8 @@ struct EstudarView: View {
 #Preview {
     @Previewable @State var router = Router()
     @Previewable @State var cardManager = CardManager()
-
-
+    
+    
     EstudarView()
         .environment(router)
         .environment(cardManager)

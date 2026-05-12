@@ -16,7 +16,6 @@ struct JogoNewsView: View {
     
     var body: some View {
         ZStack {
-            
             VStack {
                 HStack (spacing: 28){
                     Gauge(value: gameManager.progress){
@@ -45,8 +44,9 @@ struct JogoNewsView: View {
                 .frame(width: 402, height: 40)
                 
                 VStack (spacing: 90){
+                    //card das noticias
                     CardJogo()
-                    
+                    //botoes
                     HStack (spacing: 30){
                         Button {
                             isAcepted = false
@@ -75,25 +75,14 @@ struct JogoNewsView: View {
                             }
                         }
                         .buttonStyle(ButtonPublish())
-                        
-                        
                     }
                     .font(Font.custom("Fredoka-Semibold", size: 24))
                     
                 }
                 .toolbar{
                     ToolbarItem(placement: .title){
-                        Button(action: {
-                            router.goTo(.MenuView)
-                            gameManager.caosPoints = 0
-                            gameManager.confiancaPoints = 0
-                            gameManager.progress = 0
-                        },
-                               label: {
-                            Text("NOTÍCIAS")
-                                .font(Font.custom("Fredoka-Medium", size: 16))
-                                .kerning(1)
-                        })
+                        Text("NOTÍCIAS")
+                            .font(Font.custom("Fredoka-Medium", size: 16))
                     }
                 }
                 .frame(height: 670)

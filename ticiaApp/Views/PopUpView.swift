@@ -12,7 +12,7 @@ struct PopUpView: View {
     @Binding var presentPopup: Bool
     let isTrue: Bool
     @Binding var isAcepted: Bool
-
+    
     var body: some View {
         //SE ERRAR
         if isTrue == true && isAcepted == false
@@ -22,11 +22,11 @@ struct PopUpView: View {
                 .onAppear {
                     gameManager.caosPoints += 10
                 }
-
+            
         }
         //SE ACERTAR
         else if isTrue == true && isAcepted == true
-            || isTrue == false && isAcepted == false
+                    || isTrue == false && isAcepted == false
         {
             PopUpViewPositive(presentPopup: $presentPopup)
                 .onAppear {
@@ -48,5 +48,5 @@ struct PopUpView: View {
         isAcepted: $isAcepted
     )
     .environment(gameManager)
-
+    
 }

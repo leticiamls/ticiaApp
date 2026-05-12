@@ -17,11 +17,11 @@ enum NavigationDestinations: Hashable {
 @Observable
 class Router {
     var path = NavigationPath()
-
+    
     func goTo(_ destination: NavigationDestinations) {
         path.append(destination)
     }
-
+    
     func restartNavigation() {
         path = .init()
     }
@@ -29,23 +29,18 @@ class Router {
     func resetView() {
         path.removeLast()
     }
-
+    
 }
 
 struct ContentView: View {
     @Environment(GameManager.self) private var gameManager: GameManager
     @Environment(CardManager.self) private var cardManager: CardManager
-
+    
     @State var router = Router()
-        var body: some View {
+    var body: some View {
         NavigationStack(path: $router.path) {
             VStack(spacing: 100) {
                 VStack {
-                    //                    Text("Tícia!")
-                    //                        .font(Font.custom("Grandstander-Black", size: 96))
-                    //                        .foregroundStyle(Color.blackTicia)
-                    //                        .kerning(-4)
-                    //                        .frame(height: 45)
                     Image("TíciaLogoApp")
                         .resizable()
                         .scaledToFit()
@@ -54,9 +49,8 @@ struct ContentView: View {
                         .font(Font.custom("Fredoka-Medium", size: 18))
                     Text("Fake News!")
                         .font(Font.custom("Fredoka-SemiBold", size: 18))
-                    
                 }
-
+                
                 //botoes
                 VStack(spacing: 30) {
                     Button {
@@ -68,7 +62,7 @@ struct ContentView: View {
                         }
                     }
                     .buttonStyle(ButtonPrimary())
-
+                    
                     Button {
                         router.goTo(.EstudarView)
                     } label: {
@@ -76,10 +70,10 @@ struct ContentView: View {
                             Image(systemName: "book.fill")
                             Text("Estudar")
                         }
-
+                        
                     }
                     .buttonStyle(ButtonSecondary())
-
+                    
                 }
             }
             .navigationBarBackButtonHidden()
@@ -101,27 +95,27 @@ struct ContentView: View {
                         }
                         .environment(router)
                         .environment(cardManager)
-
+                    
                 case .GameView:
                     JogoNewsView()
                         .onAppear {
                             gameManager.startGame()
                         }
                         .environment(router)
-
-
+                    
+                    
                 case .ResultView:
                     let result = gameManager.getResult()
                     let resultTitle = gameManager.getResultsTitle()
+                    let resultImage = gameManager.getResultsImage()
                     ResultsView(
                         titleUser: resultTitle.titleUser,
-                        subtitleUser: result.subtitleUser
+                        subtitleUser: result.subtitleUser,
+                        ticiaImage: resultImage.imageUser
                     )
-                        .environment(router)
+                    .environment(router)
                 }
             }
-//            .background(Color.wi)
-
         }
         
     }
@@ -130,8 +124,8 @@ struct ContentView: View {
 #Preview {
     @Previewable @State var gameManager = GameManager()
     @Previewable @State var cardManager = CardManager()
-
-
+    
+    
     ContentView()
         .environment(gameManager)
         .environment(cardManager)

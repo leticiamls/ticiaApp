@@ -32,8 +32,8 @@ struct ButtonSecondary: ButtonStyle {
                 )
             )
             .opacity(configuration.isPressed ? 0.30 : 1.0)
-
-
+        
+        
             .tint(Color(.black))
             .font(Font.custom("Fredoka-SemiBold", size: 24))
     }
@@ -48,7 +48,7 @@ struct ButtonTerciary: ButtonStyle {
             .font(Font.custom("Fredoka-Semibold", size: 24))
             .foregroundStyle(Color.blackTicia)
             .opacity(configuration.isPressed ? 0.30 : 1.0)
-
+        
     }
 }
 
@@ -64,8 +64,8 @@ struct ButtonDelete: ButtonStyle {
                 )
             )
             .opacity(configuration.isPressed ? 0.30 : 1.0)
-
-
+        
+        
             .tint(Color(.black))
             .font(Font.custom("Fredoka-SemiBold", size: 24))
     }
@@ -82,7 +82,7 @@ struct ButtonPublish: ButtonStyle {
             .tint(Color(.black))
             .font(Font.custom("Fredoka-SemiBold", size: 24))
             .opacity(configuration.isPressed ? 0.75 : 1.0)
-
+        
     }
 }
 
@@ -90,7 +90,7 @@ struct ButtonAnterior: ButtonStyle {
     
     @Environment(\.isEnabled) var isEnabled
     
-
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(16)
@@ -101,22 +101,22 @@ struct ButtonAnterior: ButtonStyle {
                         Color(.black),
                         lineWidth: 2
                     )
-
+                
             )
-
+        
             .tint(Color(.black))
             .font(Font.custom("Fredoka-Medium", size: 20))
             .opacity(isEnabled ? 1 : 0.3)
             .opacity(configuration.isPressed ? 0.30 : 1.0)
-
-
+        
+        
     }
 }
 
 struct ButtonProximo: ButtonStyle {
-
+    
     @Environment(\.isEnabled) var isEnabled
-
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(18)
@@ -128,8 +128,8 @@ struct ButtonProximo: ButtonStyle {
             .font(Font.custom("Fredoka-Medium", size: 20))        
             .opacity(isEnabled ? 1 : 0.3)
             .opacity(configuration.isPressed ? 0.75 : 1.0)
-
-
+        
+        
     }
 }
 

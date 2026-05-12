@@ -45,8 +45,8 @@ struct PopUp: GroupBoxStyle {
 struct PopUpViewNegative: View {
     @Binding var presentPopup: Bool
     @Environment(GameManager.self) var gameManager: GameManager
-
-
+    
+    
     var body: some View {
         ZStack {
             GroupBox {
@@ -65,7 +65,7 @@ struct PopUpViewNegative: View {
                                 trailing: 40
                             )
                         )
-
+                    
                     VStack(alignment: .leading) {
                         Text(LocalizedStringKey(gameManager.currentNew?.justificativaErro ?? "Erro"))
                             .font(Font.custom("Fredoka-Regular", size: 20))
@@ -86,12 +86,12 @@ struct PopUpViewNegative: View {
                         }
                         .foregroundStyle(Color(.red))
                     }
-
+                    
                 }
-
+                
                 Spacer()
                     .frame(height: 16)
-
+                
                 Button {
                     presentPopup.toggle()
                 } label: {
@@ -108,27 +108,27 @@ struct PopUpViewNegative: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(Color(.red))
-
+                
             }
             .groupBoxStyle(PopUp())
             .padding(
                 EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0)
             )
         }
-
+        
     }
 }
 
 struct PopUpViewPositive: View {
     @Binding var presentPopup: Bool
     @Environment(GameManager.self) var gameManager: GameManager
-
+    
     var body: some View {
         ZStack {
             GroupBox {
                 VStack {
                     Text("Boa! Acertou!")
-
+                    
                         .font(Font.custom("Fredoka-SemiBold", size: 36))
                     Image("tíciaFeliz")
                         .resizable()
@@ -142,10 +142,10 @@ struct PopUpViewPositive: View {
                                 trailing: 40
                             )
                         )
-
+                    
                     VStack(alignment: .leading) {
                         Text(LocalizedStringKey(gameManager.currentNew?.justificativaAcerto ?? "Erro"))
-
+                        
                             .font(Font.custom("Fredoka-Regular", size: 20))
                         Spacer()
                             .frame(height: 12)
@@ -164,12 +164,12 @@ struct PopUpViewPositive: View {
                         }
                         .foregroundStyle(Color(.greenTicia))
                     }
-
+                    
                 }
-
+                
                 Spacer()
                     .frame(height: 16)
-
+                
                 Button {
                     presentPopup.toggle()
                 } label: {
@@ -186,7 +186,7 @@ struct PopUpViewPositive: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(Color(.greenTicia))
-
+                
             }
             .groupBoxStyle(PopUp())
             .padding(
@@ -199,14 +199,14 @@ struct PopUpViewPositive: View {
 struct CardEstudar: View {
     
     @Environment(CardManager.self) var cardManager: CardManager
-
+    
     var body: some View {
         VStack (alignment: .center){
             GroupBox{
                 VStack(alignment: .center, spacing: 24){
                     HStack{
                         Text(cardManager.currentStudy.tituloEstudo)
-
+                        
                             .frame(
                                 maxWidth: .infinity)
                             .fixedSize(horizontal: false, vertical: true)
@@ -219,13 +219,13 @@ struct CardEstudar: View {
                         .frame(maxHeight: 200)
                         .foregroundStyle(Color(.blackTicia))
                         .multilineTextAlignment(.center)
-
+                    
                     
                     VStack(alignment: .leading, spacing: 50){
                         HStack{
                             Image(systemName: "x.circle.fill").foregroundColor(.red)
                             Text(cardManager.currentStudy.exemploMentira)
-
+                            
                                 .font(Font.custom("Fredoka-Medium", size: 18))
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(maxHeight: 40)
@@ -237,7 +237,7 @@ struct CardEstudar: View {
                                 .fixedSize(horizontal: false, vertical: true)
                                 .frame(maxHeight: 22)
                                 .tint(.black)
-
+                            
                         }
                     }
                 }
@@ -250,13 +250,13 @@ struct CardEstudar: View {
             .frame(maxWidth: 327 , maxHeight: 393)
             .backgroundStyle(Color.clear)
         }
-
+        
     }
 }
 
 struct CardJogo: View {
     @Environment(GameManager.self) var gameManager: GameManager
-
+    
     var body: some View {
         
         VStack (alignment: .leading){
@@ -269,8 +269,8 @@ struct CardJogo: View {
                     Text(gameManager.currentNew?.titulo ?? "Sem valor")
                         .font(Font.custom("Fredoka-SemiBold", size: 20))
                         .fixedSize(horizontal: false, vertical: true)
-
-
+                    
+                    
                     Text(gameManager.currentNew?.resumo ?? "Sem valor")
                         .font(Font.custom("Fredoka-Regular", size: 16))
                         .frame(maxHeight: 100)

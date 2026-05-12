@@ -9,19 +9,18 @@ import SwiftUI
 
 struct ResultsView: View {
     @Environment(GameManager.self) var gameManager: GameManager
-
+    
     @Environment(Router.self) var router: Router
     
     let titleUser: String
     let subtitleUser: String
-        
+    let ticiaImage: String
+    
     var body: some View {
         VStack {
             //imagem e texto
             VStack(alignment: .center) {
-                //TODO: Amanhã, quarta-feira, SE DER TEMPO, ajeitar a imagem da tícia. Fazer mudar junto do resultado, criando variações de acordo com a pontuação.
-
-                Image("tíciaFeliz")
+                Image(ticiaImage)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 160)
@@ -33,17 +32,17 @@ struct ResultsView: View {
                             trailing: 35
                         )
                     )
-                Text(titleUser)
-                    .font(Font.custom("Fredoka-Semibold", size: 40))
+                Text(LocalizedStringKey(titleUser))
+                    .font(Font.custom("Fredoka-Semibold", size: 36))
                     .fontWeight(.bold)
                     .foregroundStyle(Color.blackTicia)
-                Text(subtitleUser)
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity)
-                .font(Font.custom("Fredoka-Medium", size: 20))
+                Text(LocalizedStringKey(subtitleUser))
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity)
+                    .font(Font.custom("Fredoka-Medium", size: 20))
             }
             .padding(EdgeInsets(top: 40, leading: 20, bottom: 30, trailing: 20))
-
+            
             //resultados
             VStack(alignment: .leading) {
                 Text("RESULTADOS")
@@ -74,9 +73,9 @@ struct ResultsView: View {
                             trailing: 00
                         )
                     )
-
+                    
                     Divider()
-
+                    
                     VStack {
                         HStack {
                             Image(systemName: "exclamationmark.triangle.fill")
@@ -85,7 +84,7 @@ struct ResultsView: View {
                             Text("\(Int(gameManager.caosPoints))%")
                         }
                         .font(Font.custom("Fredoka-SemiBold", size: 24))
-
+                        
                         .foregroundColor(Color(.red))
                         Gauge(value: gameManager.caosPoints/100) {
                             //
@@ -111,7 +110,7 @@ struct ResultsView: View {
                 .font(Font.system(size: 24, weight: .bold))
             }
             Spacer()
-
+            
             //botões
             VStack(spacing: 16) {
                 
@@ -120,7 +119,7 @@ struct ResultsView: View {
                     gameManager.caosPoints = 0
                     gameManager.confiancaPoints = 0
                     gameManager.progress = 0
-
+                    
                 } label: {
                     HStack {
                         Text("Jogar novamente")
@@ -128,7 +127,7 @@ struct ResultsView: View {
                     .frame(width: 340)
                 }
                 .buttonStyle(ButtonPrimary())
-
+                
                 Button {
                     router.restartNavigation()
                     gameManager.caosPoints = 0
@@ -140,22 +139,23 @@ struct ResultsView: View {
                     }
                 }
                 .buttonStyle(ButtonTerciary())
-
+                
             }
         }
         .navigationBarBackButtonHidden()
-
+        
     }
- 
+    
 }
 #Preview {
     @Previewable @State var gameManager = GameManager()
     @Previewable @State var router = Router()
-
+    
     ResultsView(
         titleUser: "Muito bem!",
-        subtitleUser: "Você foi tão bem que eu acho que posso te considerar um... Aprendiz."
+        subtitleUser: "Você foi tão bem que eu acho que posso te considerar um... **Aprendiz.**",
+        ticiaImage: "ticiaAprendiz"
     )
-        .environment(router)
-        .environment(gameManager)
+    .environment(router)
+    .environment(gameManager)
 }
