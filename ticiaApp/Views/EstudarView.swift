@@ -8,7 +8,7 @@ import SwiftUI
 
 struct EstudarView: View {
     @Environment(Router.self) var router: Router
-    @Environment(CardManager.self) var cardManager: CardManager
+    @Environment(EstudarManager.self) var estudarManager: EstudarManager
     
     
     var body: some View {
@@ -18,7 +18,7 @@ struct EstudarView: View {
             Spacer()
             HStack (spacing: 30){
                 Button {
-                    cardManager.backCard()
+                    estudarManager.backCard()
                 }
                 label: {
                     HStack{
@@ -27,10 +27,10 @@ struct EstudarView: View {
                     }
                 }
                 .buttonStyle(ButtonAnterior())
-                .disabled(cardManager.currentStudyIndex == 0)
+                .disabled(estudarManager.currentStudyIndex == 0)
                 
                 Button {
-                    cardManager.nextNew()
+                    estudarManager.nextNew()
                 }
                 
                 label: {
@@ -40,7 +40,7 @@ struct EstudarView: View {
                     }
                 }
                 .buttonStyle(ButtonProximo())
-                .disabled(cardManager.isLastNew())
+                .disabled(estudarManager.isLastNew())
                 
                 
             }
@@ -58,10 +58,10 @@ struct EstudarView: View {
 
 #Preview {
     @Previewable @State var router = Router()
-    @Previewable @State var cardManager = CardManager()
+    @Previewable @State var estudarManager = EstudarManager()
     
     
     EstudarView()
         .environment(router)
-        .environment(cardManager)
+        .environment(estudarManager)
 }
