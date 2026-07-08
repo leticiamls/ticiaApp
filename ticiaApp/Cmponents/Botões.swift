@@ -1,5 +1,5 @@
 //
-//  BotaoGerador.swift
+//  BotõesGerador.swift
 //  ticiaApp
 //
 //  Created by User on 27/04/26.
@@ -10,7 +10,7 @@ struct ButtonPrimary: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(16)
-            .frame(width: 340)
+            .frame(maxWidth: 400)
             .background(Color.blackTicia)
             .clipShape(Capsule())
             .foregroundStyle(Color.white)
@@ -24,7 +24,7 @@ struct ButtonSecondary: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(16)
-            .frame(width: 327)
+            .frame(maxWidth: 400)
             .background(
                 RoundedRectangle(cornerRadius: 30).stroke(
                     Color(.black),
@@ -48,7 +48,6 @@ struct ButtonTerciary: ButtonStyle {
             .font(Font.custom("Fredoka-Semibold", size: 24))
             .foregroundStyle(Color.blackTicia)
             .opacity(configuration.isPressed ? 0.30 : 1.0)
-        
     }
 }
 

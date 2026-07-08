@@ -12,14 +12,14 @@ struct ticiaAppApp: App {
     @State var isPresented: Bool = false
     
     @State private var gameManager: GameManager = GameManager()
-    @State private var cardManager: CardManager = CardManager()
+    @State private var estudarManager: EstudarManager = EstudarManager()
     
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(gameManager)
-                .environment(cardManager)
+                .environment(estudarManager)
         }
     }
 }
