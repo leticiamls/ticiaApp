@@ -154,7 +154,7 @@ struct ResultsView: View {
     ResultsView(
         titleUser: "Muito bem!",
         subtitleUser: "Você foi tão bem que eu acho que posso te considerar um... **Aprendiz.**",
-        ticiaImage: "ticiaAprendiz"
+        ticiaImage: "aprendizTicia"
     )
     .environment(router)
     .environment(gameManager)

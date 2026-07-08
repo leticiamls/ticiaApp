@@ -41,7 +41,8 @@ struct CardJogo: View {
             .foregroundStyle(Color.blackTicia)
             .frame(maxWidth: 327 , maxHeight: 393)
             .backgroundStyle(Color.clear)
-        }    }
+        }
+    }
 }
 
 

@@ -64,6 +64,10 @@ class GameManager {
     var caosPoints: Double = 0
     var progress: Double = 0
     
+    var totalNoticias: Int {
+        listaNoticiasJogo.count
+    }
+    
     //      Chamar o JSON
     func getNewsFromJson() -> [Noticia] {
         return Bundle.main.decode(file: "News.json")

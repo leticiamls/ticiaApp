@@ -18,11 +18,10 @@ struct JogoNewsView: View {
         ZStack {
             VStack {
                 HStack (spacing: 28){
-                    Gauge(value: gameManager.progress){
-                        
-                    }
-                    .frame(minWidth: 180)
-                    .tint(Color(.black))
+                    WordProgressBar(
+                        atual: (gameManager.currentNewIndex ?? 0) + 1,
+                        total: gameManager.totalNoticias
+                    )
                     HStack (spacing: 16){
                         HStack{
                             Image(systemName: "hand.thumbsup.fill")
@@ -38,10 +37,8 @@ struct JogoNewsView: View {
                         .foregroundStyle(Color(.red))
                     }
                 }
-                .position(x: 180, y: 0)
-                .padding(18)
+                .padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24))
                 .font(Font.system(size: 16, weight: .bold))
-                .frame(width: 402, height: 40)
                 
                 VStack (spacing: 90){
                     //card das noticias
@@ -80,13 +77,45 @@ struct JogoNewsView: View {
                     
                 }
                 .toolbar{
-                    ToolbarItem(placement: .title){
-                        Text("NOTÍCIAS")
-                            .font(Font.custom("Fredoka-Medium", size: 16))
+                    if #available(iOS 26.0, *) {
+                        ToolbarItem(placement: .topBarLeading){
+                            Button {
+                                router.restartNavigation()
+                            } label: {
+                                Image(systemName: "chevron.left")
+                                    .font(Font.system(size: 16, weight: .bold))
+                            }
+                            .padding(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
+                            .background(Color.blackTicia)
+                            .clipShape(Capsule())
+                            .foregroundStyle(Color.white)
+                            .tint(Color(.black))
+                        }
+                        .sharedBackgroundVisibility(.hidden)
+                        
+                        ToolbarItem(placement: .title){
+                            Text("NOTÍCIAS")
+                                .font(Font.custom("Fredoka-Medium", size: 16))
+                        }
+                    }
+                    else {
+                        ToolbarItem(placement: .topBarLeading){
+                            Button {
+                                router.restartNavigation()
+                            } label: {
+                                Image(systemName: "chevron.left")
+                            }
+                        }
+                        ToolbarItem(placement: .title){
+                            Text("NOTÍCIAS")
+                                .font(Font.custom("Fredoka-Medium", size: 16))
+                        }
                     }
                 }
-                .frame(height: 670)
+                .frame(height: 720)
             }
+            .navigationBarBackButtonHidden(true)
+            
             if presentPopup {
                 ZStack {
                     Color.black.opacity(0.3).ignoresSafeArea().onTapGesture {
@@ -109,6 +138,7 @@ struct JogoNewsView: View {
                 }
                 .transition(.scale)
             }
+            
         }
     }
 }

@@ -51,6 +51,7 @@ struct ContentView: View {
                     
                 }
             }
+            .padding(32)
             .navigationBarBackButtonHidden()
             .navigationDestination(for: NavigationDestinations.self) {
                 destination in
@@ -92,7 +93,6 @@ struct ContentView: View {
                 }
             }
         }
-        
     }
 }
 
