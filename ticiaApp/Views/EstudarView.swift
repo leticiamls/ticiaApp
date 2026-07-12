@@ -7,16 +7,13 @@
 import SwiftUI
 
 struct EstudarView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(Router.self) var router: Router
     @Environment(EstudarManager.self) var estudarManager: EstudarManager
-    
-    
     var body: some View {
-        VStack{
-            Spacer()
+        VStack (spacing: sizeClass == .regular ? 170 : 150){
             CardEstudar()
-            Spacer()
-            HStack (spacing: 30){
+            HStack (spacing: sizeClass == .regular ? 140 : 50){
                 Button {
                     estudarManager.backCard()
                 }
@@ -45,15 +42,18 @@ struct EstudarView: View {
                 
             }
         }
+        .padding(.top, sizeClass == .regular ? 110 : 110)
+
         .toolbar{
             ToolbarItem(placement: .title){
                 Text("ESTUDAR")
-                    .font(Font.custom("Fredoka-Medium", size: 16))
+                    .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 24 : 16))
+                    .foregroundColor(Color(red: 0.54, green: 0.53, blue: 0.53))
+
             }
         }
-        .frame(height: 670)
-        
     }
+    
 }
 
 #Preview {

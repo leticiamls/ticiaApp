@@ -9,6 +9,7 @@ import SwiftUI
 
 //estilo de pop-up
 struct PopUp: GroupBoxStyle {
+    @Environment(\.horizontalSizeClass) var sizeClass
     func makeBody(configuration: Self.Configuration) -> some View {
         VStack(alignment: .center) {
             configuration.content
@@ -20,7 +21,7 @@ struct PopUp: GroupBoxStyle {
                 .stroke(Color(.lightGray), lineWidth: 1)
         )
         .foregroundStyle(Color.blackTicia)
-        .frame(maxWidth: 370, maxHeight: 575)
+        .frame(maxWidth: sizeClass == .regular ? 480 : 370, maxHeight: sizeClass == .regular ? 650 : 575)
         .backgroundStyle(Color.clear)
     }
 }

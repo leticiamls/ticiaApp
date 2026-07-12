@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ResultsView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(GameManager.self) var gameManager: GameManager
-    
     @Environment(Router.self) var router: Router
     
     let titleUser: String
@@ -17,38 +17,30 @@ struct ResultsView: View {
     let ticiaImage: String
     
     var body: some View {
-        VStack {
+        VStack (spacing: sizeClass == .regular ? 36 : 24) {
             //imagem e texto
             VStack(alignment: .center) {
                 Image(ticiaImage)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 150, height: 160)
-                    .padding(
-                        EdgeInsets(
-                            top: 00,
-                            leading: 00,
-                            bottom: 00,
-                            trailing: 35
-                        )
-                    )
+                    .frame(maxWidth: sizeClass == .regular ? 250 : 220, maxHeight: sizeClass == .regular ? 250 : 200)
+                    .padding(.trailing, 35)
                 Text(LocalizedStringKey(titleUser))
-                    .font(Font.custom("Fredoka-Semibold", size: 36))
-                    .fontWeight(.bold)
+                    .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 48 : 36))
                     .foregroundStyle(Color.blackTicia)
                 Text(LocalizedStringKey(subtitleUser))
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
-                    .font(Font.custom("Fredoka-Medium", size: 20))
+                    .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 28 : 20))
             }
-            .padding(EdgeInsets(top: 40, leading: 20, bottom: 30, trailing: 20))
+            .padding(EdgeInsets(top: 40, leading: sizeClass == .regular ? 48 : 20, bottom: 30, trailing: sizeClass == .regular ? 48 : 20))
             
             //resultados
             VStack(alignment: .leading) {
                 Text("RESULTADOS")
-                    .font(Font.custom("Fredoka-Medium", size: 16))
+                    .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 24 : 16))
                     .foregroundStyle(Color(.gray))
-                    .frame(width: 145, height: 1)
+                    .frame(maxWidth: sizeClass == .regular ? 200 : 145, maxHeight: sizeClass == .regular ? 10 : 1)
                     .kerning(0.8)
                 GroupBox {
                     VStack {
@@ -58,7 +50,7 @@ struct ResultsView: View {
                             Spacer()
                             Text("\(Int(gameManager.confiancaPoints))%")
                         }
-                        .font(Font.custom("Fredoka-Semibold", size: 24))
+                        .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
                         .foregroundStyle(Color.greenTicia)
                         Gauge(value: gameManager.confiancaPoints/100) {
                             //
@@ -83,8 +75,7 @@ struct ResultsView: View {
                             Spacer()
                             Text("\(Int(gameManager.caosPoints))%")
                         }
-                        .font(Font.custom("Fredoka-SemiBold", size: 24))
-                        
+                        .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
                         .foregroundColor(Color(.red))
                         Gauge(value: gameManager.caosPoints/100) {
                             //
@@ -109,11 +100,11 @@ struct ResultsView: View {
                 )
                 .font(Font.system(size: 24, weight: .bold))
             }
-            Spacer()
+            .frame(maxWidth: sizeClass == .regular ? 560 : .infinity)
             
             //botões
             VStack(spacing: 16) {
-                
+            
                 Button {
                     router.resetView()
                     gameManager.caosPoints = 0
@@ -124,7 +115,6 @@ struct ResultsView: View {
                     HStack {
                         Text("Jogar novamente")
                     }
-                    .frame(width: 340)
                 }
                 .buttonStyle(ButtonPrimary())
                 
