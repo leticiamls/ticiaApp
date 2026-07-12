@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PopUpViewPositive: View {
     @Binding var presentPopup: Bool
+    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(GameManager.self) var gameManager: GameManager
     
     var body: some View {
@@ -17,8 +18,7 @@ struct PopUpViewPositive: View {
             GroupBox {
                 VStack {
                     Text("Boa! Acertou!")
-                    
-                        .font(Font.custom("Fredoka-SemiBold", size: 36))
+                        .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 42 : 36))
                     Image("tíciaFeliz")
                         .resizable()
                         .scaledToFit()
@@ -34,22 +34,18 @@ struct PopUpViewPositive: View {
                     
                     VStack(alignment: .leading) {
                         Text(LocalizedStringKey(gameManager.currentNew?.justificativaAcerto ?? "Erro"))
-                        
-                            .font(Font.custom("Fredoka-Regular", size: 20))
+                            .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? 24 : 20))
+                            .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                             .frame(height: 12)
                         HStack {
                             Image(
                                 systemName: "exclamationmark.triangle.fill"
                             )
-                            .font(Font.custom("Fredoka-Semibold", size: 20))
+                            .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 24 : 20))
                             Text("+ 10 de Confiança")
-                                .font(
-                                    Font.custom(
-                                        "Fredoka-Semibold",
-                                        size: 24
-                                    )
-                                )
+                                .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
+
                         }
                         .foregroundStyle(Color(.greenTicia))
                     }
@@ -64,14 +60,14 @@ struct PopUpViewPositive: View {
                 } label: {
                     HStack {
                         Text("Próxima")
-                            .font(Font.custom("Fredoka-Semibold", size: 24))
+                            .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
                             .foregroundColor(Color(.white))
                         Image(systemName: "arrow.right")
                             .foregroundColor(Color(.white))
-                            .font(Font.custom("Fredoka-Semibold", size: 24))
+                            .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
                     }
                     .padding(10)
-                    .frame(width: 317)
+                    .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(Color(.greenTicia))

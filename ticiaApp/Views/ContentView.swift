@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(GameManager.self) private var gameManager: GameManager
     @Environment(EstudarManager.self) private var estudarManager: EstudarManager
     
@@ -19,11 +20,11 @@ struct ContentView: View {
                     Image("TíciaLogoApp")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 310, height: 220)
+                        .frame(maxWidth: sizeClass == .regular ? 400 : 310, maxHeight: sizeClass == .regular ? 280 : 220)
                     Text("Teste seus conhecimentos sobre")
-                        .font(Font.custom("Fredoka-Medium", size: 18))
+                        .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 28 : 18))
                     Text("Fake News!")
-                        .font(Font.custom("Fredoka-SemiBold", size: 18))
+                    .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 28 : 18))
                 }
                 
                 //botoes

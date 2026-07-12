@@ -27,6 +27,8 @@ struct WordProgressBar: View {
             Rectangle()
                 .fill(Color.black)
                 .scaleEffect(x: progress, y: 1, anchor: .leading)
+                .animation(.easeInOut(duration: 0.5), value: progress)
+
         }
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .frame(maxWidth: .infinity, maxHeight: 28)

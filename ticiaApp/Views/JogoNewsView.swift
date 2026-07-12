@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct JogoNewsView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(GameManager.self) var gameManager: GameManager
     @Environment(Router.self) var router: Router
     
@@ -16,42 +17,42 @@ struct JogoNewsView: View {
     
     var body: some View {
         ZStack {
-            VStack {
+            VStack (spacing: sizeClass == .regular ? 80 : 100) {
                 VStack {
                     WordProgressBar(
                         atual: (gameManager.currentNewIndex ?? 0) + 1,
                         total: gameManager.totalNoticias
                     )
-                }
-                HStack (spacing: 16){
-                    HStack{
-                        Image(systemName: "hand.thumbsup.fill")
-                            .font(Font.system(size: 18, weight: .bold))
-                            .frame(width: 16)
-                        Text("Confiança:")
-                            .font(Font.custom("Fredoka-Medium", size: 24))
-                        Text("\(Int(gameManager.confiancaPoints))%")
-                            .font(Font.custom("Fredoka-Medium", size: 24))
+                    HStack (spacing: 16){
+                        HStack{
+                            Image(systemName: "hand.thumbsup.fill")
+                                .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 32 : 20))
+                                .frame(maxWidth: sizeClass == .regular ? 32 : 16)
+                            Text("Confiança:")
+                                .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 36 : 24))
+                            Text("\(Int(gameManager.confiancaPoints))%")
+                                .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 32 : 24))
+                        }
+                        .foregroundStyle(Color.greenTicia)
+                        Spacer()
+                        HStack{
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 32 : 20))
+                                .frame(maxWidth: sizeClass == .regular ? 32 : 14)
+                            Text("Caos:")
+                                .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 36 : 24))
+                            Text("\(Int(gameManager.caosPoints))%")
+                                .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 32 : 24))
+                        }
+                        .foregroundStyle(Color(.red))
                     }
-                    .foregroundStyle(Color.greenTicia)
-                    Spacer()
-                    HStack{
-                        Image(systemName: "exclamationmark.triangle.fill")
-                            .font(Font.system(size: 18, weight: .bold))
-                            .frame(width: 16)
-                        Text("Caos:")
-                            .font(Font.custom("Fredoka-Medium", size: 24))
-                        Text("\(Int(gameManager.caosPoints))%")
-                            .font(Font.custom("Fredoka-Medium", size: 24))
-                    }
-                    .foregroundStyle(Color(.red))
                 }
                 
-                VStack (spacing: 90){
+                VStack (spacing: sizeClass == .regular ? 110 : 110){
                     //card das noticias
                     CardJogo()
                     //botoes
-                    HStack (spacing: 30){
+                    HStack (spacing: sizeClass == .regular ? 140 : 30){
                         Button {
                             isAcepted = false
                             withAnimation {
@@ -81,25 +82,26 @@ struct JogoNewsView: View {
                         .buttonStyle(ButtonPublish())
                     }
                     .font(Font.custom("Fredoka-Semibold", size: 24))
-                    
                 }
                 .toolbar{
-                        ToolbarItem(placement: .topBarLeading){
-                            Button {
-                                router.restartNavigation()
-                            } label: {
-                                Image(systemName: "chevron.left")
-                            }
+                    ToolbarItem(placement: .topBarLeading){
+                        Button {
+                            router.restartNavigation()
+                        } label: {
+                            Image(systemName: "chevron.left")
                         }
-                        ToolbarItem(placement: .title){
-                            Text("NOTÍCIAS")
-                                .font(Font.custom("Fredoka-Medium", size: 18))
-                                .foregroundColor(Color(red: 0.54, green: 0.53, blue: 0.53))
-                        }
+                    }
+                    ToolbarItem(placement: .title){
+                        Text("NOTÍCIAS")
+                            .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 24 : 18))
+                            .foregroundColor(Color(red: 0.54, green: 0.53, blue: 0.53))
+                    }
                 }
-                .frame(height: 700)
+                .padding(.leading, 16)
+                .padding(.trailing, 16)
+
             }
-            .padding(EdgeInsets(top: 0, leading: 24, bottom: 0, trailing: 24))
+            .padding(EdgeInsets(top: sizeClass == .regular ? 0 : 0, leading: sizeClass == .regular ? 28 : 24, bottom: sizeClass == .regular ? 32 : 20, trailing: sizeClass == .regular ? 28: 24))
             .navigationBarBackButtonHidden(true)
             
             if presentPopup {
