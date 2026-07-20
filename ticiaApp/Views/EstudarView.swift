@@ -11,9 +11,9 @@ struct EstudarView: View {
     @Environment(Router.self) var router: Router
     @Environment(EstudarManager.self) var estudarManager: EstudarManager
     var body: some View {
-        VStack (spacing: sizeClass == .regular ? 170 : 150){
+        VStack (spacing: sizeClass == .regular ? 170 : 120){
             CardEstudar()
-            HStack (spacing: sizeClass == .regular ? 140 : 50){
+            HStack (spacing: sizeClass == .regular ? 140 : 30){
                 Button {
                     estudarManager.backCard()
                 }
@@ -22,6 +22,8 @@ struct EstudarView: View {
                         Image(systemName: "arrow.backward")
                         Text("Anterior")
                     }
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                 }
                 .buttonStyle(ButtonAnterior())
                 .disabled(estudarManager.currentStudyIndex == 0)
@@ -29,31 +31,38 @@ struct EstudarView: View {
                 Button {
                     estudarManager.nextNew()
                 }
-                
                 label: {
                     HStack{
                         Text("Próximo")
                         Image(systemName: "arrow.right")
                     }
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
                 }
                 .buttonStyle(ButtonProximo())
                 .disabled(estudarManager.isLastNew())
-                
-                
             }
         }
+        .padding(.leading, 32)
+        .padding(.trailing, 32)
         .padding(.top, sizeClass == .regular ? 110 : 110)
 
         .toolbar{
+            ToolbarItem(placement: .topBarLeading){
+                Button {
+                    router.restartNavigation()
+                } label: {
+                    Image(systemName: "chevron.left")
+                }
+            }
             ToolbarItem(placement: .title){
-                Text("ESTUDAR")
-                    .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 24 : 16))
+                Text("NOTÍCIAS")
+                    .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 24 : 18))
                     .foregroundColor(Color(red: 0.54, green: 0.53, blue: 0.53))
-
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
-    
 }
 
 #Preview {

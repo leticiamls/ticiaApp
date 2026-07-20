@@ -12,24 +12,28 @@ struct CardJogo: View {
     @Environment(GameManager.self) var gameManager: GameManager
     
     var body: some View {
+        
         VStack (alignment: .leading){
             GroupBox{
                 Image(gameManager.currentNew?.foto ?? "Sem valor")
                     .resizable()
-                    .frame(maxWidth: sizeClass == .regular ? 400 : 300, maxHeight: sizeClass == .regular ? 250 : 150)
+                    .frame(maxWidth: sizeClass == .regular ? .infinity : 300, maxHeight: sizeClass == .regular ? 200 : 150)
                     .clipShape(RoundedRectangle(cornerRadius: sizeClass == .regular ? 15 : 10))
                 VStack(alignment: .leading, spacing: 18){
                     VStack(alignment: .leading, spacing: 4){
                         Text(gameManager.currentNew?.titulo ?? "Sem valor")
-                            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 26 : 20))
+                            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 28 : 18))
+                            .minimumScaleFactor(0.5)
                             .fixedSize(horizontal: false, vertical: true)
                         Text(gameManager.currentNew?.resumo ?? "Sem valor")
-                            .frame(maxHeight: sizeClass == .regular ? 320 : 100)
-                            .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? 19 : 16))
+                            .frame(maxHeight: sizeClass == .regular ? 320 : 100, alignment: .top)
+                            .lineLimit(sizeClass == .regular ? 6 : 4)
+                            .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? 24 : 16))
+                            .minimumScaleFactor(0.9)
                             .foregroundStyle(Color(.secondaryLabel))
                     }
                         Text("**Fonte:** \(gameManager.currentNew?.fonte ?? "Sem valor")")
-                        .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? 20 : 15))
+                        .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? 24 : 15))
                         .fixedSize(horizontal: false, vertical: true)
 
                 }

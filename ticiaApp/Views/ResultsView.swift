@@ -23,18 +23,23 @@ struct ResultsView: View {
                 Image(ticiaImage)
                     .resizable()
                     .scaledToFit()
-                    .frame(maxWidth: sizeClass == .regular ? 250 : 220, maxHeight: sizeClass == .regular ? 250 : 200)
-                    .padding(.trailing, 35)
+                    .frame(maxWidth: sizeClass == .regular ? 300 : 220, maxHeight: sizeClass == .regular ? 280 : 200)
+                    .padding(.trailing, 3)
                 Text(LocalizedStringKey(titleUser))
-                    .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 48 : 36))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.center)
+                    .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 62 : 34))
+                    .minimumScaleFactor(0.5)
                     .foregroundStyle(Color.blackTicia)
                 Text(LocalizedStringKey(subtitleUser))
+                    .padding(.trailing, sizeClass == .regular ? 48 : 16)
+                    .padding(.leading, sizeClass == .regular ? 48 : 16)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity)
-                    .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 28 : 20))
+                    .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 32 : 20))
+                    .minimumScaleFactor(0.5)
             }
-            .padding(EdgeInsets(top: 40, leading: sizeClass == .regular ? 48 : 20, bottom: 30, trailing: sizeClass == .regular ? 48 : 20))
-            
+        
             //resultados
             VStack(alignment: .leading) {
                 Text("RESULTADOS")
@@ -50,7 +55,7 @@ struct ResultsView: View {
                             Spacer()
                             Text("\(Int(gameManager.confiancaPoints))%")
                         }
-                        .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
+                        .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 44 : 24))
                         .foregroundStyle(Color.greenTicia)
                         Gauge(value: gameManager.confiancaPoints/100) {
                             //
@@ -75,7 +80,7 @@ struct ResultsView: View {
                             Spacer()
                             Text("\(Int(gameManager.caosPoints))%")
                         }
-                        .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
+                        .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 44 : 24))
                         .foregroundColor(Color(.red))
                         Gauge(value: gameManager.caosPoints/100) {
                             //
@@ -98,9 +103,8 @@ struct ResultsView: View {
                 .padding(
                     EdgeInsets(top: 00, leading: 16, bottom: 00, trailing: 16)
                 )
-                .font(Font.system(size: 24, weight: .bold))
             }
-            .frame(maxWidth: sizeClass == .regular ? 560 : .infinity)
+            .frame(maxWidth: sizeClass == .regular ? 760 : .infinity)
             
             //botões
             VStack(spacing: 16) {
@@ -131,7 +135,11 @@ struct ResultsView: View {
                 .buttonStyle(ButtonTerciary())
                 
             }
+            .frame(maxWidth: sizeClass == .regular ? 560 : .infinity)
+            .padding(.trailing, 20)
+            .padding(.leading, 20)
         }
+        .padding(8)
         .navigationBarBackButtonHidden()
         
     }
@@ -142,7 +150,7 @@ struct ResultsView: View {
     @Previewable @State var router = Router()
     
     ResultsView(
-        titleUser: "Muito bem!",
+        titleUser: "Isso sim é especialista!",
         subtitleUser: "Você foi tão bem que eu acho que posso te considerar um... **Aprendiz.**",
         ticiaImage: "aprendizTicia"
     )

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct WordProgressBar: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
     let atual: Int
     let total: Int
     
@@ -31,10 +32,10 @@ struct WordProgressBar: View {
 
         }
         .clipShape(RoundedRectangle(cornerRadius: 20))
-        .frame(maxWidth: .infinity, maxHeight: 28)
+        .frame(maxWidth: .infinity, maxHeight: sizeClass == .regular ? 40 : 32)
         .overlay(
             Text("\(atual)/\(total)")
-                .font(.system(size: 18, weight: .heavy, design: .rounded))
+                .font(.system(size: sizeClass == .regular ? 22 : 18, weight: .heavy, design: .rounded))
                 .foregroundStyle(Color.white)
                 .shadow(color: .black, radius: 0.3, x: 0, y: 0)
                 .shadow(color: .black, radius: 0.3, x: 0, y: 0)

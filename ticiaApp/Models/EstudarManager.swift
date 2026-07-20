@@ -10,7 +10,7 @@ import SwiftUI
 class EstudarManager {
     let estudosLista: [Estudo] = [
         Estudo(tituloEstudo: "Sensacionalismo", descricaoEstudo: "Uso de títulos chamativos e de **CAPS LOCK** com apelo emocional para incentivar o compartilhamento rápido.", exemploMentira: "**MUITO CUIDADO! COMER ARROZ DE ONTEM PODE MATAR!!!**", exemploVerdade: "Entenda a relação entre o armazenamento do arroz e o risco de intoxicação bacteriana"),
-        Estudo(tituloEstudo: "Erros gramaticais e ortográficos", descricaoEstudo: "Conteúdos desinformativos geralmente não passam por revisões. A presença de erros de grosseiros de portugues, a falta de coesão e a pontuação excessiva são sinais que exigem atenção.", exemploMentira: "**O GOVERMO VAI CONFICAR SUA POUPANÇA AMANA!!!!! COMO EVITAR VEJA...**", exemploVerdade: "Banco Central informa novas regras para o rendimento da poupança"),
+        Estudo(tituloEstudo: "Erros gramaticais e ortográficos", descricaoEstudo: "A presença de erros de grosseiros de portugues, a falta de coesão e a pontuação excessiva são sinais que exigem atenção.", exemploMentira: "**O GOVERMO VAI CONFICAR SUA POUPANÇA AMANA!!!!! COMO EVITAR VEJA...**", exemploVerdade: "Banco Central informa novas regras para o rendimento da poupança"),
         Estudo(tituloEstudo: "URL’s Falsas e/ou com Domínio Estranho", descricaoEstudo: "Criação de endereços web que imitam portais de notícias famosos, alterando uma letra ou usando extensões incomuns (como .net.br, .co em vez de .pt ou .com.br ). ", exemploMentira: "**hps://a.cnbrazil.con.net**", exemploVerdade: "**https://www.cnnbrasil.com.br**")]
     var currentStudyIndex: Int = 0
     var progress: Double = 0
