@@ -59,48 +59,58 @@ struct JogoNewsView: View {
                     Spacer()
                     
                     //card + botões
-                    VStack (spacing: sizeClass == .regular ? 0 : 0){
-                        Spacer()
-                      
-                        CardJogo()
-                      
-                        
-                        //botoes
-                        HStack (spacing: sizeClass == .regular ? 100 : 48){
-                            Button {
-                                isAcepted = false
-                                withAnimation {
-                                    presentPopup.toggle()
-                                }
-                            }
-                            label: {
-                                HStack{
-                                    Image(systemName: "xmark")
-                                    Text("Excluir")
-                                        .lineLimit(1)
-                                        .minimumScaleFactor(0.8)
-                                }
-                            }
-                            .buttonStyle(ButtonDelete())
+                    GeometryReader { geo in
+                        let width = geo.size.width
+
+                        VStack (spacing: sizeClass == .regular ? 0 : 0) {
+                            Spacer()
                             
-                            Button {
-                                isAcepted = true
-                                withAnimation {
-                                    presentPopup.toggle()
+                            CardJogo()
+                                .frame(
+                                    width: geo.size.width * (sizeClass == .regular ? 0.63 : 1),
+                                    height: geo.size.height * (0.6)
+                                )
+                            
+                            
+                            //botoes
+                            HStack (spacing: sizeClass == .regular ? 100 : 28){
+                                Button {
+                                    isAcepted = false
+                                    withAnimation {
+                                        presentPopup.toggle()
+                                    }
                                 }
-                            }
-                            label: {
-                                HStack{
-                                    Image(systemName: "checkmark")
-                                    Text("Publicar")
-                                        .lineLimit(1)
-                                        .minimumScaleFactor(0.8)
+                                label: {
+                                    HStack{
+                                        Image(systemName: "xmark")
+                                        Text("Excluir")
+                                            .lineLimit(1)
+                                    }
+                                    .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.048 : width * 0.06))
+
                                 }
+                                .buttonStyle(ButtonDelete())
+                                
+                                Button {
+                                    isAcepted = true
+                                    withAnimation {
+                                        presentPopup.toggle()
+                                    }
+                                }
+                                label: {
+                                    HStack{
+                                        Image(systemName: "checkmark")
+                                        Text("Publicar")
+                                            .lineLimit(1)
+                                    }
+                                    .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.048 : width * 0.06))
+                                }
+                                .buttonStyle(ButtonPublish())
                             }
-                            .buttonStyle(ButtonPublish())
+                            .padding(EdgeInsets(top: sizeClass == .regular ? 100 : 40, leading: 0, bottom: 0, trailing: 0))
+                            Spacer()
                         }
-                        .padding(EdgeInsets(top: sizeClass == .regular ? 100 : 40, leading: 0, bottom: 0, trailing: 0))
-                        Spacer()
+                        .frame(maxWidth: .infinity)
                     }
                     .toolbar{
                         ToolbarItem(placement: .topBarLeading){
