@@ -9,7 +9,7 @@
         "justificativaAcerto": "Excelente! Você reconheceu uma notícia oficial vinda de uma fonte confiável e com informações verificáveis sobre o evento."
     },
     {
-        "titulo": "Show do Guns N' Roses em Fortaleza tem fila quilométrica antes dos portões abrir",
+        "titulo": "Show do Guns N' Roses em Fortaleza tem fila quilométrica para entrar",
         "resumo": "Fãs da banda Guns N' Roses enfrentaram calor e longas esperas na Arena Castelão para garantir lugar na apresentação, formando filas antes da abertura dos portões.",
         "fonte": "diariodonordeste.verdesmares.com.br",
         "foto": "guns",
@@ -36,7 +36,7 @@
         "justificativaAcerto": "Muito bem! Você diferenciou uma orientação de saúde legítima de promessas milagrosas. O tom aqui é educativo e profissional."
     },
     {
-        "titulo": "Após retorno bem-sucedido, BTS inicia turnê mundial com passagem pela América Latina",
+        "titulo": "BTS inicia turnê mundial com passagem pela América Latina",
         "resumo": "As estrelas do k-pop BTS iniciam uma turnê global com paradas na América Latina, impulsionadas pelo sucesso do novo álbum e pelo show de retorno em Seul.",
         "fonte": "g1.globo.com",
         "foto": "bts",
@@ -46,7 +46,7 @@
         
     },
     {
-        "titulo": "Mata de Santa Genebra, em Campinas, promove encontro sobre plantas medicinais aberta ao público",
+        "titulo": "Mata de Santa Genebra promove encontro sobre plantas medicinais aberta ao público",
         "resumo": "Alunos da Unicamp farão apresentações sobre identificação de espécies, propriedades medicinais e dicas de preparo para o uso seguro e eficaz de plantas.",
         "fonte": "campinas.sp.gov.br",
         "foto": "farmacia",
@@ -73,7 +73,7 @@
         "justificativaAcerto": "Boa! Você reconheceu uma reportagem investigativa de um jornal de prestígio sobre um tema de interesse público."
     },
     {
-        "titulo": "Apple anuncia sucessão: Tim Cook deixará comando e John Ternus será novo CEO",
+        "titulo": "Tim Cook deixará comando da Apple e John Ternus será novo CEO",
         "resumo": "Tim Cook passará a atuar como presidente do conselho, enquanto John Ternus, atual VP de Engenharia de Hardware, assumirá como CEO a partir de 1º de setembro de 2026.",
         "fonte": "www.g1.globo.com",
         "foto": "caminhar",

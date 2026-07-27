@@ -17,8 +17,8 @@ struct CardResultsFinal: GroupBoxStyle {
                 )
         }
         .background(
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.background)
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.white)
                 .stroke(Color(.lightGray), lineWidth: 1.7)
         )
     }

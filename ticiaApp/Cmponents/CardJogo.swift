@@ -12,27 +12,38 @@ struct CardJogo: View {
     @Environment(GameManager.self) var gameManager: GameManager
     
     var body: some View {
-        VStack (alignment: .leading){
-            GroupBox{
-                Image(gameManager.currentNew?.foto ?? "Sem valor")
-                    .resizable()
-                    .frame(maxWidth: sizeClass == .regular ? 400 : 300, maxHeight: sizeClass == .regular ? 250 : 150)
-                    .clipShape(RoundedRectangle(cornerRadius: sizeClass == .regular ? 15 : 10))
-                VStack(alignment: .leading, spacing: 18){
-                    VStack(alignment: .leading, spacing: 4){
-                        Text(gameManager.currentNew?.titulo ?? "Sem valor")
-                            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 26 : 20))
-                            .fixedSize(horizontal: false, vertical: true)
-                        Text(gameManager.currentNew?.resumo ?? "Sem valor")
-                            .frame(maxHeight: sizeClass == .regular ? 320 : 100)
-                            .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? 19 : 16))
-                            .foregroundStyle(Color(.secondaryLabel))
-                    }
+        GeometryReader { geo in
+            let width = geo.size.width
+            
+            VStack (alignment: .leading) {
+                GroupBox{
+                    Image(gameManager.currentNew?.foto ?? "Sem valor")
+                        .resizable()
+                        .aspectRatio(2/1,contentMode: .fit)
+                        .clipShape(RoundedRectangle(cornerRadius: sizeClass == .regular ? 15 : 10))
+                    VStack(alignment: .leading, spacing: 18){
+                        VStack(alignment: .leading, spacing: 4){
+                            Text(gameManager.currentNew?.titulo ?? "Sem valor")
+                                .font(Font.custom("Fredoka-SemiBold", size: width * 0.068, relativeTo: .title))
+                                .fixedSize(horizontal: false, vertical: true)
+                            Text(gameManager.currentNew?.resumo ?? "Sem valor")
+                                .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? width * 0.048 : width * 0.05, relativeTo: .body))
+                                .lineLimit(5)
+                                .foregroundStyle(Color(.secondaryLabel))
+                        }
+                        Spacer()
                         Text("**Fonte:** \(gameManager.currentNew?.fonte ?? "Sem valor")")
-                        .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? 20 : 15))
-                        .fixedSize(horizontal: false, vertical: true)
-
+                            .font(Font.custom("Fredoka-Regular", size: width * 0.05, relativeTo: .footnote))
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(RoundedRectangle(cornerRadius: 25)
+                    .fill(Color.white)
+                    .stroke(Color(.lightGray), lineWidth: 1.5))
+                .foregroundStyle(Color.blackTicia)
+                .backgroundStyle(Color.clear)
             }
             .padding(.bottom, sizeClass == .regular ? 8 : 0)
             .padding(.trailing, sizeClass == .regular ? 20 : 0)

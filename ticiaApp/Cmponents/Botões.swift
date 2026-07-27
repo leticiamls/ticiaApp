@@ -12,13 +12,11 @@ struct ButtonPrimary: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(sizeClass == .regular ? 24 : 16)
-            .frame(maxWidth: sizeClass == .regular ? 500 : 400)
+            .frame(maxWidth: sizeClass == .regular ? 600 : 400)
             .background(Color.blackTicia)
             .clipShape(Capsule())
-            .foregroundStyle(Color.background)
-            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32 : 24))
-            .opacity(configuration.isPressed ? 0.75 : 1.0)
-    }
+            .foregroundStyle(Color.white)
+            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 42 : 24))
 }
 
 struct ButtonSecondary: ButtonStyle {
@@ -27,7 +25,7 @@ struct ButtonSecondary: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(sizeClass == .regular ? 24 : 16)
-            .frame(maxWidth: sizeClass == .regular ? 500 : 400)
+            .frame(maxWidth: sizeClass == .regular ? 600 : 400)
             .background(
                 RoundedRectangle(cornerRadius: sizeClass == .regular ? 100 : 30).stroke(
                     Color(.blackTicia),
@@ -38,7 +36,7 @@ struct ButtonSecondary: ButtonStyle {
         
         
             .tint(Color(.black))
-            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32 : 24))
+            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 42 : 24))
     }
 }
 
@@ -50,7 +48,7 @@ struct ButtonTerciary: ButtonStyle {
             .padding(sizeClass == .regular ? 24 : 16)
             .frame(maxWidth: sizeClass == .regular ? 470 : 370)
             .buttonStyle(PlainButtonStyle())
-            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32 : 24))
+            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 42 : 24))
             .foregroundStyle(Color.blackTicia)
             .opacity(configuration.isPressed ? 0.30 : 1.0)
     }
@@ -62,7 +60,7 @@ struct ButtonDelete: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(sizeClass == .regular ? 24: 18)
-            .frame(maxWidth: sizeClass == .regular ? 220 : 150)
+            .frame(maxWidth: sizeClass == .regular ? 300 : .infinity)
             .background(
                 RoundedRectangle(cornerRadius: sizeClass == .regular ? 100 : 30).stroke(
                     Color(.blackTicia),
@@ -74,20 +72,20 @@ struct ButtonDelete: ButtonStyle {
         
             .tint(Color(.blackTicia))
             .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32: 24))
-    }
-}
+            .tint(Color(.black))
+            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 42 : 20))
 
 struct ButtonPublish: ButtonStyle {
     @Environment(\.horizontalSizeClass) var sizeClass
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(sizeClass == .regular ? 24 : 18)
-            .frame(maxWidth: sizeClass == .regular ? 220: 165)
+            .frame(maxWidth: sizeClass == .regular ? 300 : .infinity)
             .background(Color.blackTicia)
             .clipShape(Capsule())
             .foregroundStyle(Color.background)
             .tint(Color(.black))
-            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32 : 24))
+            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 42 : 20))
             .opacity(configuration.isPressed ? 0.75 : 1.0)
     }
 }
@@ -98,8 +96,8 @@ struct ButtonAnterior: ButtonStyle {
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .padding(sizeClass == .regular ? 24 : 16)
-            .frame(maxWidth: sizeClass == .regular ? 220 : 150, maxHeight: sizeClass == .regular ? 70 : 44)
+            .padding(sizeClass == .regular ? 24: 18)
+            .frame(maxWidth: sizeClass == .regular ? 300 : .infinity)
             .background(
                 RoundedRectangle(cornerRadius: sizeClass == .regular ? 100 : 30)
                     .stroke(
@@ -108,7 +106,7 @@ struct ButtonAnterior: ButtonStyle {
                     )
             )
             .tint(Color(.black))
-            .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 28 : 20))
+            .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 36 : 20))
             .opacity(isEnabled ? 1 : 0.3)
             .opacity(configuration.isPressed ? 0.30 : 1.0)
     }
@@ -120,12 +118,13 @@ struct ButtonProximo: ButtonStyle {
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .padding(sizeClass == .regular ? 24 : 16)
-            .frame(maxWidth: sizeClass == .regular ? 220 : 150, maxHeight: sizeClass == .regular ? 70 : 44)            .background(Color.blackTicia)
+            .padding(sizeClass == .regular ? 24: 18)
+            .frame(maxWidth: sizeClass == .regular ? 300 : .infinity)
+            .background(Color.blackTicia)
             .clipShape(Capsule())
             .foregroundStyle(Color.background)
             .tint(Color(.black))
-            .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 28 : 20))
+            .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 36 : 20))
             .opacity(isEnabled ? 1 : 0.3)
             .opacity(configuration.isPressed ? 0.75 : 1.0)
     }

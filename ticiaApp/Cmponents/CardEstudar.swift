@@ -12,41 +12,51 @@ struct CardEstudar: View {
     @Environment(EstudarManager.self) var estudarManager: EstudarManager
     
     var body: some View {
-        VStack (alignment: .center){
-            GroupBox{
-                VStack(alignment: .center, spacing: sizeClass == .regular ? 55 : 48){
-                    VStack (spacing: sizeClass == .regular ? 20 : 8){
-                        Text(estudarManager.currentStudy.tituloEstudo)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 40 : 28))
-                            .multilineTextAlignment(.center)
-                        
-                        Text(estudarManager.currentStudy.descricaoEstudo)
-                            .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? 28 : 20))
-                            .fixedSize(horizontal: false, vertical: true)
-                            
-                            .foregroundStyle(Color(.blackTicia))
-                            .multilineTextAlignment(.center)
-                    }
-                    VStack(alignment: .leading, spacing: sizeClass == .regular ? 30 : 30){
-                        HStack{
-                            Image(systemName: "x.circle.fill").foregroundColor(.red)
-                                .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32 : 24))
-                            Text(estudarManager.currentStudy.exemploMentira)
-                                .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 22 : 18))
+        GeometryReader{ geometry in
+            let width = geometry.size.width
+            VStack (alignment: .center) {
+                GroupBox{
+                    VStack(alignment: .center, spacing: width * 0.08){
+                        VStack(alignment: .center, spacing: 4){
+                            Text(estudarManager.currentStudy.tituloEstudo)
+                                .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.09 : width * 0.1, relativeTo: .title))
+                                .multilineTextAlignment(.center)
+
                                 .fixedSize(horizontal: false, vertical: true)
-                                .frame(maxHeight: 40)
+                            Text(estudarManager.currentStudy.descricaoEstudo)
+                                .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? width * 0.065 : width * 0.06, relativeTo: .body))
+                                .multilineTextAlignment(.center)
+                                .fixedSize(horizontal: false, vertical: true)
+                                .foregroundStyle(Color(.black))
                         }
-                        HStack{
-                            Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
-                                .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32 : 24))
-                            Text(estudarManager.currentStudy.exemploVerdade)
-                                .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 24 : 18))                                .fixedSize(horizontal: false, vertical: true)
-                                .tint(.black)
-                            
+                        VStack(alignment: .leading, spacing: 30){
+                            HStack{
+                                Image(systemName: "x.circle.fill").foregroundColor(.red)
+                                    .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? width * 0.07 : width * 0.08, relativeTo: .caption))
+                                Text(estudarManager.currentStudy.exemploMentira)
+                                    .font(Font.custom("Fredoka-Medium", size: width * 0.06, relativeTo: .subheadline))
+                                    .minimumScaleFactor(0.8)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
+                            HStack{
+                                Image(systemName: "checkmark.circle.fill").foregroundColor(.green)
+                                    .font(Font.custom("Fredoka-Medium", size: width * 0.07, relativeTo: .caption))
+                                Text(estudarManager.currentStudy.exemploVerdade)
+                                    .font(Font.custom("Fredoka-Medium", size: width * 0.06, relativeTo: .subheadline))
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .tint(.black)
+                            }
                         }
+                        .multilineTextAlignment(.leading)
                     }
                 }
+                .padding(.horizontal, sizeClass == .regular ? 27 : 16)
+                .padding(.vertical, sizeClass == .regular ? 35 : 20)
+                .background(RoundedRectangle(cornerRadius: 25)
+                    .fill(Color.white)
+                    .stroke(Color(.lightGray), lineWidth: 1.5))
+                .foregroundStyle(Color.blackTicia)
+                .backgroundStyle(Color.clear)
             }
             .padding(.bottom, sizeClass == .regular ? 20 : 10)
             .padding(.trailing, sizeClass == .regular ? 20 : 0)
@@ -58,7 +68,5 @@ struct CardEstudar: View {
             .frame(maxWidth: sizeClass == .regular ? 450 : 327, maxHeight: sizeClass == .regular ? 500 : 393)
             .backgroundStyle(Color.backgroundCard)
         }
-        
     }
 }
-
