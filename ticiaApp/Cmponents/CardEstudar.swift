@@ -52,11 +52,11 @@ struct CardEstudar: View {
             .padding(.trailing, sizeClass == .regular ? 20 : 0)
             .padding(.leading, sizeClass == .regular ? 20 : 0)
             .background(RoundedRectangle(cornerRadius: sizeClass == .regular ? 30 : 20)
-                .fill(Color.white)
+                .fill(Color.backgroundCard)
                 .stroke(Color(.lightGray), lineWidth: 1.5))
             .foregroundStyle(Color.blackTicia)
             .frame(maxWidth: sizeClass == .regular ? 450 : 327, maxHeight: sizeClass == .regular ? 500 : 393)
-            .backgroundStyle(Color.clear)
+            .backgroundStyle(Color.backgroundCard)
         }
         
     }

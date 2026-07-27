@@ -25,7 +25,7 @@ struct WordProgressBar: View {
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.gray.opacity(0.3))
             Rectangle()
-                .fill(Color.black)
+                .fill(Color.blackTicia)
                 .scaleEffect(x: progress, y: 1, anchor: .leading)
                 .animation(.easeInOut(duration: 0.5), value: progress)
 

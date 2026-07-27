@@ -15,7 +15,7 @@ struct ButtonPrimary: ButtonStyle {
             .frame(maxWidth: sizeClass == .regular ? 500 : 400)
             .background(Color.blackTicia)
             .clipShape(Capsule())
-            .foregroundStyle(Color.white)
+            .foregroundStyle(Color.background)
             .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32 : 24))
             .opacity(configuration.isPressed ? 0.75 : 1.0)
     }
@@ -30,7 +30,7 @@ struct ButtonSecondary: ButtonStyle {
             .frame(maxWidth: sizeClass == .regular ? 500 : 400)
             .background(
                 RoundedRectangle(cornerRadius: sizeClass == .regular ? 100 : 30).stroke(
-                    Color(.black),
+                    Color(.blackTicia),
                     lineWidth: 2
                 )
             )
@@ -65,14 +65,14 @@ struct ButtonDelete: ButtonStyle {
             .frame(maxWidth: sizeClass == .regular ? 220 : 150)
             .background(
                 RoundedRectangle(cornerRadius: sizeClass == .regular ? 100 : 30).stroke(
-                    Color(.black),
+                    Color(.blackTicia),
                     lineWidth: 2
                 )
             )
             .opacity(configuration.isPressed ? 0.30 : 1.0)
         
         
-            .tint(Color(.black))
+            .tint(Color(.blackTicia))
             .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32: 24))
     }
 }
@@ -85,7 +85,7 @@ struct ButtonPublish: ButtonStyle {
             .frame(maxWidth: sizeClass == .regular ? 220: 165)
             .background(Color.blackTicia)
             .clipShape(Capsule())
-            .foregroundStyle(Color.white)
+            .foregroundStyle(Color.background)
             .tint(Color(.black))
             .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? 32 : 24))
             .opacity(configuration.isPressed ? 0.75 : 1.0)
@@ -103,7 +103,7 @@ struct ButtonAnterior: ButtonStyle {
             .background(
                 RoundedRectangle(cornerRadius: sizeClass == .regular ? 100 : 30)
                     .stroke(
-                        Color(.black),
+                        Color(.blackTicia),
                         lineWidth: 2
                     )
             )
@@ -123,7 +123,7 @@ struct ButtonProximo: ButtonStyle {
             .padding(sizeClass == .regular ? 24 : 16)
             .frame(maxWidth: sizeClass == .regular ? 220 : 150, maxHeight: sizeClass == .regular ? 70 : 44)            .background(Color.blackTicia)
             .clipShape(Capsule())
-            .foregroundStyle(Color.white)
+            .foregroundStyle(Color.background)
             .tint(Color(.black))
             .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 28 : 20))
             .opacity(isEnabled ? 1 : 0.3)

@@ -40,10 +40,8 @@ struct CardJogo: View {
             .padding(.top, sizeClass == .regular ? 24 : 0)
             .frame(maxWidth: sizeClass == .regular ? 450 : 327, maxHeight: sizeClass == .regular ? 550 : 393)
             .background(RoundedRectangle(cornerRadius: sizeClass == .regular ? 20 : 20)
-                .fill(Color.white)
+                .fill(Color.background)
                 .stroke(Color(.lightGray), lineWidth: 1.5))
-            .foregroundStyle(Color.blackTicia)
-         
             .backgroundStyle(Color.clear)
         }
     }

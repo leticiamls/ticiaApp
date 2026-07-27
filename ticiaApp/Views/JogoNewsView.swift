@@ -17,6 +17,8 @@ struct JogoNewsView: View {
     
     var body: some View {
         ZStack {
+            Color.background
+                .ignoresSafeArea()
             VStack (spacing: sizeClass == .regular ? 80 : 100) {
                 VStack {
                     WordProgressBar(

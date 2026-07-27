@@ -17,6 +17,9 @@ struct ResultsView: View {
     let ticiaImage: String
     
     var body: some View {
+        ZStack {
+            Color.background
+                .ignoresSafeArea()
         VStack (spacing: sizeClass == .regular ? 36 : 24) {
             //imagem e texto
             VStack(alignment: .center) {
@@ -133,7 +136,7 @@ struct ResultsView: View {
             }
         }
         .navigationBarBackButtonHidden()
-        
+        }
     }
     
 }

@@ -11,6 +11,9 @@ struct EstudarView: View {
     @Environment(Router.self) var router: Router
     @Environment(EstudarManager.self) var estudarManager: EstudarManager
     var body: some View {
+        ZStack{
+            Color.background
+                .ignoresSafeArea()
         VStack (spacing: sizeClass == .regular ? 170 : 150){
             CardEstudar()
             HStack (spacing: sizeClass == .regular ? 140 : 50){
@@ -51,6 +54,7 @@ struct EstudarView: View {
                     .foregroundColor(Color(red: 0.54, green: 0.53, blue: 0.53))
 
             }
+        }
         }
     }
     
