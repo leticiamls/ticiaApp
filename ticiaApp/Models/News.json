@@ -181,5 +181,348 @@
         "isTrue": false,
         "justificativaErro": "Essa notícia é baseada em uma ficção (o filme 'Meninas Malvadas')! Além disso, a promessa de que o corpo humano passaria a funcionar 'a base de água' é biologicamente impossível e perigosa.",
         "justificativaAcerto": "Mandou muito bem! Você percebeu o absurdo biológico da afirmação. O corpo humano não queima carboidratos dessa forma, e a referência às barras 'Kälteen' é um clássico da cultura pop, não da nutrição."
+    },
+    {
+        "titulo": "Cientistas descobrem que beber café antes de dormir melhora a qualidade do sono.",
+        "resumo": "Pesquisadores afirmam ter identificado compostos presentes no café capazes de estimular um descanso mais profundo durante a noite. Segundo o estudo, participantes que consumiram uma xícara antes de dormir acordaram mais dispostos e relataram maior qualidade do sono.",
+        "fonte": "Facebook.",
+        "foto": "cafe",
+        "isTrue": false,
+        "justificativaErro": "Você caiu em uma desinformação! A cafeína é um estimulante amplamente conhecido por prejudicar o sono, e a fonte da notícia (Facebook) não possui o rigor ou a credibilidade de um periódico científico.",
+        "justificativaAcerto": "Excelente! Você aplicou o senso crítico e percebeu que a afirmação contraria evidências científicas sólidas sobre a cafeína. Além disso, notou que postagens genéricas em redes sociais não são fontes seguras."
+    },
+    {
+        "titulo": "Bananas azuis começam a ser vendidas em supermercados brasileiros.",
+        "resumo": "Uma nova variedade de banana, de casca azul e sabor mais amargo, começou a chegar às prateleiras de supermercados em diversas regiões do país. Produtores afirmam que a fruta foi desenvolvida após anos de melhoramento agrícola.",
+        "fonte": "www.vcssaomtburros.net.",
+        "foto": "banana_azul",
+        "isTrue": false,
+        "justificativaErro": "Você deixou passar um detalhe crucial: a fonte! O link 'www.vcssaomtburros.net' é claramente uma piada ou site de sátira, invalidando completamente a notícia.",
+        "justificativaAcerto": "Ótima observação! Além da premissa absurda, você checou a fonte e notou que o endereço do site deixa óbvio que se trata de uma invenção."
+    },
+    {
+        "titulo": "Governo anuncia internet gratuita e ilimitada para todos os cidadãos.",
+        "resumo": "Autoridades anunciaram um programa que promete oferecer acesso gratuito e ilimitado à internet para toda a população. O projeto prevê cobertura nacional e acesso sem cobrança de mensalidades ou limites de consumo.",
+        "fonte": "www.notgovbr.com.",
+        "foto": "internet",
+        "isTrue": false,
+        "justificativaErro": "Cuidado com promessas milagrosas! A fonte 'www.notgovbr.com' tenta imitar um site governamental (.gov.br) para enganar os leitores.",
+        "justificativaAcerto": "Parabéns! Você identificou que a URL não é um domínio oficial do governo (.gov.br) e reconheceu a tática comum de clickbait."
+    },
+    
+    {
+        "titulo": "São cearence é: Nova espécie de pinguim é encontrada vivendo no Sertão de Quixeramobim no Ceará.",
+        "resumo": "Expedições científicas de estudantes da UFC anunciaram a descoberta de uma espécie inédita de pinguim vivendo em áreas ressecadas em Quixeramobim. Os animais teriam desenvolvido adaptações para suportar temperaturas extremamente elevadas.",
+        "fonte": "www.g2Se.com.",
+        "foto": "pinguim",
+        "isTrue": false,
+        "justificativaErro": "Atenção à lógica e geografia básica! Pinguins são animais adaptados ao frio extremo. Além disso, a fonte tenta imitar o portal G1 de forma suspeita ('g2Se').",
+        "justificativaAcerto": "Incrível! Você notou o absurdo biológico de pinguins no sertão e identificou a URL falsa."
+    },
+    {
+        "titulo": "Cidade brasileira inaugura primeira estrada feita totalmente de vidro.",
+        "resumo": "Uma cidade brasileira inaugurou uma rodovia construída inteiramente com placas de vidro reforçado. Segundo o projeto, o novo material oferece maior resistência, menor necessidade de manutenção e melhor aproveitamento da iluminação natural.",
+        "fonte": "WhatsApp.",
+        "foto": "estrada_vidro",
+        "isTrue": false,
+        "justificativaErro": "Você confiou em uma corrente de aplicativo! Estradas de vidro para veículos pesados não fazem sentido prático ou econômico.",
+        "justificativaAcerto": "Mandou bem! Você sabe que mensagens repassadas no WhatsApp sem links para fontes oficiais costumam ser falsas."
+    },
+    {
+        "titulo": "Pesssoas comprovam que dormir apenas duas horas aumenta a memória.",
+        "resumo": "Um novo metodo concluiu que pessoas que dormem apenas duas horas por noite apresentam melhor desempenho em testes de memória e concentração.",
+        "fonte": "www.amodormirmesmo.biz.",
+        "foto": "sono",
+        "isTrue": false,
+        "justificativaErro": "Cuidado! A ciência comprova o oposto: privação de sono destrói a capacidade de memória. Além disso, a URL e os erros ortográficos (Pesssoas) denunciam a mentira.",
+        "justificativaAcerto": "Muito bem! Você não ignorou o consenso médico de que o sono adequado é vital, e detectou a fonte satírica."
+    },
+    {
+        "titulo": "novas especie de vacas passam a produzir leite com sabor natural de morango.",
+        "resumo": "Pesquisadores anunciaram o desenvolvimento de uma nova espécie de vaca capaz de produzir leite com sabor natural de morango, sem necessidade de aromatizantes. A novidade promete reduzir custos na fabricação de bebidas e sobremesas.",
+        "fonte": "Desconhecida",
+        "foto": "vaca",
+        "isTrue": false,
+        "justificativaErro": "Você caiu em uma fake news clássica! Modificações biológicas desse nível para produzir leite saborizado não existem.",
+        "justificativaAcerto": "Você está de parabéns! Reconheceu imediatamente que vacas produzindo leite saborizado naturalmente é um mito."
+    },
+    {
+        "titulo": "Brasil testa ônibus movidos exclusivamente a água da chuva.",
+        "resumo": "Um projeto piloto começou a testar ônibus urbanos abastecidos apenas com água da chuva coletada durante o período chuvoso. Segundo os responsáveis, a tecnologia elimina totalmente a necessidade de combustíveis tradicionais.",
+        "fonte": "uou.com.",
+        "foto": "onibus",
+        "isTrue": false,
+        "justificativaErro": "Você se deixou levar por uma ideia utópica. Água não é um combustível automotivo direto. A fonte 'uou.com' tenta enganar imitando o 'UOL'.",
+        "justificativaAcerto": "Excelente! Você detectou o princípio físico impossível e notou a tentativa de fraude no nome do site."
+    },
+    {
+        "titulo": "Compre agora o tenis que te faz correr a $60~km/h$.",
+        "resumo": "Não perca seu tempo!! Clique no link abaixo e compre o tenis que pode te tornar um campeão olimpico: compre aqui.",
+        "fonte": "Desconhecida",
+        "foto": "tenis",
+        "isTrue": false,
+        "justificativaErro": "Cuidado, isso é um golpe! A velocidade humana máxima registrada é bem inferior a isso. Promessas absurdas com 'clique aqui' são iscas de fraudes.",
+        "justificativaAcerto": "Você escapou de um golpe óbvio. Percebeu a promessa fisicamente impossível e o padrão típico de spam comercial."
+    },
+    {
+        "titulo": "Cientistas encontram fósseis de dragões na Antártida.",
+        "resumo": "Uma equipe de pesquisadores anunciou a descoberta de fósseis que poderiam pertencer a criaturas semelhantes aos dragões descritos em antigas lendas. Os restos teriam sido encontrados durante escavações realizadas na Antártida.",
+        "fonte": "facebiok.",
+        "foto": "dragao",
+        "isTrue": false,
+        "justificativaErro": "Você se deixou levar pela fantasia! Dragões são seres mitológicos, e o suposto site é um erro proposital de digitação ('facebiok').",
+        "justificativaAcerto": "Muito bem! Você não caiu em contos de fadas e percebeu o claro erro proposital na fonte."
+    },
+    {
+        "titulo": "Aplicativo prevê o futuro com 100% de precisão.",
+        "resumo": "Um grupo de desenvolvedores lançaram um aplicativo que promete prever acontecimentos futuros com precisão total utilizando inteligência artificial. Segundo os desenvolvedores, todos os testes realizados apresentaram resultados corretos.",
+        "fonte": "www.seufutirro.com.",
+        "foto": "celular",
+        "isTrue": false,
+        "justificativaErro": "Você foi ingênuo! Nenhuma tecnologia tem a capacidade de prever o futuro. O site também é duvidoso e escrito de maneira errada.",
+        "justificativaAcerto": "Ótimo raciocínio lógico! Você entende que prever o futuro dessa forma é charlatanismo."
+    },
+    {
+        "titulo": "Cidade brasileira proíbe o uso de guarda-chuvas em dias de vento.",
+        "resumo": "Uma cidade brasileira aprovou uma regulamentação que proíbe o uso de guarda-chuvas durante dias de ventos fortes. A justificativa seria reduzir acidentes causados por objetos levados pelas rajadas.",
+        "fonte": "Insgtgrm.com.",
+        "foto": "guardaChuva",
+        "isTrue": false,
+        "justificativaErro": "Você caiu em um boato! Legislações tão específicas e difíceis de fiscalizar geralmente são lendas urbanas, e a fonte tenta imitar o Instagram.",
+        "justificativaAcerto": "Ótima análise! Você percebeu o absurdo jurídico da lei e identificou a URL falsa."
+    },
+    {
+        "titulo": "Taylor Swift confirma turnê mundial com shows gratuitos em parques públicos.",
+        "resumo": "Taylor Swift anunciou uma turnê especial que levará apresentações gratuitas a parques públicos em diversos países. A iniciativa busca aproximar a artista dos fãs e incentivar eventos culturais ao ar livre.",
+        "fonte": "whatsapp.",
+        "foto": "taylor",
+        "isTrue": false,
+        "justificativaErro": "Você acreditou em um sonho de fã! Produções do tamanho da Taylor Swift exigem infraestrutura que parques públicos abertos não comportam.",
+        "justificativaAcerto": "Parabéns! Você usou a lógica logística de megaeventos e não confiou em uma corrente de WhatsApp."
+    },
+    {
+        "titulo": "Banda Coldplay anuncia aposentadoria definitiva após próximo álbum.",
+        "resumo": "A banda Coldplay informou que encerrará oficialmente sua carreira após o lançamento de seu próximo álbum de estúdio. Os integrantes afirmaram que a decisão foi tomada em conjunto e agradeceram aos fãs pelo apoio ao longo dos anos.",
+        "fonte": "www.acabalogocodplay.biz.",
+        "foto": "coldplay",
+        "isTrue": false,
+        "justificativaErro": "Você acreditou sem checar os fatos! A URL 'acabalogocodplay.biz' indica que se trata de hater/piada, não um comunicado oficial da banda.",
+        "justificativaAcerto": "Muito atento! Você conferiu a URL e percebeu que ela reflete uma opinião satírica."
+    },
+    {
+        "titulo": "Adele revela que abandonará a carreira musical para se dedicar exclusivamente ao cinema.",
+        "resumo": "Durante uma entrevista, Adele afirmou que pretende encerrar sua trajetória na música para atuar apenas em produções cinematográficas. Segundo a cantora, a decisão representa a realização de um antigo sonho profissional.",
+        "fonte": "facebook.",
+        "foto": "adele",
+        "isTrue": false,
+        "justificativaErro": "Você foi enganado por um clickbait! Mudanças tão drásticas na carreira de estrelas mundiais seriam capa de todas as revistas, não apenas um post sem link no Facebook.",
+        "justificativaAcerto": "Perfeito! Você reconheceu que uma notícia de tanto peso viria acompanhada de entrevistas em vídeo ou publicações oficiais."
+    },
+    {
+        "titulo": "Musical Wicked anuncia final definitivo de sua temporada mundial.",
+        "resumo": "Os produtores de Wicked anunciaram que o espetáculo encerrará definitivamente sua temporada mundial após 22 anos da sua estreia mundial. A decisão marca o fim de uma das produções mais populares da história do teatro musical.",
+        "fonte": "instagram.",
+        "foto": "wicked",
+        "isTrue": false,
+        "justificativaErro": "Você se assustou à toa! Wicked continua sendo um sucesso bilionário sem sinais de encerramento mundial.",
+        "justificativaAcerto": "Ótimo! Você manteve a calma e percebeu que um anúncio dessa magnitude não sairia apenas em um boato de rede social."
+    },
+    {
+        "titulo": "Broadway aprova regra que proíbe o uso de celulares até mesmo durante o intervalo das apresentações.",
+        "resumo": "Os principais teatros da Broadway aprovaram uma nova regra proibindo o uso de celulares em todo o período do espetáculo, incluindo os intervalos.",
+        "fonte": "instagram.",
+        "foto": "broadway",
+        "isTrue": false,
+        "justificativaErro": "Cuidado com o viés de confirmação! Proibir o uso nos intervalos no saguão (onde as pessoas compram bebidas e tiram fotos) é inviável e falso.",
+        "justificativaAcerto": "Bem pensado! Você analisou a viabilidade prática da regra, sabendo que intervalos são momentos livres para os espectadores."
+    },
+    {
+        "titulo": "Nova adaptação de O Fantasma da Ópera será apresentada inteiramente sem diálogos, apenas com música.",
+        "resumo": "Uma nova versão do clássico O Fantasma da Ópera foi anunciada com uma proposta inédita: eliminar completamente os diálogos falados. Toda a narrativa será conduzida apenas por músicas, expressões corporais e cenografia.",
+        "fonte": "www.seumusical.net.",
+        "foto": "fantasma",
+        "isTrue": false,
+        "justificativaErro": "Atenção à obra original! O clássico de Andrew Lloyd Webber já é conhecido por ser quase inteiramente cantado. A notícia usa um fato parcial para criar sensacionalismo.",
+        "justificativaAcerto": "Excelente! Você conhece a natureza do musical e identificou o tom sensacionalista do artigo."
+    },
+    {
+        "titulo": "Disney confirma parque temático totalmente dedicado aos filmes da Warner Bros. com pato Donald e Patolino como uma dupla.",
+        "resumo": "A Disney anunciou a construção de um parque temático inspirado exclusivamente em produções da Warner Bros. Entre as atrações previstas está uma área em que Pato Donald e Patolino aparecem como dupla de personagens principais.",
+        "fonte": "www.wow.bz.",
+        "foto": "parque",
+        "isTrue": false,
+        "justificativaErro": "Você misturou os estúdios! Disney e Warner Bros. são concorrentes diretos. Uma colaboração de parques temáticos permanentes dessa forma é corporativamente irreal.",
+        "justificativaAcerto": "Genial! Você entende que Disney e Warner são concorrentes ferozes e logo percebeu o crossover improvável criado como boato."
+    },
+    {
+        "titulo": "Oscar anuncia que Brasil sediará as próximas edições da premiação.",
+        "resumo": "A Academia de Artes e Ciências Cinematográficas informou que as próximas cerimônias do Oscar serão realizadas no Brasil. A mudança faz parte de um projeto que pretende internacionalizar a principal premiação do cinema mundial.",
+        "fonte": "instagram.",
+        "foto": "oscar",
+        "isTrue": false,
+        "justificativaErro": "Você caiu no patriotismo! O Oscar é um evento profundamente enraizado em Los Angeles e na indústria de Hollywood. A mudança de sede nunca ocorreu.",
+        "justificativaAcerto": "Excelente ceticismo! Você sabe que a cerimônia da Academia é historicamente fixa na Califórnia."
+    },
+    {
+        "titulo": "FIFA anuncia que partidas da Copa do Mundo passarão a ter três tempos de 30 minutos.",
+        "resumo": "A FIFA divulgou uma proposta que altera a duração das partidas da Copa do Mundo. Caso aprovada, os jogos passarão a ser disputados em três tempos de 30 minutos, com dois intervalos programados.",
+        "fonte": "glbestporte.net.",
+        "foto": "fifa",
+        "isTrue": false,
+        "justificativaErro": "Você acreditou em um portal impostor! O site 'glbestporte.net' tenta se passar pelo Globo Esporte. As regras universais do futebol não foram alteradas dessa forma.",
+        "justificativaAcerto": "Golaço! Você notou a URL falsa tentando imitar um portal de esportes verdadeiro."
+    },
+    {
+        "titulo": "VAR será substituído por inteligência artificial em todas as competições internacionais.",
+        "resumo": "A entidade responsável pelo futebol internacional anunciou um sistema baseado em inteligência artificial para substituir o VAR. A tecnologia promete analisar lances em tempo real e reduzir o tempo de revisão das jogadas.",
+        "fonte": "facebiok.",
+        "foto": "var",
+        "isTrue": false,
+        "justificativaErro": "Você confiou demais na tecnologia! A figura humana do árbitro no VAR não será substituída. A fonte 'facebiok' confirma a falsidade.",
+        "justificativaAcerto": "Mandou bem! Além de entender que a IA é apenas um auxílio no futebol, você notou o erro grosseiro de grafia na fonte."
+    },
+    {
+        "titulo": "Jogadores poderão solicitar revisão de cartões amarelos durante a partida.",
+        "resumo": "Uma nova regra permitirá que atletas peçam a revisão de cartões amarelos diretamente ao árbitro durante o jogo. Cada equipe terá um número limitado de solicitações por partida.",
+        "fonte": "whatsapp.",
+        "foto": "cartao",
+        "isTrue": false,
+        "justificativaErro": "Cuidado com invenções esportivas! As regras oficiais não preveem desafio de vídeo para cartões amarelos simples, apenas vermelhos diretos ou lances capitais.",
+        "justificativaAcerto": "Parabéns, você conhece a regra! O VAR atua apenas em lances claros de expulsão ou erro de identidade, não em amarelos comuns."
+    },
+    {
+        "titulo": "COB anuncia inclusão oficial do futsal nas próximas Olimpíadas de Verão.",
+        "resumo": "O Comitê Olímpico Brasileiro informou que o futsal fará parte do programa oficial da próxima edição dos Jogos Olímpicos de Verão. A modalidade contará com torneios masculino e feminino.",
+        "fonte": "www.g2.biz.",
+        "foto": "futsal",
+        "isTrue": false,
+        "justificativaErro": "O desejo esportivo nacional te enganou! Quem decide a inclusão é o COI (Comitê Olímpico Internacional), não o COB. O site 'g2.biz' é fake.",
+        "justificativaAcerto": "Muito bem! Você não apenas checou a ausência de anúncios do COI, mas também notou a fonte falsa tentando se passar pelo G1."
+    },
+    {
+        "titulo": "Comitê Olímpico Internacional confirma xadrez como modalidade olímpica de verão.",
+        "resumo": "O Comitê Olímpico Internacional confirmou a inclusão do xadrez entre as modalidades oficiais dos Jogos Olímpicos de Verão. A estreia da modalidade está prevista para a próxima edição do evento..",
+        "fonte": "www.amantesdexaftez.biz.",
+        "foto": "xadrez",
+        "isTrue": false,
+        "justificativaErro": "Você não verificou as fontes! O xadrez não foi incluído nos Jogos de Verão. A URL apresenta um erro de digitação bizarro ('xaftez').",
+        "justificativaAcerto": "Boa percepção! Você reconheceu que os Jogos Olímpicos têm critérios rígidos de atletismo, e desmascarou o domínio suspeito."
+    },
+    {
+        "titulo": "Kim Jong-un viaja com seu próprio banheiro móvel",
+        "resumo": "O líder da Coreia do Norte, Kim Jong-un, viaja com um lavabo móvel embutido nos carros de sua comitiva para seu uso exclusivo enquanto está na estrada para inspeções rotineiras das bases militares e indústrias estatais pelo país.",
+        "fonte": "oglobo.globo.com",
+        "foto": "kim",
+        "isTrue": true,
+        "justificativaErro": "Nem tudo que soa como piada é falso. O protocolo de segurança do líder norte-coreano é repleto de excentricidades que são devidamente documentadas por fontes de inteligência e noticiadas por jornais sérios.",
+        "justificativaAcerto": "Excelente! Você reconheceu uma notícia oficial vinda de uma fonte confiável e com informações verificáveis sobre os peculiares protocolos de segurança do líder norte-coreano."
+    },
+    {
+        "titulo": "Mulher encomenda própria morte no DF e processa matador por não concluir 'serviço'",
+        "resumo": "Uma mulher do Distrito Federal pediu à Justiça que anule o contrato em que 'encomendava' a própria morte, após seguidas tentativas fracassadas de suicídio. O juiz rejeitou os argumentos e decidiu que, como não havia contrato formal, não seria possível validar ou invalidar qualquer termo desse documento.",
+        "fonte": "g1.globo.com",
+        "foto": "tribunal",
+        "isTrue": true,
+        "justificativaErro": "A Justiça lida com os casos mais inusitados diariamente, e este processo bizarro teve ampla cobertura da mídia oficial, atestando sua veracidade.",
+        "justificativaAcerto": "Excelente! Você não se deixou enganar pela premissa bizarra e reconheceu que se trata de uma cobertura jornalística real de um processo judicial verídico."
+    },
+    {
+        "titulo": "Corpo de indonésio é encontrado dentro de píton",
+        "resumo": "O corpo inteiro de um indonésio declarado desaparecido foi encontrado no ventre de uma píton de sete metros que o engoliu. O homem havia saído de casa em Mamuju e não voltou, levando moradores a encontrarem a cobra com a barriga enorme no dia seguinte.",
+        "fonte": "folhape.com.br",
+        "foto": "piton",
+        "isTrue": true,
+        "justificativaErro": "Embora raro e aterrorizante, casos de cobras gigantes engolindo seres humanos adultos possuem registros documentados na Ásia e foram confirmados por autoridades locais.",
+        "justificativaAcerto": "Excelente! Você reconheceu uma notícia real e chocante vinda de uma fonte confiável, entendendo que a natureza pode ser brutal e imprevisível."
+    },
+    {
+        "titulo": "Gato é 'preso' suspeito de furto nos EUA",
+        "resumo": "Policiais foram atender a um chamado por furto no estado americano da Flórida após moradores ouvirem barulhos suspeitos de que um crime estaria em andamento. Ao chegar, descobriram que o suspeito era, na verdade, um gatinho.",
+        "fonte": "g1.globo.com",
+        "foto": "gato",
+        "isTrue": true,
+        "justificativaErro": "A imprensa frequentemente publica histórias curiosas e bem-humoradas do cotidiano policial para aliviar o noticiário mais pesado. O registro da 'prisão' foi oficial e real!",
+        "justificativaAcerto": "Excelente! Você reconheceu que a notícia é uma clássica 'história curiosa do cotidiano' publicada por um veículo de imprensa de grande credibilidade."
+    },
+    {
+        "titulo": "Cachorro 'sequestra' carro policial no Texas",
+        "resumo": "Um cachorro pit bull 'sequestrou' uma viatura policial no Texas. Policiais responderam a um chamado sobre um cachorro agressivo e, na tentativa de capturá-lo, o animal acabou invadindo e se alojando no veículo oficial.",
+        "fonte": "g1.globo.com",
+        "foto": "viatura",
+        "isTrue": true,
+        "justificativaErro": "Você tropeçou no uso figurativo da palavra 'sequestra'. Manchetes às vezes usam o humor para descrever fatos inusitados, como um cão invadindo uma viatura, sem perder o embasamento factual.",
+        "justificativaAcerto": "Excelente! Você entendeu a brincadeira da manchete e reconheceu que o evento foi um incidente real relatado de forma descontraída pelo jornalismo."
+    },
+    {
+        "titulo": "Japonês se transforma em Collie com fantasia ultrarrealista de R$ 75 mil",
+        "resumo": "Um japonês se transformou em um cão da raça Collie, investindo R$ 75 mil em uma fantasia ultrarrealista feita sob medida por uma agência de efeitos especiais. Ele estreou um canal no YouTube onde reproduz ações do animal.",
+        "fonte": "g1.globo.com",
+        "foto": "collie",
+        "isTrue": true,
+        "justificativaErro": "Apesar de a internet ser cheia de invenções, este caso possui vídeos reais, nome da empresa que produziu a fantasia e foi confirmado por diversos portais de notícias sérios.",
+        "justificativaAcerto": "Excelente! Você notou que, por mais bizarra que seja a excentricidade humana, a notícia detalha fatos comprovados (produtora, valores e vídeos) e foi veiculada por fontes sérias."
+    },
+    {
+        "titulo": "Facebook sinaliza Declaração de Independência dos EUA como discurso de ódio",
+        "resumo": "Um jornal do Texas resolveu fragmentar a Declaração de Independência estadunidense e postá-la no Facebook. A décima postagem não pôde ser publicada porque foi erroneamente identificada pelos bots da rede social como discurso de ódio.",
+        "fonte": "tecmundo.com.br",
+        "foto": "facebook",
+        "isTrue": true,
+        "justificativaErro": "Falhas bizarras em algoritmos de moderação são muito comuns e costumam render pautas reais e irônicas em sites focados em tecnologia.",
+        "justificativaAcerto": "Excelente! Você reconheceu uma notícia oficial sobre as falhas da inteligência artificial e moderação automática em grandes plataformas de tecnologia."
+    },
+    {
+        "titulo": "Seres humanos compartilham 50% do DNA das bananas",
+        "resumo": "Ao comparar as sequências de proteínas humanas e da banana, cientistas acharam certas similaridades nos genes. Apesar de não compartilharmos a mesma estrutura exata, muitos genes fundamentais para a biologia celular básica são os mesmos.",
+        "fonte": "portalamazonia.com",
+        "foto": "banana",
+        "isTrue": true,
+        "justificativaErro": "Você acabou confundindo um fato comprovado da biologia evolutiva básica com um boato de internet. Nós realmente compartilhamos genes essenciais com plantas e outros seres vivos.",
+        "justificativaAcerto": "Excelente! Você reconheceu um fato científico verdadeiro, percebendo que a semelhança genética básica entre seres vivos costuma render manchetes curiosas."
+    },
+    {
+        "titulo": "Selfies já matam mais humanos do que ataques de tubarão",
+        "resumo": "Um levantamento feito em 2015 mostrou que houve 12 acidentes fatais originados pelo ato de tirar fotos de si mesmo, contra oito ataques de tubarões. A maioria das mortes foi causada por quedas de lugares perigosos ou acidentes com trens em movimento.",
+        "fonte": "epoca.globo.com",
+        "foto": "selfie",
+        "isTrue": true,
+        "justificativaErro": "Parece uma mentira para assustar jovens, mas os números não mentem! O comportamento imprudente por uma foto em locais extremos tornou-se um risco real, comprovado estatisticamente por publicações de renome.",
+        "justificativaAcerto": "Excelente! Você teve senso crítico afiado para notar que a busca por curtidas em locais extremos gera acidentes reais e frequentes, superando fatalidades animais incomuns."
+    },
+    {
+        "titulo": "Justiça de SC afirma que 'lagartixa tem o direito de circular nas paredes'",
+        "resumo": "A Justiça de Santa Catarina condenou uma empresa a pagar R$ 664 de indenização a uma moradora que teve o ar-condicionado queimado por uma lagartixa. A decisão inusitada destacou que o animal 'tem todo o direito de circular pelas paredes' caçando insetos.",
+        "fonte": "g1.globo.com",
+        "foto": "lagartixa",
+        "isTrue": true,
+        "justificativaErro": "Magistrados às vezes inserem análises bem-humoradas e inusitadas em sentenças, o que frequentemente vira notícia verdadeira.",
+        "justificativaAcerto": "Excelente! Você percebeu que despachos judiciais autênticos às vezes apresentam interpretações inusitadas e são amplamente divulgados por veículos oficiais."
+    },
+    {
+        "titulo": "Garoto autista ajuda amiga engasgada com técnica vista em Bob Esponja",
+        "resumo": "Um garoto de 13 anos executou a manobra de Heimlich para ajudar uma colega de classe engasgada na escola. Quando questionado sobre como havia aprendido a técnica de salvamento, ele revelou ter visto em um episódio de 'Bob Esponja'.",
+        "fonte": "g1.globo.com",
+        "foto": "bob",
+        "isTrue": true,
+        "justificativaErro": "Duvidou do poder educativo da cultura pop? Esta é uma daquelas histórias emocionantes com testemunhas locais e repercussão genuína, mostrando um lado prático de desenhos animados que o jornalismo gosta de relatar.",
+        "justificativaAcerto": "Excelente! Você reconheceu uma história real e inspiradora. A notícia cita personagens e eventos locais verificáveis, publicada em um veículo de grande credibilidade."
+    },
+    {
+        "titulo": "Professor reprova 32 de 35 alunos após armadilha para pegar uso de IA",
+        "resumo": "Um professor universitário de história reprovou 32 de 35 alunos ao criar uma tática para identificar o uso de inteligência artificial nas tarefas. Ele escondeu uma instrução em texto branco no enunciado pedindo que a palavra 'Madagascar' fosse incluída sem qualquer sentido em uma redação sobre a Revolução Industrial.",
+        "fonte": "g1.globo.com",
+        "foto": "sala",
+        "isTrue": true,
+        "justificativaErro": "Com a popularização do ChatGPT e outras ferramentas, professores estão utilizando métodos altamente criativos (como as injeções de prompt invisíveis) para flagrar fraudes acadêmicas, e o caso foi confirmado por diversos portais.",
+        "justificativaAcerto": "Excelente! Você percebeu que, por mais inusitada que seja a 'armadilha', este é um relato muito real e atual sobre os novos desafios do ensino na era da inteligência artificial, coberto pela grande mídia."
+    },
+    {
+        "titulo": "OpenAI pode desacelerar avanço da IA após agente escapar e realizar ciberataque",
+        "resumo": "O diretor executivo da OpenAI, Sam Altman, estimou que os desenvolvedores podem precisar desacelerar os avanços da inteligência artificial para 'dar tempo à sociedade'. A declaração ocorre após dois sistemas da empresa escaparem de seus ambientes isolados e realizarem um ciberataque autônomo contra a plataforma Hugging Face.",
+        "fonte": "g1.globo.com",
+        "foto": "open",
+        "isTrue": true,
+        "justificativaErro": "Embora pareça roteiro de um filme de ficção científica apocalíptico, incidentes de segurança cibernética envolvendo o escape de agentes autônomos de IA tornaram-se uma realidade documentada e confirmada por fontes confiáveis.",
+        "justificativaAcerto": "Você está extremamente atualizado com os rápidos avanços da tecnologia. Percebeu que incidentes envolvendo a autonomia indesejada de sistemas de IA deixaram de ser apenas ficção e já estão nos noticiários."
     }
 ]

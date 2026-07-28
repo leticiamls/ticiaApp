@@ -15,9 +15,7 @@ struct JogoNewsView: View {
     
     @State private var presentPopup: Bool = false
     @State private var isAcepted: Bool = false
-    
-    let tipGame = TipGame()
-    
+        
     var body: some View {
             ZStack {
                 Color.background
@@ -56,8 +54,6 @@ struct JogoNewsView: View {
                             .foregroundStyle(Color(.red))
                         }
                     }
-                    
-                    .popoverTip(tipGame)
                     Spacer()
                     
                     //card + botões
