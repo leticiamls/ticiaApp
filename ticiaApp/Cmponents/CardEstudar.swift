@@ -27,7 +27,7 @@ struct CardEstudar: View {
                                 .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? width * 0.065 : width * 0.06, relativeTo: .body))
                                 .multilineTextAlignment(.center)
                                 .fixedSize(horizontal: false, vertical: true)
-                                .foregroundStyle(Color(.black))
+                                .foregroundStyle(Color(.blackTicia))
                         }
                         VStack(alignment: .leading, spacing: 30){
                             HStack{
@@ -44,7 +44,7 @@ struct CardEstudar: View {
                                 Text(estudarManager.currentStudy.exemploVerdade)
                                     .font(Font.custom("Fredoka-Medium", size: width * 0.06, relativeTo: .subheadline))
                                     .fixedSize(horizontal: false, vertical: true)
-                                    .tint(.black)
+                                    .tint(.blackTicia)
                             }
                         }
                         .multilineTextAlignment(.leading)
@@ -58,15 +58,6 @@ struct CardEstudar: View {
                 .foregroundStyle(Color.blackTicia)
                 .backgroundStyle(Color.clear)
             }
-            .padding(.bottom, sizeClass == .regular ? 20 : 10)
-            .padding(.trailing, sizeClass == .regular ? 20 : 0)
-            .padding(.leading, sizeClass == .regular ? 20 : 0)
-            .background(RoundedRectangle(cornerRadius: sizeClass == .regular ? 30 : 20)
-                .fill(Color.backgroundCard)
-                .stroke(Color(.lightGray), lineWidth: 1.5))
-            .foregroundStyle(Color.blackTicia)
-            .frame(maxWidth: sizeClass == .regular ? 450 : 327, maxHeight: sizeClass == .regular ? 500 : 393)
-            .backgroundStyle(Color.backgroundCard)
         }
     }
 }
