@@ -48,7 +48,6 @@ struct ResultsView: View {
                 VStack(alignment: .leading) {
                     Text("RESULTADOS")
                         .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 24 : 16))
-                        .foregroundStyle(Color(.gray))
                         .frame(maxWidth: sizeClass == .regular ? 200 : 145, maxHeight: sizeClass == .regular ? 10 : 1)
                         .kerning(0.8)
                     GroupBox {

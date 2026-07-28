@@ -29,7 +29,6 @@ struct CardJogo: View {
                             Text(gameManager.currentNew?.resumo ?? "Sem valor")
                                 .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? width * 0.048 : width * 0.05, relativeTo: .body))
                                 .lineLimit(5)
-                                .foregroundStyle(Color(.secondaryLabel))
                         }
                         Spacer()
                         Text("**Fonte:** \(gameManager.currentNew?.fonte ?? "Sem valor")")
@@ -39,16 +38,11 @@ struct CardJogo: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(RoundedRectangle(cornerRadius: 25)
-                    .fill(Color.background)
-                    .stroke(Color(.lightGray), lineWidth: 1.5))
-                .backgroundStyle(Color.clear)
             }
             .padding(.bottom, sizeClass == .regular ? 8 : 0)
             .padding(.trailing, sizeClass == .regular ? 20 : 0)
             .padding(.leading, sizeClass == .regular ? 20 : 0)
             .padding(.top, sizeClass == .regular ? 24 : 0)
-            .frame(maxWidth: sizeClass == .regular ? 450 : 327, maxHeight: sizeClass == .regular ? 550 : 393)
             .background(RoundedRectangle(cornerRadius: sizeClass == .regular ? 20 : 20)
                 .fill(Color.background)
                 .stroke(Color(.lightGray), lineWidth: 1.5))
