@@ -20,6 +20,8 @@ struct JogoNewsView: View {
     
     var body: some View {
             ZStack {
+                Color.background
+                    .ignoresSafeArea()
                 VStack (spacing: sizeClass == .regular ? 0 : 0) {
                     //barra de progresso + indicadores de confiança e caos
                     VStack {

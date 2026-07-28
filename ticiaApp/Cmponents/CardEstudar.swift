@@ -53,7 +53,7 @@ struct CardEstudar: View {
                 .padding(.horizontal, sizeClass == .regular ? 27 : 16)
                 .padding(.vertical, sizeClass == .regular ? 35 : 20)
                 .background(RoundedRectangle(cornerRadius: 25)
-                    .fill(Color.white)
+                    .fill(Color.backgroundCard)
                     .stroke(Color(.lightGray), lineWidth: 1.5))
                 .foregroundStyle(Color.blackTicia)
                 .backgroundStyle(Color.clear)

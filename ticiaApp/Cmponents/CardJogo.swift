@@ -40,9 +40,8 @@ struct CardJogo: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(RoundedRectangle(cornerRadius: 25)
-                    .fill(Color.white)
+                    .fill(Color.background)
                     .stroke(Color(.lightGray), lineWidth: 1.5))
-                .foregroundStyle(Color.blackTicia)
                 .backgroundStyle(Color.clear)
             }
             .padding(.bottom, sizeClass == .regular ? 8 : 0)
