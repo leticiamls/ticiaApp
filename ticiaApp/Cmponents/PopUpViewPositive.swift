@@ -61,9 +61,9 @@ struct PopUpViewPositive: View {
                     HStack {
                         Text("Próxima")
                             .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
-                            .foregroundColor(Color(.blackTicia))
+                            .foregroundColor(Color.white)
                         Image(systemName: "arrow.right")
-                            .foregroundColor(Color(.blackTicia))
+                            .foregroundColor(Color.white)
                             .font(Font.custom("Fredoka-Semibold", size: sizeClass == .regular ? 32 : 24))
                     }
                     .padding(10)
