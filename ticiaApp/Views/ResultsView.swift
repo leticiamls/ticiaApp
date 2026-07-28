@@ -19,6 +19,9 @@ struct ResultsView: View {
     var body: some View {
         GeometryReader { geo in
             let width = geo.size.width
+            ZStack {
+                Color.background
+                    .ignoresSafeArea()
             VStack (spacing: sizeClass == .regular ? 48 : 24) {
                 //imagem e texto
                 VStack(alignment: .center) {
@@ -143,10 +146,12 @@ struct ResultsView: View {
             .padding(8)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationBarBackButtonHidden()
-            
+            }
+        }
+        .navigationBarBackButtonHidden()
         }
     }
-}
+
 #Preview {
     @Previewable @State var gameManager = GameManager()
     @Previewable @State var router = Router()

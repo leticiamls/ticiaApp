@@ -17,7 +17,7 @@ struct PopUp: GroupBoxStyle {
         .padding(EdgeInsets(top: 16, leading: 20, bottom: 16, trailing: 20))
         .background(
             RoundedRectangle(cornerRadius: 20)
-                .fill(Color.white)
+                .fill(Color.background)
                 .stroke(Color(.lightGray), lineWidth: 1)
         )
         .foregroundStyle(Color.blackTicia)

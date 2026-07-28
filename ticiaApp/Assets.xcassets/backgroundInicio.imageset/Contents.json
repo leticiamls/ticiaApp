@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "TíciaLogoApp.svg",
+      "filename" : "BackgroundInicio.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Background-ipad.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
