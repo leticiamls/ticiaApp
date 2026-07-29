@@ -128,6 +128,8 @@ struct ResultsView: View {
                             }
                         }
                         .buttonStyle(ButtonPrimary())
+                        .frame(maxWidth: userDimensions * 0.7, maxHeight: userDimensions * 0.1)
+
                         
                         Button {
                             router.restartNavigation()
