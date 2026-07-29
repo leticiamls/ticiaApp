@@ -16,6 +16,8 @@ struct EstudarView: View {
             let width = geo.size.width
             let height = geo.size.height
             
+            let userDimensions = min(width, height)
+            
             ZStack {
                 Color.background
                     .ignoresSafeArea()
@@ -72,7 +74,7 @@ struct EstudarView: View {
             ToolbarItem(placement: .title){
                 Text("ESTUDAR")
                     .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 32 : 18))
-                    .foregroundColor(Color(red: 0.54, green: 0.53, blue: 0.53))
+                    .foregroundColor(Color.blackTicia)
             }
         }
         .navigationBarBackButtonHidden(true)

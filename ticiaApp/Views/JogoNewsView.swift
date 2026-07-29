@@ -59,56 +59,110 @@ struct JogoNewsView: View {
                     //card + botões
                     GeometryReader { geo in
                         let width = geo.size.width
-
-                        VStack (spacing: sizeClass == .regular ? 0 : 0) {
-                            Spacer()
-                            
-                            CardJogo()
-                                .frame(
-                                    width: geo.size.width * (sizeClass == .regular ? 0.63 : 1),
-                                    height: geo.size.height * (0.6)
-                                )
-                            
-                            
-                            //botoes
-                            HStack (spacing: sizeClass == .regular ? 100 : 28){
-                                Button {
-                                    isAcepted = false
-                                    withAnimation {
-                                        presentPopup.toggle()
-                                    }
-                                }
-                                label: {
-                                    HStack{
-                                        Image(systemName: "xmark")
-                                        Text("Excluir")
-                                            .lineLimit(1)
-                                    }
-                                    .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.048 : width * 0.06))
-
-                                }
-                                .buttonStyle(ButtonDelete())
+                        let height = geo.size.height
+                        
+                        let userDimension = min(width, height)
+                        
+                        ViewThatFits {
+                            VStack (spacing: sizeClass == .regular ? userDimension * 0.05 : 0) {
+                                Spacer()
                                 
-                                Button {
-                                    isAcepted = true
-                                    withAnimation {
-                                        presentPopup.toggle()
+                                CardJogo()
+                                    .frame(
+                                        width: geo.size.width * (sizeClass == .regular ? 0.40 : 1),
+                                        height: geo.size.height * (0.58),
+                                    )
+                                
+                                //botoes
+                                HStack (spacing: sizeClass == .regular ? 100 : 28){
+                                    Button {
+                                        isAcepted = false
+                                        withAnimation {
+                                            presentPopup.toggle()
+                                        }
                                     }
-                                }
-                                label: {
-                                    HStack{
-                                        Image(systemName: "checkmark")
-                                        Text("Publicar")
-                                            .lineLimit(1)
+                                    label: {
+                                        HStack{
+                                            Image(systemName: "xmark")
+                                            Text("Excluir")
+                                                .lineLimit(1)
+                                        }
+                                        .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.048 : width * 0.06))
+                                        
                                     }
-                                    .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.048 : width * 0.06))
+                                    .buttonStyle(ButtonDelete())
+                                    
+                                    Button {
+                                        isAcepted = true
+                                        withAnimation {
+                                            presentPopup.toggle()
+                                        }
+                                    }
+                                    label: {
+                                        HStack{
+                                            Image(systemName: "checkmark")
+                                            Text("Publicar")
+                                                .lineLimit(1)
+                                        }
+                                        .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.048 : width * 0.06))
+                                    }
+                                    .buttonStyle(ButtonPublish())
                                 }
-                                .buttonStyle(ButtonPublish())
+                                .padding(
+                                    EdgeInsets(
+                                        top: sizeClass == .regular ? 100 : 40,
+                                        leading: 0,
+                                        bottom: 0,
+                                        trailing: 0
+                                    )
+                                )
+                                Spacer()
                             }
-                            .padding(EdgeInsets(top: sizeClass == .regular ? 100 : 40, leading: 0, bottom: 0, trailing: 0))
-                            Spacer()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+                            HStack (spacing: userDimension * 0.09) {
+                                    Button {
+                                        isAcepted = false
+                                        withAnimation {
+                                            presentPopup.toggle()
+                                        }
+                                    }
+                                    label: {
+                                        HStack{
+                                            Image(systemName: "xmark")
+                                            Text("Excluir")
+                                                .lineLimit(1)
+                                        }
+                                        .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? userDimension * 0.06 : userDimension * 0.06))
+                                        
+                                    }
+                                    .buttonStyle(ButtonDelete())
+                                CardJogo()
+                                    .frame(
+                                        width: geo.size.width * (sizeClass == .regular ? 0.36 : 1),
+                                        height: geo.size.height * (sizeClass == .regular ? 0.8 : 1)
+                                    )
+                                    
+                                    Button {
+                                        isAcepted = true
+                                        withAnimation {
+                                            presentPopup.toggle()
+                                        }
+                                    }
+                                    label: {
+                                        HStack{
+                                            Image(systemName: "checkmark")
+                                            Text("Publicar")
+                                        }
+                                        .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? userDimension * 0.055 : userDimension * 0.06))
+                                    }
+                                    .buttonStyle(ButtonPublish())
+                                }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .padding(.horizontal, userDimension * 0.06)
+
+                            }
                         }
-                        .frame(maxWidth: .infinity)
                     }
                     .toolbar{
                         ToolbarItem(placement: .topBarLeading){
@@ -121,7 +175,7 @@ struct JogoNewsView: View {
                         ToolbarItem(placement: .title){
                             Text("NOTÍCIAS")
                                 .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 24 : 18))
-                                .foregroundColor(Color(red: 0.54, green: 0.53, blue: 0.53))
+                                .foregroundColor(Color.blackTicia)
                         }
                     }
                     .padding(.leading, 16)
@@ -157,8 +211,6 @@ struct JogoNewsView: View {
                 
             }
         }
-        
-    }
 
 
 #Preview {
