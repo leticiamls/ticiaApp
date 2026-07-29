@@ -69,12 +69,12 @@ struct JogoNewsView: View {
                             
                             CardJogo()
                                 .frame(
-                                    width: geo.size.width * (sizeClass == .regular ? 0.40 : 1),
-                                    height: geo.size.height * (0.58),
+                                    width: geo.size.width * (sizeClass == .regular ? 0.6 : 1),
+                                    height: geo.size.height * (sizeClass == .regular ? 0.6 : 1),
                                 )
                             
                             //botoes
-                            HStack (spacing: sizeClass == .regular ? 100 : 28){
+                            HStack (spacing: sizeClass == .regular ? userDimension * 0.05 : 28){
                                 Button {
                                     isAcepted = false
                                     withAnimation {
@@ -87,7 +87,7 @@ struct JogoNewsView: View {
                                         Text("Excluir")
                                             .lineLimit(1)
                                     }
-                                    .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.048 : width * 0.06))
+                                    .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? userDimension * 0.048 : width * 0.06))
                                     
                                 }
                                 .buttonStyle(ButtonDelete())
@@ -104,16 +104,16 @@ struct JogoNewsView: View {
                                         Text("Publicar")
                                             .lineLimit(1)
                                     }
-                                    .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.048 : width * 0.06))
+                                    .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? userDimension * 0.048 : width * 0.06))
                                 }
                                 .buttonStyle(ButtonPublish())
                             }
                             .padding(
                                 EdgeInsets(
                                     top: sizeClass == .regular ? 100 : 40,
-                                    leading: 0,
+                                    leading: sizeClass == .regular ? userDimension * 0.1 : 0,
                                     bottom: 0,
-                                    trailing: 0
+                                    trailing: sizeClass == .regular ? userDimension * 0.1 : 0,
                                 )
                             )
                             Spacer()

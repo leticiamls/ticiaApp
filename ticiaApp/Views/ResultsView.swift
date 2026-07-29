@@ -77,7 +77,8 @@ struct ResultsView: View {
                                     trailing: 00
                                 )
                             )
-                            
+                            Divider()
+                                .overlay(Color.blackTicia)
                             
                             VStack {
                                 HStack {

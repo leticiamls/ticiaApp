@@ -60,7 +60,7 @@ struct ButtonDelete: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding(sizeClass == .regular ? 24: 18)
-            .frame(maxWidth: sizeClass == .regular ? 300 : .infinity)
+            .frame(maxWidth: sizeClass == .regular ? .infinity : .infinity)
             .background(
                 RoundedRectangle(cornerRadius: sizeClass == .regular ? 100 : 30).stroke(
                     Color(.blackTicia),

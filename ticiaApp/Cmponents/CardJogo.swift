@@ -31,7 +31,7 @@ struct CardJogo: View {
                                 .font(
                                     Font.custom(
                                         "Fredoka-SemiBold",
-                                        size: usedDimension * 0.078,
+                                        size: usedDimension * 0.068,
                                         relativeTo: .title
                                     )
                                 )
