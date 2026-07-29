@@ -14,27 +14,50 @@ struct CardJogo: View {
     var body: some View {
         GeometryReader { geo in
             let width = geo.size.width
+            let height = geo.size.height
             
+            //TODO: USAR ISSO NOS GEOMETRYREADER QUE TIVER
+            let usedDimension = min(width, height)
+
             VStack (alignment: .leading) {
                 GroupBox{
                     Image(gameManager.currentNew?.foto ?? "Sem valor")
                         .resizable()
-                        .aspectRatio(2/1,contentMode: .fit)
+                        .aspectRatio(2/1, contentMode: .fit)
                         .clipShape(RoundedRectangle(cornerRadius: sizeClass == .regular ? 15 : 10))
-                    VStack(alignment: .leading, spacing: 18){
-                        VStack(alignment: .leading, spacing: 4){
+                    VStack(alignment: .leading, spacing: usedDimension * 0.02){
+                        VStack(alignment: .leading, spacing: usedDimension * 0.02){
                             Text(gameManager.currentNew?.titulo ?? "Sem valor")
-                                .font(Font.custom("Fredoka-SemiBold", size: width * 0.068, relativeTo: .title))
+                                .font(
+                                    Font.custom(
+                                        "Fredoka-SemiBold",
+                                        size: usedDimension * 0.068,
+                                        relativeTo: .title
+                                    )
+                                )
                                 .fixedSize(horizontal: false, vertical: true)
                             Text(gameManager.currentNew?.resumo ?? "Sem valor")
-                                .font(Font.custom("Fredoka-Regular", size: sizeClass == .regular ? width * 0.048 : width * 0.05, relativeTo: .body))
+                                .font(
+                                    Font.custom(
+                                        "Fredoka-Regular",
+                                        size: sizeClass == .regular ? usedDimension * 0.048 : usedDimension * 0.05,
+                                        relativeTo: .body
+                                    )
+                                )
                                 .lineLimit(5)
                         }
                         Spacer()
                         Text("**Fonte:** \(gameManager.currentNew?.fonte ?? "Sem valor")")
-                            .font(Font.custom("Fredoka-Regular", size: width * 0.05, relativeTo: .footnote))
+                            .font(
+                                Font.custom(
+                                    "Fredoka-Regular",
+                                    size: usedDimension * 0.05,
+                                    relativeTo: .footnote
+                                )
+                            )
                             .fixedSize(horizontal: false, vertical: true)
                     }
+                    
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

@@ -16,19 +16,53 @@ struct EstudarView: View {
             let width = geo.size.width
             let height = geo.size.height
             
+            let minorDimension = min(width, height)
+            
             ZStack {
                 Color.background
                     .ignoresSafeArea()
-                VStack (spacing: sizeClass == .regular ? 140 : 30) {
-                    Spacer()
-                    CardEstudar()
-                        .frame(
-                            width: width * (sizeClass == .regular ? 0.7 : 0.85),
-                            height: height * (sizeClass == .regular ? 0.5 : 0.58),
-                        )
-                    Spacer()
-                    //botoes
-                    HStack(spacing: sizeClass == .regular ? 140 : 30) {
+                ViewThatFits {
+                    VStack (spacing: sizeClass == .regular ? 0 : 30) {
+                        Spacer()
+                        CardEstudar(usedDimension: minorDimension)
+                            .frame(
+                                width: width * (sizeClass == .regular ? 0.55 : 0.85),
+                                height: height * (sizeClass == .regular ? 0.5 : 0.58),
+                            )
+                        Spacer()
+                        //botoes
+                        HStack(spacing: sizeClass == .regular ? 140 : 30) {
+                            Button {
+                                estudarManager.backCard()
+                            } label: {
+                                HStack {
+                                    Image(systemName: "arrow.backward")
+                                    Text("Anterior")
+                                }
+                                .lineLimit(1)
+                                .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? minorDimension * 0.04 : minorDimension * 0.06))
+                            }
+                            .buttonStyle(ButtonAnterior())
+                            .disabled(estudarManager.currentStudyIndex == 0)
+                            
+                            Button {
+                                estudarManager.nextNew()
+                            } label: {
+                                HStack {
+                                    Text("Próximo")
+                                    Image(systemName: "arrow.right")
+                                }
+                                .lineLimit(1)
+                                .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? minorDimension * 0.04 : minorDimension * 0.06))
+                            }
+                            .buttonStyle(ButtonProximo())
+                            .disabled(estudarManager.isLastNew())
+                        }
+                        .padding(.horizontal, width * 0.05)
+                        
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    HStack (alignment: .center, spacing: minorDimension * 0.1) {
                         Button {
                             estudarManager.backCard()
                         } label: {
@@ -37,10 +71,16 @@ struct EstudarView: View {
                                 Text("Anterior")
                             }
                             .lineLimit(1)
-                            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.04 : width * 0.06))
+                            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? minorDimension * 0.045 : minorDimension * 0.06))
                         }
                         .buttonStyle(ButtonAnterior())
                         .disabled(estudarManager.currentStudyIndex == 0)
+                        
+                        CardEstudar(usedDimension: minorDimension)
+                            .frame(
+                                width: width * (sizeClass == .regular ? 0.4 : 0.85),
+                                height: height * 0.83,
+                            )
                         
                         Button {
                             estudarManager.nextNew()
@@ -50,17 +90,23 @@ struct EstudarView: View {
                                 Image(systemName: "arrow.right")
                             }
                             .lineLimit(1)
-                            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? width * 0.04 : width * 0.06))
+                            .font(Font.custom("Fredoka-SemiBold", size: sizeClass == .regular ? minorDimension * 0.045 : minorDimension * 0.06))
                         }
                         .buttonStyle(ButtonProximo())
                         .disabled(estudarManager.isLastNew())
+                        
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(.horizontal, width * 0.05)
-                    
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+
         }
+        .frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .center
+        )
         .toolbar{
             ToolbarItem(placement: .topBarLeading){
                 Button {
@@ -72,7 +118,7 @@ struct EstudarView: View {
             ToolbarItem(placement: .title){
                 Text("ESTUDAR")
                     .font(Font.custom("Fredoka-Medium", size: sizeClass == .regular ? 32 : 18))
-                    .foregroundColor(Color(red: 0.54, green: 0.53, blue: 0.53))
+                    .foregroundColor(Color.blackTicia)
             }
         }
         .navigationBarBackButtonHidden(true)
