@@ -223,6 +223,8 @@ struct JogoNewsView: View {
                         }
                     }
                 }
+                .padding(.leading, 16)
+                .padding(.trailing, 16)
             }
             .toolbar{
                 ToolbarItem(placement: .topBarLeading){
@@ -238,8 +240,7 @@ struct JogoNewsView: View {
                         .foregroundColor(Color.blackTicia)
                 }
             }
-            .padding(.leading, 16)
-            .padding(.trailing, 16)
+       
             
             
             
